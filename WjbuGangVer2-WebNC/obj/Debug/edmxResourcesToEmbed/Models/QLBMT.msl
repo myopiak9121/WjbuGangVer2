@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLBMTModelStoreContainer" CdmEntityContainer="QLBMTEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="QLBMTModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="QLBMTModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDons">
+      <EntityTypeMapping TypeName="QLBMTModel.HoaDon">
+        <MappingFragment StoreEntitySet="HoaDon">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="MaPT" ColumnName="MaPT" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiMHs">
+      <EntityTypeMapping TypeName="QLBMTModel.LoaiMH">
+        <MappingFragment StoreEntitySet="LoaiMH">
+          <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+          <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MatHangs">
+      <EntityTypeMapping TypeName="QLBMTModel.MatHang">
+        <MappingFragment StoreEntitySet="MatHang">
+          <ScalarProperty Name="MaMH" ColumnName="MaMH" />
+          <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+          <ScalarProperty Name="TenMH" ColumnName="TenMH" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="HinhChinh" ColumnName="HinhChinh" />
+          <ScalarProperty Name="Hinh1" ColumnName="Hinh1" />
+          <ScalarProperty Name="Hinh2" ColumnName="Hinh2" />
+          <ScalarProperty Name="Hinh3" ColumnName="Hinh3" />
+          <ScalarProperty Name="Hinh4" ColumnName="Hinh4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhuongThucThanhToans">
+      <EntityTypeMapping TypeName="QLBMTModel.PhuongThucThanhToan">
+        <MappingFragment StoreEntitySet="PhuongThucThanhToan">
+          <ScalarProperty Name="MaPT" ColumnName="MaPT" />
+          <ScalarProperty Name="TenPT" ColumnName="TenPT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="HoaDonChiTiet" TypeName="QLBMTModel.HoaDonChiTiet" StoreEntitySet="HoaDonChiTiet">
+      <EndProperty Name="HoaDon">
+        <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+      </EndProperty>
+      <EndProperty Name="MatHang">
+        <ScalarProperty Name="MaMH" ColumnName="MaMH" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

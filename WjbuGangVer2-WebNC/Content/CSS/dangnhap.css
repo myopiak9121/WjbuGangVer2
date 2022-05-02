@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(~/Content/Images/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    display: flex;
+}
+
+.layout {
+    margin: auto;
+    display: flex;
+}
+
+.form-box {
+    width: 380px;
+    height: 580px;
+    position: relative;
+    background: #fff;
+    padding: 10px;
+    overflow: hidden;
+    box-shadow: 20px 40px 40px 0 rgba(0, 0, 0, 0.3), 0 40px 40px 0 rgba(0, 0, 0, 0.1);
+}
+
+#logo {
+    height: 100px;
+    margin: 20px 0px 0px 140px;
+}
+
+.button-box {
+    width: 220px;
+    margin: 20px 0px 0px 80px;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+
+.toggle-btn {
+    padding: 10px 24px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#btn :right {
+    background: linear-gradient(to left, cyan,#5ac5f1);
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right,cyan,#5ac5f1);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.icon {
+    margin: 30px auto;
+    text-align: center;
+}
+
+    .icon a i {
+        margin: 0 8.5px;
+        box-shadow: 0 0 20px 0 #7f7f7f3d;
+        cursor: pointer;
+        border-radius: 50%;
+        color: white;
+        background: linear-gradient(to right,cyan,#5ac5f1);
+    }
+
+    .icon a {
+        text-decoration: none;
+    }
+
+.input-group {
+    margin-top: -10px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #5ac5f1,cyan);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+.checkbox {
+    margin: 20px 10px 30px 0;
+}
+
+span {
+    color: #777;
+    font-size: 12px;
+    bottom: 64.5px;
+    position: absolute;
+}
+
+#login {
+    left: 50px;
+}
+
+#register {
+    left: 450px;
+}
+
+.left-img {
+    width: 400px;
+    height: 600px;
+    overflow: hidden;
+    box-shadow: 20px 40px 40px 0 rgba(0, 0, 0, 0.3), 0 40px 40px 0 rgba(0, 0, 0, 0.1);
+}
+
+.right-img {
+    z-index: 5;
+    width: 400px;
+    height: 600px;
+    overflow: hidden;
+    box-shadow: 20px 40px 40px 0 rgba(0, 0, 0, 0.3), 0 40px 40px 0 rgba(0, 0, 0, 0.1);
+}
+
+.left-img img {
+    width: auto;
+    height: 600px;
+    margin-left: -215px;
+}
+
+.right-img img {
+    height: 600px;
+    width: 450px;
+    margin-left: -30px;
+}
+
+.left-img img {
+    transition: transform 1s;
+}
+
+    .left-img img:hover {
+        -ms-transform: scale(1.15); /* IE 9 */
+        -webkit-transform: scale(1.15); /* Safari 3-8 */
+        transform: scale(1.15);
+    }
+
+.right-img img {
+    transition: transform 1s;
+}
+
+    .right-img img:hover {
+        -ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Safari 3-8 */
+        transform: scale(1.1);
+    }
+
+#logo {
+    transition: transform .7s;
+}
+
+    #logo:hover {
+        -ms-transform: scale(1.2); /* IE 9 */
+        -webkit-transform: scale(1.2); /* Safari 3-8 */
+        transform: scale(1.2);
+    }
+
+
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+    .form input {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    .form button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+    }
+
+        .form button:hover, .form button:active, .form button:focus {
+            background: #43A047;
+        }
+
+    .form .message {
+        margin: 15px 0 0;
+        color: #b3b3b3;
+        font-size: 12px;
+    }
+
+        .form .message a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+    .form .register-form {
+        display: none;
+    }
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+    .container:before, .container:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .container .info {
+        margin: 50px auto;
+        text-align: center;
+    }
+
+        .container .info h1 {
+            margin: 0 0 15px;
+            padding: 0;
+            font-size: 36px;
+            font-weight: 300;
+            color: #1a1a1a;
+        }
+
+        .container .info span {
+            color: #4d4d4d;
+            font-size: 12px;
+        }
+
+            .container .info span a {
+                color: #000000;
+                text-decoration: none;
+            }
+
+            .container .info span .fa {
+                color: #EF3B3A;
+            }
+
+body {
+    background: #76b852; /* fallback for old browsers */
+    background: rgb(141,194,111);
+    background: linear-gradient(90deg, rgba(141,194,111,1) 0%, rgba(118,184,82,1) 50%);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+        

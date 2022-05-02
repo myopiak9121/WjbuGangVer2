@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBMTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="255" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email" Type="varchar" MaxLength="255" />
+    <Property Name="SDT" Type="int" />
+    <Property Name="NgaySinh" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ngay" Type="datetime" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="TongTien" Type="int" />
+    <Property Name="MaPT" Type="int" Nullable="false" />
+    <Property Name="AccountID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HoaDonChiTiet">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="MaMH" />
+    </Key>
+    <Property Name="MaHD" Type="int" Nullable="false" />
+    <Property Name="MaMH" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoaiMH">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="MaLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoai" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MatHang">
+    <Key>
+      <PropertyRef Name="MaMH" />
+    </Key>
+    <Property Name="MaMH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaLoai" Type="int" Nullable="false" />
+    <Property Name="TenMH" Type="nvarchar" MaxLength="255" />
+    <Property Name="DonGia" Type="int" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+    <Property Name="HinhChinh" Type="nvarchar" MaxLength="255" />
+    <Property Name="Hinh1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Hinh2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Hinh3" Type="nvarchar" MaxLength="255" />
+    <Property Name="Hinh4" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="PhuongThucThanhToan">
+    <Key>
+      <PropertyRef Name="MaPT" />
+    </Key>
+    <Property Name="MaPT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenPT" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK__HoaDon__AccountI__45F365D3">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountID" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="AccountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDon__MaPT__44FF419A">
+    <End Role="PhuongThucThanhToan" Type="Self.PhuongThucThanhToan" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhuongThucThanhToan">
+        <PropertyRef Name="MaPT" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="MaPT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDonChiT__MaHD__440B1D61">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+    <End Role="HoaDonChiTiet" Type="Self.HoaDonChiTiet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="HoaDonChiTiet">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDonChiT__MaMH__4222D4EF">
+    <End Role="MatHang" Type="Self.MatHang" Multiplicity="1" />
+    <End Role="HoaDonChiTiet" Type="Self.HoaDonChiTiet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatHang">
+        <PropertyRef Name="MaMH" />
+      </Principal>
+      <Dependent Role="HoaDonChiTiet">
+        <PropertyRef Name="MaMH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MatHang__MaLoai__4316F928">
+    <End Role="LoaiMH" Type="Self.LoaiMH" Multiplicity="1" />
+    <End Role="MatHang" Type="Self.MatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiMH">
+        <PropertyRef Name="MaLoai" />
+      </Principal>
+      <Dependent Role="MatHang">
+        <PropertyRef Name="MaLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLBMTModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDonChiTiet" EntityType="Self.HoaDonChiTiet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiMH" EntityType="Self.LoaiMH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MatHang" EntityType="Self.MatHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhuongThucThanhToan" EntityType="Self.PhuongThucThanhToan" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__HoaDon__AccountI__45F365D3" Association="Self.FK__HoaDon__AccountI__45F365D3">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDon__MaPT__44FF419A" Association="Self.FK__HoaDon__MaPT__44FF419A">
+      <End Role="PhuongThucThanhToan" EntitySet="PhuongThucThanhToan" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDonChiT__MaHD__440B1D61" Association="Self.FK__HoaDonChiT__MaHD__440B1D61">
+      <End Role="HoaDon" EntitySet="HoaDon" />
+      <End Role="HoaDonChiTiet" EntitySet="HoaDonChiTiet" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDonChiT__MaMH__4222D4EF" Association="Self.FK__HoaDonChiT__MaMH__4222D4EF">
+      <End Role="MatHang" EntitySet="MatHang" />
+      <End Role="HoaDonChiTiet" EntitySet="HoaDonChiTiet" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MatHang__MaLoai__4316F928" Association="Self.FK__MatHang__MaLoai__4316F928">
+      <End Role="LoaiMH" EntitySet="LoaiMH" />
+      <End Role="MatHang" EntitySet="MatHang" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

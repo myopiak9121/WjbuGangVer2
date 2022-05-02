@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/index.css" type="text/css">
+    <link rel="stylesheet" href="../../CSS/Products.css" type="text/css">
+    <link rel="stylesheet" href="../../CSS/aos.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" tyoe="text/css" href="../../CSS/lightbox.min.css">
+    <script src="../../JAVA/lightbox-plus-jquery.min.js"></script>
+    <title>1</title>
+</head>
+<body>
+    
+    <div class="header">
+        <div class="header-container">
+            <div id="logo" data-aos="zoom-out">
+                <a href="../../index.html">
+                    <img height="150" src="../../Images/index/new logo.png">
+                </a>
+            </div>
+            <div class="searchBox">
+                <div class="search">
+                    <div>
+                        <input type="text" placeholder="Search . . ." required>
+                    </div>
+                </div>
+            </div>
+            <a href="../login.html"><div id="login" href="#"><i class="fa fa-user fa-2x"></i><p>Đăng Nhập</p></div></a>
+            <a href="../Gio Hang.html"><div id="cart"><i class="fa fa-shopping-cart fa-2x"></i></div></a>
+            
+        </div>
+    </div>
+    <div class="body">
+        <div class="menu-bar-container">
+            <div class="menu-bar">
+                <ul>
+                    <li style="width: 250px; font-size: 25px; font-weight: bold; text-align: center;" id="danhmuc"><i style="color: red;" class="fa fa-bars"></i><a href="#">Danh Mục<i style="float:right;" class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li style="width: 250px"><a href="./HTML/All Products page 1.html">Laptop<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="../../HTML/Asus/Asus Products.html"><li style="width: 250px; margin-top: -1px;">Asus</li></a>
+                                    <a href="../../HTML/Acer/Acer Products.html"><li style="width: 250px">Acer</li></a>
+                                    <a href="../../HTML/MSI/MSI Products.html"><li style="width: 250px">MSI</li></a>
+                                    <a href="../../HTML/Dell/Dell Products.html"><li style="width: 250px">Dell</li></a>
+                                    <a href="../../HTML/Macbook/Mac Products.html"><li style="width: 250px">Macbook</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px"><a href="#">Linh Kiện PC<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#"><li style="width: 250px; margin-top: -1px;">VGA</li></a>
+                                    <a href="#"><li style="width: 250px">CPU</li></a>
+                                    <a href="#"><li style="width: 250px">Mainboard</li></a>
+                                    <a href="#"><li style="width: 250px">RAM</li></a>
+                                    <a href="#"><li style="width: 250px">PSU</li></a>
+                                    <a href="#"><li style="width: 250px">Case</li></a>
+                                    <a href="#"><li style="width: 250px">HDD / SSD</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px"><a href="#">Gaming Gear<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#"><li style="width: 250px; margin-top: -1px;">Bàn phím</li></a>
+                                    <a href="#"><li style="width: 250px">Chuột</li></a>
+                                    <a href="#"><li style="width: 250px">Tai Nghe</li></a>
+                                    <a href="#"><li style="width: 250px">Loa</li></a>
+                                    <a href="#"><li style="width: 250px">Lót Chuột</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px"><a href="#">Màn Hình<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#"><li style="width: 250px; margin-top: -1px;">24''</li></a>
+                                    <a href="#"><li style="width: 250px">27''- 30''</li></a>
+                                    <a href="#"><li style="width: 250px">32''</li></a>
+                                    <a href="#"><li style="width: 250px">60Hz</li></a>
+                                    <a href="#"><li style="width: 250px">144Hz</li></a>
+                                    <a href="#"><li style="width: 250px">240Hz</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px"><a href="#">Ghế Gaming<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#"><li style="width: 250px; margin-top: -1px;">DXRacer</li></a>
+                                    <a href="#"><li style="width: 250px">SoleSeat</li></a>
+                                    <a href="#"><li style="width: 250px">Xtreme</li></a>
+                                    <a href="#"><li style="width: 250px">Cougar</li></a>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <div class="center">
+                        <div class="pagination">
+                            <a href="../../index.html"><i class="fa fa-home"></i>Trang Chủ</a>
+                            <a href="../../HTML/All Products page 1.html" class="active"><i class="fa fa-tags"></i>Sản Phẩm</a>
+                            <a href="../../csbh.html"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
+                            <a data-modal-target="#modal"><i class="fa fa-phone"></i>Liên Hệ</a>
+                            <div class="modal" id="modal">
+                                <div class="modal-header">
+                                  <div class="title">Liên Hệ</div>
+                                  <button data-close-button class="close-button">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="300" style="margin-left: -40px;" src="../../Images/Sang.jpg">
+                                    </div>
+                                    <p>
+                                        SĐT:0582754857
+
+                                        <br>
+                                        <a style="margin-left:70px" href="https://www.facebook.com/profile.php?id=100038650591808">Sang Phạm</a>
+                                    </p>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="../../Images/Me.png">
+                                    </div>
+                                    <p>
+                                        SĐT:0931151121
+                                        <br>
+                                        <a style="margin-left:70px" href="https://www.facebook.com/satie0201/">Quốc Tiến</a>
+                                    </p>
+                                </div>
+                              </div>
+                              <div id="overlay"></div>
+                              <script src="./JAVA/java.js"></script>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="row" style="width: 1500px;">
+                <div style="color: red; animation: fadeIn 1s infinite alternate; margin-left: 120px; position: relative; top: 10px; font-size: 20px; font-family: Arial, Helvetica, sans-serif;">
+                    <i class="fa fa-home"></i> HYPER GEAR OFFICIAL STORE <span style="margin-left:200px;">
+                        <i class="fa fa-truck"></i> GIAO HÀNG TOÀN QUỐC</span><span style="margin-left:200px;">
+                            <i class="fa fa-check"></i> SẢN PHẨM CHÍNH HÃNG</span></div>
+            </div>            
+        </div>
+    <div class="body">
+        <div id="menubar"></div>
+    </div>
+    <div class="layout">
+        <div id="product-images">
+            <img height="500" width="500" src="../../Images/Dell/Dell Inspiron G7 15-info1.jpg">
+            <a href="../../Images/Dell/Dell Inspiron G7 15-1.jpg"  data-lightbox="mylaptop"> <img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="../../Images/Dell/Dell Inspiron G7 15-1.jpg"></a>
+            <a href="../../Images/Dell/Dell Inspiron G7 15-2.jpg"  data-lightbox="mylaptop"><img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="../../Images/Dell/Dell Inspiron G7 15-2.jpg"></a>
+            <a href="../../Images/Dell/Dell Inspiron G7 15-3.jpg"  data-lightbox="mylaptop"><img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="../../Images/Dell/Dell Inspiron G7 15-3.jpg"></a>
+            </div>
+        <div id="product-info">
+            <h1>Dell G7 15</h1>
+            <p>
+                <br><b>Nhà sản xuất</b> : Dell  
+                <br><br><b>Xuất xứ</b> : Chính hãng
+                <br><br><b>Bảo hành</b> : 24 Tháng
+                <br><br><b>Tình trạng</b> : Mới 100%
+                <br><br>Giá:<span style="color: red; margin-left: 50px;">39,890,000đ</span>
+                <br><br><br>
+                <button style="background-color: red; color: white">Đặt Hàng</button>
+                <button style="background-color: orangered; color: white">Thêm vào giỏ</button>
+            </p>
+        </div>
+        <div id="thongso">
+            <table id="customers">
+                <tr>
+                  <caption><h2>THÔNG SỐ KỸ THUẬT:</h2></caption>
+                </tr>
+                <tr>
+                  <td>CPU</td>
+                  <td>8th Generation Intel® Core™ i7-8750H Processor (2.2Ghz up to 4.1 Ghz 9MB)
+                </td>
+                </tr>
+                <tr>
+                  <td>RAM</td>
+                  <td>16GB, 2x8GB, DDR4, 2666MHz
+
+                </td>
+                </tr>
+                <tr>
+                  <td>Ổ Cứng</td>
+                  <td>1TB SSD PCIE G3X4 (3 slot)
+                </td>
+                </tr>
+                <tr>
+                  <td>Card Đồ Họa</td>
+                  <td>NVIDIA GeForce® GTX 1060 6GB GDDR5
+
+                </td>
+                </tr>
+                <tr>
+                  <td>Màn Hình</td>
+                  <td>15.6-inch FHD (1920 x 1080) IPS Anti-Glare LED-Backlit Display
+
+                </td>
+                </tr>
+                <tr>
+                  <td>Cổng Giao Tiếp</td>
+                  <td>
+                    1x HDMI 2.0
+                    3x SuperSpeed USB 3.1 Gen 1 Type-A including 1 with PowerShare
+                    1x Thunderbolt™ 3 Port (USB 3.1 Gen 2 Type-C™ with support for 40 Gbps Thunderbolt and DisplayPort)
+                    1x Noble lock slot
+                    1x 2-in-1 SD (UHS50) / MMC, RJ-45
+                    1x Headphone/Mic
+                </td>
+                </tr>
+                <tr>
+                  <td>Audio</td>
+                  <td>Y2 x 4.2W speakers with Smart AMP technology
+                </td>
+                </tr>
+                <tr>
+                  <td>Numberpad</td>
+                  <td>Có</td>
+                </tr>
+                <tr>
+                  <td>Hệ điều hành</td>
+                  <td>Linux
+
+                </td>
+                </tr>
+                <tr>
+                  <td>Pin</td>
+                  <td>56 Whr, 4-Cell
+
+                </td>
+                </tr>
+                <tr>
+                    <td>Trọng lượng</td>
+                    <td>2.63 Kg
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Màu sắc</td>
+                    <td>Black</td>
+                  </tr>
+                  <tr>
+                    <td>Kích thước</td>
+                    <td>360 x 275 x 24.9</td>
+                  </tr>
+              </table>
+        </div>
+        <div class="accordion">
+            <button type="button" class="accordion-button">Xem Thêm</button>
+            <div class="accordion-content">
+        <div id="product-info-expand">
+            <img src="../../Images/Dell/Dell Inspiron G7 15-info2.jpg">
+                <p>
+                    <b>Thiết kế</b>
+                    <br>
+                    Laptop Dell G7 15 Gaming với thiết kế màn hình 15.6 in rất tiện lợi.Với Cấu hình trên Dell G7 15 Gaming là modell tốt nhất dành cho các game thủ, đồ họa, kiến trúc. Có thể sự ra đời của Dell G7 15 Gaming sẽ làm cho các hãng máy tính khác phải đau đầu bởi sự cải tiến quá mạnh mẽ với cấu hình cực khủng. Đều đó cũng chưa nói nên điều gi khi sự xuất hiện của Dell G7 15 Gaming với cái giá không thể nào tốt hơn được nữa. Có thể định nghĩa là chiếc Laptop Lý tưởng nhất cho Các Game thủ và dân đồ họa với bộ xử lý đồ họa quá đỉnh cao. Sức mạnh hấp dẫn với đồ hoạ NVIDIA® GeForce® GTX 1060 và các CPU Intel® Quad-and-Hex Core ™ 8 mới nhất
+                    <img src="../../Images/Dell/Dell Inspiron G7 15-info3.jpg"> <br>
+                   <b>Cấu hình </b>                   
+                   <br>
+                   Các tùy chọn SSD dual-drive NVMe PCIe SSD chạy nhanh hơn 4 lần so với SATA truyền thống. Tải ứng dụng hoặc dữ liệu nhanh hơn, chạy máy nhanh hơn, kéo dài tuổi thọ pin và cải thiện khả năng chống sốc. Được thiết kế để chơi game mạnh mẽ: Killer Networking Gig Ethernet có tiêu chuẩn - có nghĩa là WLAN 2x2 hỗ trợ Wi-Fi 802.11ac nhanh chóng để tận dụng các bộ định tuyến .11ac mới nhất. Phần mềm SmartByte sẽ ưu tiên hiển thị hình ảnh của bạn trên các nội dung khác để cải thiện luồng dữ liệu, trừ việc buffering. Cổng HDMI 2.0 kích thước đầy đủ cắm vào các màn hình bên ngoài và hỗ trợ lên đến 4K cho trải nghiệm chơi game hoàn hảo
+                   <img src="../../Images/Dell/Dell Inspiron G7 15-info4.jpg"> <br>
+                    <b>Âm thanh </b>
+                    <br>
+                    Âm thanh vượt trội Dell G7 15 Gaming: Trải nghiệm từng nhịp của hành động với sự rõ nét và hình ảnh được cải tiến nhờ hai loa điều khiển từ phía trước được hỗ trợ bởi Waves MaxxAudio Pro. Trải nghiệm sân khấu cá nhân cuối cùng: Nâng cao khả năng chơi game, xem và mega-tasking với một trong hai kết hợp của SmartByte và Waves MaxxAudio Pro. Bạn sẽ được hút vào mọi trò chơi như chưa bao giờ, với luồng mạnh mẽ
+                    </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-container">
+    <div class="thongtin" style="float: left; margin-left: 100px;">
+        <p><b>HỖ TRỢ KHÁCH HÀNG</b></p>
+        <p><span style="color:red">Hotline chăm sóc khách hàng <br>1900-6035</span><br>(1000đ/phút, 8-21h kể cả T7, CN)</p>
+        <p style="font-size:15px">Các câu hỏi thường gặp</p>
+        <p style="font-size:15px">Gửi yêu cầu hỗ trợ</p>
+        <p style="font-size:15px">Hướng dẫn đặt hàng</p>
+        <p style="font-size:15px">Phương thức vận chuyển</p>
+        <p style="font-size:15px">Chính sách đổi trả</p>
+        <p style="font-size:15px">Chính sách hàng nhập khẩu</p>
+    </div>
+    <div class="thongtin" style="float: left">
+        <p><b>HỢP TÁC VÀ LIÊN KẾT</b></p>
+        <p style="font-size:15px">Quy chế hoạt động sàn GDTMĐT</p>
+        <p style="font-size:15px">Bán hàng cùng HGShop</p><br>
+        <p><b>PHƯƠNG THỨC THANH TOÁN</b></p>
+        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/visa.svg" style="margin-left: 10px; float: left;">
+        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/mastercard.svg" style="margin-left: 10px; float: left">
+        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/jcb.svg" style="margin-left: 10px; margin-right:10px; float: left">
+        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/cash.svg" style="margin-left: 10px; margin-top: 10px;">
+        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/internet-banking.svg" style="margin-left: 5px;">
+        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/installment.svg" style="margin-left: 5px;"> 
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2530546194694!2d106.655663793639!3d10.791920472338704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752934d78720e1%3A0xd51e0fa8457cb04b!2sXgear!5e0!3m2!1svi!2s!4v1607832319981!5m2!1svi!2s" width="500" height="300" frameborder="0" style="border:0; float:left;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+    <div class="thongtin" style="float:left; margin-left: 20px;">
+        <p><b>KẾT NỐI VỚI CHÚNG TÔI</b></p>
+        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/fb.svg" style="margin-left: 10px; float: left;">
+        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/youtube.svg" style="margin-left: 10px; float: left;">
+        <img src="https://cdn.chanhtuoi.com/uploads/2020/10/logo-zalo.jpg" style="margin-left: 15px; float: left; height: 25px; background-color: white; border-radius: 50%; margin-top: 4px;">
+        <img>
+        <p style="margin-top: 50px;"><b>TẢI ỨNG DỤNG TRÊN DI ĐỘNG</b></p>
+        <img height="50" src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/appstore.png" style="margin-left: 10px;">
+        <img height="50" src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/playstore.png" style="margin-left: 10px;">
+        <img>
+    </div>    
+    </div>
+</div>
+<div class="endless-footer"></div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+    <script type="text/javascript">
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function(){
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + '%';
+        }
+    </script>
+    <script>
+        AOS.init({
+                easing: 'ease-out-back',
+                duration: 1000
+            });
+    </script>
+    <script>
+        hljs.initHighlightingOnLoad();
+
+        $('.hero__scroll').on('click', function(e) {
+            $('html, body').animate({
+                scrollTop: $(window).height()
+            }, 1200);
+        });
+    </script>
+    <script src="../../JAVA/java.js"></script>
+</body>
+</html>

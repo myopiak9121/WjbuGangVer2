@@ -1,0 +1,244 @@
+﻿
+@{
+    ViewBag.Title = "CSBH";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/CSS/index.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/CSS/aos.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/CSS/csbh.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>WibuGang</title>
+</head>
+<body>
+    
+    <div class="body">
+        <div class="menu-bar-container">
+            <div class="menu-bar">
+                <ul>
+                    <li style="width: 250px; font-size: 25px; font-weight: bold; text-align: center;" id="danhmuc"><i style="color: red;" class="fa fa-bars"></i><a href="#">Danh Mục<i style="float:right;" class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li style="width: 250px"><a href="./HTML/All Products page 1.html">Laptop<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="./HTML/Asus/Asus Products.html"><li style="width: 250px; margin-top: -1px;">Asus</li></a>
+                                    <a href="./HTML/Acer/Acer Products.html"><li style="width: 250px">Acer</li></a>
+                                    <a href="./HTML/MSI/MSI Products.html"><li style="width: 250px">MSI</li></a>
+                                    <a href="./HTML/Dell/Dell Products.html"><li style="width: 250px">Dell</li></a>
+                                    <a href="./HTML/Macbook/Mac Products.html"><li style="width: 250px">Macbook</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px"><a href="#">Linh Kiện PC<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#"><li style="width: 250px; margin-top: -1px;">VGA</li></a>
+                                    <a href="#"><li style="width: 250px">CPU</li></a>
+                                    <a href="#"><li style="width: 250px">Mainboard</li></a>
+                                    <a href="#"><li style="width: 250px">RAM</li></a>
+                                    <a href="#"><li style="width: 250px">PSU</li></a>
+                                    <a href="#"><li style="width: 250px">Case</li></a>
+                                    <a href="#"><li style="width: 250px">HDD / SSD</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px"><a href="#">Gaming Gear<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#"><li style="width: 250px; margin-top: -1px;">Bàn phím</li></a>
+                                    <a href="#"><li style="width: 250px">Chuột</li></a>
+                                    <a href="#"><li style="width: 250px">Tai Nghe</li></a>
+                                    <a href="#"><li style="width: 250px">Loa</li></a>
+                                    <a href="#"><li style="width: 250px">Lót Chuột</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px"><a href="#">Màn Hình<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#"><li style="width: 250px; margin-top: -1px;">24''</li></a>
+                                    <a href="#"><li style="width: 250px">27''- 30''</li></a>
+                                    <a href="#"><li style="width: 250px">32''</li></a>
+                                    <a href="#"><li style="width: 250px">60Hz</li></a>
+                                    <a href="#"><li style="width: 250px">144Hz</li></a>
+                                    <a href="#"><li style="width: 250px">240Hz</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px"><a href="#">Ghế Gaming<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#"><li style="width: 250px; margin-top: -1px;">DXRacer</li></a>
+                                    <a href="#"><li style="width: 250px">SoleSeat</li></a>
+                                    <a href="#"><li style="width: 250px">Xtreme</li></a>
+                                    <a href="#"><li style="width: 250px">Cougar</li></a>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <div class="center">
+                        <div class="pagination">
+                            <a href="./index.html"><i class="fa fa-home"></i>Trang Chủ</a>
+                            <a href="./HTML/All Products page 1.html"><i class="fa fa-tags"></i>Sản Phẩm</a>
+                            <a href="./csbh.html" class="active"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
+                            <a data-modal-target="#modal"><i class="fa fa-phone"></i>Liên Hệ</a>
+                            <div class="modal" id="modal">
+                                <div class="modal-header">
+                                  <div class="title">Liên Hệ</div>
+                                  <button data-close-button class="close-button">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="300" style="margin-left: -40px;" src="./Images/Sang.jpg">
+                                    </div>
+                                    <p>
+                                        SĐT: 0582754857
+
+                                        <br>
+                                        <a style="margin-left:70px" href="https://www.facebook.com/profile.php?id=100038650591808">Sang Phạm</a>
+                                    </p>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="./Images/Me.png">
+                                    </div>
+                                    <p>
+                                        SĐT: 0931151121
+                                        <br>
+                                        <a style="margin-left:80px;" href="https://www.facebook.com/satie0201/"> Quốc Tiến</a>
+                                    </p>
+                                </div>
+                              </div>
+                              <div id="overlay"></div>
+                              <script src="./JAVA/java.js"></script>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="row" style="width: 1500px;">
+                <div style="color: red; animation: fadeIn 1s infinite alternate; margin-left: 120px; position: relative; top: 10px; font-size: 20px; font-family: Arial, Helvetica, sans-serif;">
+                    <i class="fa fa-home"></i> HYPER GEAR OFFICIAL STORE <span style="margin-left:200px;">
+                        <i class="fa fa-truck"></i> GIAO HÀNG TOÀN QUỐC</span><span style="margin-left:200px;">
+                            <i class="fa fa-check"></i> SẢN PHẨM CHÍNH HÃNG</span></div>
+            </div>            
+        </div>
+    </div>
+    <br><br><br>
+    <div class="csbh-layout">
+        <div class="hi">
+            CHÍNH SÁCH BÁN HÀNG CỦA Wibu Gang
+            <div class="colorbar">
+                <img src="./Images/index/colorbar.gif">
+            </div>
+        </div>
+        
+    <div id="Chinhsach">
+    <h3 style="text-align:center">Để đảm bảo sự hài lòng của khách hàng, WibuGang hỗ trợ đổi mới hàng hóa trong vòng 7 -30 ngày (tùy sản phẩm)  kể từ ngày giao hàng.NẾU máy được xác định là lỗi về phần cứng từ phía nhà sản xuất hoặc lỗi được xác nhận bởi trung tâm bảo hành được ủy quyền chính thức từ hãng.</h3>
+        <br>
+    <font color="blue"> <h2>I/ Chính sách trả hàng:</h2></font><br>
+    <h3>1. Trả hàng và hoàn lại tiền 100% theo hoá đơn bán hàng:</h3><br>
+    <h3> – Giao hàng không đúng theo đơn đặt hàng của quý khách .</h3> <br>
+    <h3>   – Sản phẩm còn trong thời hạn đổi mới nhưng không còn sản phẩm đổi và khách hàng không muốn đổi sang sản phẩm tương tự.</h3>
+    <h3>2. Trả hàng hoàn lại tiền nhưng mất phí trong các trường hợp sau:</h3><br>
+    <h3> – Phí 2%/ trên hóa đơn sản phẩm trả của WibuGang : sản phẩm còn trong thời hạn đổi trả và máy chưa qua sử dụng .</h3><br>
+    <h3> – Phí 5%/ trên hóa đơn sản phẩm trả của WibuGang: sản phẩm còn trong thời hạn đổi trả và máy đã qua sử dụng.</h3><br>
+    <h3> – Phí 10% / trên hóa đơn sản phẩm trả của WibuGang ( từ ngày thứ 8 đến ngày thứ 12 ) . Bao gồm cả máy chưa qua sử dụng hoặc đã qua sử dụng .</h3><br>
+    <h3> – Phí 20% / trên hóa đơn sản phẩm trả của WibuGang ( từ ngày thứ 13 đến ngày thứ 20 ) . Bao gồm cả máy chưa qua sử dụng hoặc đã qua sử dụng .</h3><br>
+    <h3> – Kể từ ngày giao hàng , quá thời hạn 20 ngày sản phẩm đã mua sẽ không được áp dụng chính sách trả hàng của WibuGang .</h3><br>
+    <br>
+    <font color="red"> <h3>LƯU Ý – YÊU CẦU VỀ TRẢ HÀNG: Sản phẩm phải còn nguyên vẹn,  không bị lỗi, không bị trầy xước . Tem/nhãn trên máy còn nguyên vẹn . Bắt buộc phải đầy đủ các giấy tờ – phụ kiện kèm theo trong thùng máy và chứng từ mà WibuGang đã xuất như lúc khách hàng nhận hàng ( bao gồm cả quà tặng ). WibuGang sẽ hoàn tiền trễ nhất trong vòng 48h dưới hình thức tiền mặt hoặc chuyển khoản theo yêu cầu của khách hàng. WibuGang sẽ không áp dụng chính sách trả hàng nếu như sản phẩm không đáp ứng đầy đủ các yêu cầu trên .</h3></font>
+    <br>
+
+    <font color="blue"> <h2>II/ Chính sách đổi mới sản phẩm bị lỗi:</h2></font>
+    <h3> – Khách hàng vui lòng kiểm tra kĩ hàng hóa trước khi thanh toán hoặc ngay khi nhận hàng, XGEAR sẽ không chịu trách nhiệm đối với hàng hóa bị lỗi không phải do nhà sản xuất gây ra sau khi khách Hàng đã nhận hàng. Trong trường hợp sản phẩm của khách hàng bị hư hại trong quá trình vận chuyển, quý khách vui lòng từ chối nhận và báo ngay cho XGEAR để được đổi sản phẩm mới.</h3><br>
+    <h3> – Đổi mới hàng hóa trong vòng 7 ngày ( đối với linh kiện, gaming gear, một số mã laptop MSI và laptop Acer) – 14 ngày (đối với một số mã Laptop Asus, MSI) kể từ ngày giao hàng . Hàng hóa bị lỗi phải được xác định là lỗi kỹ thuật do nhà sản xuất (cần có xác nhận của Hãng đối với một số trường hợp phức tạp); sản phẩm yêu cầu không bị trầy xước, nứt mẻ (còn nguyên mới giống như lúc Khách hàng nhận hàng); phụ kiện kèm theo phải còn mới, hộp/thùng còn nguyên vẹn, đầy đủ chứng từ như khi WibuGang  giao hàng, riêng lỗi màn hình điểm chết phải từ 5 điểm chết trở lên mới được đổi mới. </h3>
+    <br>
+    <font color="blue"> <h2>III/ Trường hợp từ chối đổi trả sản phẩm:</h2></font>
+    <h3> – Sản phẩm bị lỗi được xác định là lỗi do người dùng (phải nhờ bộ phận kỹ thuật hãng kiểm tra với 1 số trường hợp đặc thù).</h3><br>
+    <h3> – Sản phẩm không còn mới 100%: trầy xước, móp méo, không còn nguyên vẹn như lúc đầu, không đầy đủ phụ kiện, thùng/hộp sản phẩm.</h3><br>
+    <h3> – Các logo của laptop, tem của hãng hay của cửa hàng đều phải đảm bảo nguyên vẹn, không bị bung hay tháo rời dưới mọi hình thức trong thời gian đổi trả máy. Khách hàng tuyệt đối không được dán màn hình trong thời gian đổi trả máy để đảm bảo màn hình không bị xước, nếu khách hàng tự ý dán thì nhờ khách hàng tự lấy ra.</h3><br>
+    <h3>– Những lí do cảm tính như: “Tôi không thích máy này nữa”, “Máy này quá yếu”, “Máy này màn hình không như tôi mong muốn”…</h3><br>
+
+    <font color="blue"> <h2>IV / Thời gian tiếp nhận đổi trả sản phẩm:</h2></font>
+    <h3> – Từ T2 -> T6 : (  Từ 10h đến 19h )</h3><br>
+    <h3> – Thứ 7 từ 10h đến 12h30, chiều thứ 7 không nhận bảo hành.</h3><br>
+    <h3> – Chủ nhật không nhận bảo hành.</h3><br>
+    <h3> – Mong quý khách thông cảm.</h3>
+    
+    <div class="hi">
+        QUY ĐỊNH BẢO HÀNH
+        <div class="colorbar">
+            <img src="~/Content/Images/index/colorbar.gif">
+        </div>
+    </div>
+    <font color="blue"> <h2>I/ Điều kiện nhận bảo hành.</h2></font>
+    <h3> – Áp dụng chính sách đổi mới nếu sản phẩm của quý khách mua tại Xgear trong vòng 7 ngày kể từ lúc giao hàng .( Quý khách tham khảo quy định chính sách đổi mới ) nếu sau 7 ngày sẽ áp dụng chính sách bảo hành theo tiêu chuẩn của nhà sản xuất tại các trung tâm bảo hành chính hãng tại Việt Nam .</h3>
+    <font color="blue"> <h2>Đối với Laptop MSI:</h2></font>
+    <h3>HCMC: Digiworld Corporation</h3>
+    <h3> – Address: 512A Huynh Tan Phat, BinhThuan ward, Dist. 07, HCMC, Vietnam</h3><br>
+    <h3>  – TEL: 84-902 738168</h3><br>
+    <h3>  – E-mail: thanhloan@dgw.com.vn</h3><br>
+    <h3>Ha Noi: Digiworld Corp.</h3>
+    <h3> – Address: 27/785 Truong Dinh Str., Hoang Mai Dist., Ha Noi, Viet Nam.</h3><br>
+    <h3> – TEL: 84-916 398982</h3><br>
+    <h3> – E-mail: thanhloan@dgw.com.vn</h3><br>
+
+
+    <font color="blue"> <h2>Đối với Laptop ASUS:</h2></font>
+    <h3> – Quý khách vui long tham khảo theo đường dẫn sau :</h3>
+    <a href="https://www.asus.com/vn/About_ASUS/Facilities-Branches/"></a><br>
+    <h3> Các sản phẩm, thiết bị do Xgear cung cấp ( dựa trên hóa đơn bán hàng, tem hoặc phiếu bảo hành, serial number v.v…. )</h3>
+    <h3> Đối với các sản phẩm, thiết bị được cấp hiếu bảo hành (PBH), khách hàng phải xuất trình PBH và có đầy đủ tem bảo hành của XGEAR(nếu thiết bị không cấp PBH thì phải còn nguyên tem của XGEAR) và phải còn trong thời hạn bảo hành.</h3>
+    <h3>Tem bảo hành, mã vạch số serial,… của sản phẩm phải còn nguyên vẹn, không có dấu hiệu cạo sửa, tẩy xóa, bị rách, mờ.</h3>
+    <h3>Đối với laptop, màn hình LCD có số điểm chấm từ 5 điểm lỗi trở lên.</h3>
+    <h3>Những hư hỏng của thiết bị được xác định do lỗi kỹ thuật hoặc lỗi của nhà sản xuất .</h3>
+
+    <font color="blue"> <h2>II / Không nhận bảo hành đối với:</h2></font>
+    <h3>Các sản phẩm, thiết bị có dấu hiệu dung dịch lạ, có nước vào, có vết ẩm ướt, bị đứt mạch, bị trầy xước, bể mẻ, móp méo, biến dạng, có dấu hiệu cháy nổ, nám, phù tụ, gỉ sét hoặc các hiện tượng được cho là do lỗi cá nhân gây ra. Hoặc nếu được nhận bảo hành, khách hàng phải hoàn toàn chịu chi phí phát sinh đối với các lỗi đó.</h3><br>
+    <h3>Thiết bị hư hỏng do thiên tai, hỏa hoạn, sử dụng nguồn điện không ổn định hoặc do lắp đặt, vận chuyển không đúng quy cách, …</h3><br>
+    <h3>Màn hình LCD bị loang màu, chảy màu LCD.</h3><br>
+    <h3>Các phụ kiện kèm theo thiết bị như: chuột, bao lụa, bộ dây sạc, tai nghe, cable nối, vỏ máy, nút công tắc, dây điện, quạt tản nhiệt, hoặc sản phẩm tặng kèm theo máy.</h3><br>
+    <h3>Không bảo hành đối với quà khuyến mãi của công ty . ( Ngoại trừ SSD + RAM ) .</h3>
+    <font color="green"> <h3>Đặc biệt: không nhận BH về dữ liệu trong các thiết bị lưu trữ, bản quyền phần mềm.</h3></font>
+
+    <font color="blue"> <h2>III/ Đối với trường hợp hết thời hạn bảo hành.</h2></font>
+    <h3> – Đối với các sản phẩm, thiết bị hết thời hạn bảo hành thì Xgear vẫn nhận máy và chuyển sang trường hợp SỬA CHỮA DỊCH VỤ. </h3><br>
+    <h3>  – Khách hàng sẽ hoàn toàn chịu tất cả các chi phí thay thế linh kiện, sửa chữa do trung tâm bảo hành đưa ra. Xgear sẽ hỗ trợ Khách hàng gởi bảo hành đến trung tâm bảo hành.</h3><br>
+
+    <font color="blue"> <h2>IV/ Thời gian trả bảo hành:</h2></font>
+    <h3>–  Dự kiến từ 7 – 10 ngày tính từ ngày tiếp nhận bảo hành tại cửa hàng (không tính thứ 7 và chủ nhật, ngày lễ). Đối với những lỗi phức tạp hơn thì thời gian bảo hành có thể kéo dài, Xgear sẽ thông báo cho bạn nếu có thông tin bảo hành từ hãng.</h3>
+    </div>
+    </div>
+
+    <div class="endless-footer"></div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+                easing: 'ease-out-back',
+                duration: 1000
+            });
+    </script>
+    <script>
+        hljs.initHighlightingOnLoad();
+
+        $('.hero__scroll').on('click', function(e) {
+            $('html, body').animate({
+                scrollTop: $(window).height()
+            }, 1200);
+        });
+    </script>
+    <script src="~/Content/JAVA/java.js"></script>
+</body>
+</html>
+
+
+
+
+
+    
+
+
+
+
+    
+        
+        
+

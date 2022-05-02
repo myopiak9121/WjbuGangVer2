@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../CSS/dangnhap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+
+    <title>1</title>
+</head>
+<body>
+    <script>
+        function validateformbai1(){
+        var name = document.myform.username.value;
+        var password = document.myform.password.value;
+        if (name == null || name ==""){
+            alert("Username không được để trống")
+            return false;
+        } else if (password.length < 8){
+            alert("Password phải 8 ký tự trở lên.");
+            return false;
+        } else if (passwordconfirm != password){
+            alert("Nhập lại mật khẩu không đúng")
+            return false;
+        } else
+            return ("WibuGang Laptop Shop/login.html");
+        }
+    </script>
+<div class="hero">
+    <div class="layout">
+        <div class="left-img">
+            <img src="../Images/login-left.jpg">
+        </div>
+        <div class="form-box">
+            <a href="../index.html"><img id="logo" src="../Images/new logo.png"></a>
+            <div class="button-box">
+                <div id="btn"></div>    
+                <button type="button" class="toggle-btn" onclick="login()">Đăng Nhập</button>
+                <button type="button" class="toggle-btn" onclick="register()">Đăng Ký</button>
+            </div>
+            <div class="icon">
+                <a href="#"><i style="padding: 10px 13.5px;" class="fa fa-facebook" ></i> </a>
+                <a href="#"><i style="padding: 10px 11px" class="fa fa-instagram"></i> </a>
+                <a href="#"><i style="padding: 10px 11px" class="fa fa-twitter" ></i> </a>
+        </div>
+        <form id="login" class="input-group" name="myform">
+            <input type="text" class="input-field" name="username" placeholder="Tên Đăng Nhập" required="" oninvalid="this.setCustomValidity('Mời nhập tên đăng nhập')">
+            <input type="password" class="input-field" placeholder="Mật Khẩu" required="" oninvalid="this.setCustomValidity('Mời nhập mật khẩu')">
+            <input type="checkbox" class="checkbox"> <span>Duy Trì Đăng Nhập</span>
+            <button type="submit" class="submit-btn" onclick="return validateformbai1()">Đăng Nhập</button>
+        </form>
+        
+    
+        <form id="register" class="input-group" name="myform">
+            <input type="text"  class="input-field" placeholder="Tên Đăng Nhập" required="" oninvalid="this.setCustomValidity('Mời nhập tên đăng nhập')">
+            <input type="email" class="input-field" placeholder="Email" required="" oninvalid="this.setCustomValidity('Mời nhập Email')" oninput="setCustomValidity('Email cần có &lsquo;@&rsquo;')">
+            <input type="password"  class="input-field" placeholder="Nhập Mật Khẩu" required="" oninvalid="this.setCustomValidity('Mời nhập mật khẩu')">
+            <input type="password"  class="input-field" placeholder="Nhập Lại Mật Khẩu" required="" oninvalid="this.setCustomValidity('Mời nhập Lại mật khẩu')">
+            <input type="checkbox" class="checkbox"> <span><i>Tôi đồng ý với mọi <a style="color: #5ac5f1;" href="#">điều khoản</a> đặt ra</i></span>
+            <button type="submit" class="submit-btn">Đăng Ký</button>
+        </form>
+        </div>
+        <div class="right-img">
+            <img src="../Images/login-right.jpg">
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var x= document.getElementById("login");
+    var y= document.getElementById("register");
+    var z= document.getElementById("btn");
+  
+    function register() {
+        x.style.left ="-400px";
+        y.style.left ="50px";
+        z.style.left ="110px";
+    }
+    function login() {
+        x.style.left ="50px";
+        y.style.left ="450px";
+        z.style.left ="0";
+    }
+    function myFunction() {
+  var x = document.getElementById("myEmail").required;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,922 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8BDF1263-EA97-4B67-9E65-7ABA15CE0898}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WjbuGangVer2_WebNC</RootNamespace>
+    <AssemblyName>WjbuGangVer2-WebNC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44339</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CSBHController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LienHeController.cs" />
+    <Compile Include="Controllers\LogInController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Account.cs">
+      <DependentUpon>QLBMT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>QLBMT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BUS\ShopWibuBUS.cs" />
+    <Compile Include="Models\HoaDon.cs">
+      <DependentUpon>QLBMT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoaiMH.cs">
+      <DependentUpon>QLBMT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MatHang.cs">
+      <DependentUpon>QLBMT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhuongThucThanhToan.cs">
+      <DependentUpon>QLBMT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLBMT.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBMT.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLBMT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBMT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLBMT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBMT.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CSS\All Products.css" />
+    <Content Include="Content\CSS\aos.css" />
+    <Content Include="Content\CSS\contact.css" />
+    <Content Include="Content\CSS\csbh.css" />
+    <Content Include="Content\CSS\dangnhap.css" />
+    <Content Include="Content\CSS\Gio Hang.css" />
+    <Content Include="Content\CSS\index.css" />
+    <Content Include="Content\CSS\lightbox.min.css" />
+    <Content Include="Content\CSS\login.css" />
+    <Content Include="Content\CSS\login2.css" />
+    <Content Include="Content\CSS\Products.css" />
+    <Content Include="Content\CSS\Searchbar.css" />
+    <Content Include="Content\HTML\Acer\Acer Aspire 3.html" />
+    <Content Include="Content\HTML\Acer\Acer Aspire 5.html" />
+    <Content Include="Content\HTML\Acer\Acer Aspire 7.html" />
+    <Content Include="Content\HTML\Acer\Acer Aspire A15.html" />
+    <Content Include="Content\HTML\Acer\Acer Nitro 5.html" />
+    <Content Include="Content\HTML\Acer\ACER Predator Helios 300.html" />
+    <Content Include="Content\HTML\Acer\Acer Products.html" />
+    <Content Include="Content\HTML\Acer\Acer Swfit 3.html" />
+    <Content Include="Content\HTML\Acer\ACER Swift 5.html" />
+    <Content Include="Content\HTML\Acer\Acer Swift SF314.html" />
+    <Content Include="Content\HTML\Acer\Acer Triton 700.html" />
+    <Content Include="Content\HTML\All Products page 1.html" />
+    <Content Include="Content\HTML\All Products page 2.html" />
+    <Content Include="Content\HTML\All Products page 3.html" />
+    <Content Include="Content\HTML\All Products page 4.html" />
+    <Content Include="Content\HTML\Asus\Asus G14.HTML" />
+    <Content Include="Content\HTML\Asus\Asus Products.html" />
+    <Content Include="Content\HTML\Asus\Asus ROG G17.html" />
+    <Content Include="Content\HTML\Asus\Asus ROG G512.html" />
+    <Content Include="Content\HTML\Asus\ASUS ROG M15.html" />
+    <Content Include="Content\HTML\Asus\Asus ROG Strix SCAR 15.html" />
+    <Content Include="Content\HTML\Asus\Asus ROG Strix SCAR 17.html" />
+    <Content Include="Content\HTML\Asus\Asus ROG Zephyrus Duo 15.html" />
+    <Content Include="Content\HTML\Asus\ASUS ROG Zephyrus G15.html" />
+    <Content Include="Content\HTML\Asus\Asus ROG Zephyrus M.html" />
+    <Content Include="Content\HTML\Asus\ASUS ROG Zephyrus S15.html" />
+    <Content Include="Content\HTML\Asus\Asus TUF F15.html" />
+    <Content Include="Content\HTML\CPU\AMD Ryzen 5.html" />
+    <Content Include="Content\HTML\CPU\AMD Ryzen 7.html" />
+    <Content Include="Content\HTML\CPU\CPU product.html" />
+    <Content Include="Content\HTML\CPU\Intel Core I5.html" />
+    <Content Include="Content\HTML\CPU\Intel Core I7.html" />
+    <Content Include="Content\HTML\CPU\Intel Core I9.html" />
+    <Content Include="Content\HTML\Dell\Dell Inspiron 14.html" />
+    <Content Include="Content\HTML\Dell\Dell Inspiron 15.html" />
+    <Content Include="Content\HTML\Dell\Dell Inspiron 3593.html" />
+    <Content Include="Content\HTML\Dell\Dell Inspiron 5593.html" />
+    <Content Include="Content\HTML\Dell\Dell Inspiron G3 3590.html" />
+    <Content Include="Content\HTML\Dell\Dell Inspiron G5 5590.html" />
+    <Content Include="Content\HTML\Dell\Dell Inspiron G7 15.html" />
+    <Content Include="Content\HTML\Dell\Dell Inspiron G7 7590.html" />
+    <Content Include="Content\HTML\Dell\Dell Products.html" />
+    <Content Include="Content\HTML\Dell\Dell XPS 13.html" />
+    <Content Include="Content\HTML\Dell\Dell XPS 15.html" />
+    <Content Include="Content\HTML\Gio Hang.html" />
+    <Content Include="Content\HTML\login.html" />
+    <Content Include="Content\HTML\Macbook\Mac Products.html" />
+    <Content Include="Content\HTML\Macbook\Macbook Pro 13.html" />
+    <Content Include="Content\HTML\Macbook\Macbook Pro 16 2019.html" />
+    <Content Include="Content\HTML\Macbook\Macbook Pro i5.html" />
+    <Content Include="Content\HTML\Macbook\Macbook Pro Retina.html" />
+    <Content Include="Content\HTML\MSI\MSI Bravo 15.html" />
+    <Content Include="Content\HTML\MSI\MSI GE66 Raider.html" />
+    <Content Include="Content\HTML\MSI\MSI GF63 Thin.html" />
+    <Content Include="Content\HTML\MSI\MSI GF65 Thin.html" />
+    <Content Include="Content\HTML\MSI\MSI GL75 Leopard.html" />
+    <Content Include="Content\HTML\MSI\MSI GS66 Stealth.html" />
+    <Content Include="Content\HTML\MSI\MSI GT76 Titan.html" />
+    <Content Include="Content\HTML\MSI\MSI Prestige 15.html" />
+    <Content Include="Content\HTML\MSI\MSI Products.html" />
+    <Content Include="Content\HTML\MSI\MSI Stealth 15M.html" />
+    <Content Include="Content\HTML\MSI\Stealth 15M A11.html" />
+    <Content Include="Content\Images\Acer\Acer Aspire -info2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire -info3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire -info4.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 3-1.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 3-2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 3-3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 3-4.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 3.-info2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 3.-info3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 3.-info4.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 3.-infojpg.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5 A515-1.png" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5 A515-2.png" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5 A515-3.png" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5 A515-4.png" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5 A515-5.png" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5 A515-6.png" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5 A515-info.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5 A515-info2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5 A515-info3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5 A515-info4.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5-1.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5-2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5-3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5-4.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 5-info.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 7-1.png" />
+    <Content Include="Content\Images\Acer\Acer Aspire 7-2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 7-2.png" />
+    <Content Include="Content\Images\Acer\Acer Aspire 7-3.png" />
+    <Content Include="Content\Images\Acer\Acer Aspire 7-banner.png" />
+    <Content Include="Content\Images\Acer\Acer Aspire 7-info1.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 7-info2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 7-info3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire 7-info4.jpg" />
+    <Content Include="Content\Images\Acer\Acer Aspire A515-info2.jpg" />
+    <Content Include="Content\Images\Acer\Acer icon.png" />
+    <Content Include="Content\Images\Acer\Acer Nitro 5-1.jpg" />
+    <Content Include="Content\Images\Acer\Acer Nitro 5-2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Nitro 5-3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Nitro 5-4.jpg" />
+    <Content Include="Content\Images\Acer\Acer Nitro 5-5.jpg" />
+    <Content Include="Content\Images\Acer\Acer Nitro 5-6.jpg" />
+    <Content Include="Content\Images\Acer\Acer Nitro 5-7.jpg" />
+    <Content Include="Content\Images\Acer\Acer Nitro 5-info1.jpg" />
+    <Content Include="Content\Images\Acer\Acer Nitro 5-info2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Nitro 5-info3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Nitro 5-info4.jpg" />
+    <Content Include="Content\Images\Acer\ACER Predator Helios-1.png" />
+    <Content Include="Content\Images\Acer\ACER Predator Helios-2.png" />
+    <Content Include="Content\Images\Acer\ACER Predator Helios-4.png" />
+    <Content Include="Content\Images\Acer\ACER Predator Helios-5.png" />
+    <Content Include="Content\Images\Acer\ACER Predator Helios-6.png" />
+    <Content Include="Content\Images\Acer\ACER Predator Helios-info.jpg" />
+    <Content Include="Content\Images\Acer\ACER Predator Helios-info2.jpg" />
+    <Content Include="Content\Images\Acer\ACER Predator Helios-info3.jpg" />
+    <Content Include="Content\Images\Acer\ACER Predator Helios-info4.jpg" />
+    <Content Include="Content\Images\Acer\Acer Predator Triton 500-2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Predator Triton 500-info.jpg" />
+    <Content Include="Content\Images\Acer\Acer predator triton 700 slider fix.jpg" />
+    <Content Include="Content\Images\Acer\Acer predator triton 700 slider.jpeg" />
+    <Content Include="Content\Images\Acer\Acer Predator Triton 700-1.png" />
+    <Content Include="Content\Images\Acer\Acer Predator Triton 700-2.png" />
+    <Content Include="Content\Images\Acer\Acer Predator Triton 700-3.png" />
+    <Content Include="Content\Images\Acer\Acer Predator Triton 700-4.png" />
+    <Content Include="Content\Images\Acer\Acer Predator Triton 700-5.png" />
+    <Content Include="Content\Images\Acer\Acer Predator Triton 700-6.png" />
+    <Content Include="Content\Images\Acer\Acer Predator Triton 700-banner.jpg" />
+    <Content Include="Content\Images\Acer\Acer Predator Triton 700-info.jpg" />
+    <Content Include="Content\Images\Acer\Acer Predator Triton 700-info2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Predator Triton 700-info3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Predator Triton 700-info4.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 3 SF314-info2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 3 SF314-info3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 3 SF314-info4.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 3-1png.png" />
+    <Content Include="Content\Images\Acer\Acer Swift 3-2.png" />
+    <Content Include="Content\Images\Acer\Acer Swift 3-3.png" />
+    <Content Include="Content\Images\Acer\Acer Swift 3-info.png" />
+    <Content Include="Content\Images\Acer\Acer Swift 3-info2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 3-info3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 3-info4.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 5-1.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 5-2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 5-3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 5-4.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 5-5.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 5-info2.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 5-info3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 5-info4.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift 5.-infojpg.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift SF3 - 1.png" />
+    <Content Include="Content\Images\Acer\Acer Swift SF3 - 2.png" />
+    <Content Include="Content\Images\Acer\Acer Swift SF3 - 3.jpg" />
+    <Content Include="Content\Images\Acer\Acer Swift SF3 - 3.png" />
+    <Content Include="Content\Images\Acer\Acer Swift SF3 - 4.png" />
+    <Content Include="Content\Images\Acer\Acer Swift SF3 - info.png" />
+    <Content Include="Content\Images\Acer\Acer Swift SF3 --2.jpg" />
+    <Content Include="Content\Images\Acer\MSI GE66 Raider-1.jpg" />
+    <Content Include="Content\Images\Acer\MSI GE66 Raider-2.jpg" />
+    <Content Include="Content\Images\Acer\MSI GE66 Raider-3.jpg" />
+    <Content Include="Content\Images\Acer\MSI GE66 Raider-4.jpg" />
+    <Content Include="Content\Images\Acer\MSI GE66 Raider-5.jpg" />
+    <Content Include="Content\Images\Acer\MSI GE66 Raider-info1.jpg" />
+    <Content Include="Content\Images\Acer\PH315-52-10-4.jpg" />
+    <Content Include="Content\Images\Asus\Asus ad1.jpg" />
+    <Content Include="Content\Images\Asus\Asus ad2.jpg" />
+    <Content Include="Content\Images\Asus\Asus ad3.jpg" />
+    <Content Include="Content\Images\Asus\Asus banner.jpg" />
+    <Content Include="Content\Images\Asus\Asus G14-info4.jpg" />
+    <Content Include="Content\Images\Asus\Asus icon.png" />
+    <Content Include="Content\Images\Asus\ASUS ROG M15-bannerpng.png" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix G G512-1.png" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix G G512-2.png" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix G G512-23.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix G G512-4.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix G G512-banner.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix G G512-info.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix G G512-info2.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix G G512-info3.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix G G512-info4.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 15-1.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 15-2.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 15-3.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 15-4.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 15-5.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 15-banner.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 15-info1.png" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 15-info2.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 15-info3.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 15-info4.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 17- banner .png" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 17-1.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 17-2.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 17-4.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 17-5.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 17-info1.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 17-info2.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 17-info3.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Strix SCAR 17-info4.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Zephyrus duo 15 Slider fix.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Zephyrus duo 15 Slider.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Zephyrus duo G15 info.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Zephyrus G15 Slider.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus G15-1.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus G15-2.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus G15-3.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus G15-4.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus G15-perfom.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Zephyrus M-1.jpg" />
+    <Content Include="Content\Images\Asus\Asus ROG Zephyrus M-1.png" />
+    <Content Include="Content\Images\Asus\Asus ROG Zephyrus M-2.png" />
+    <Content Include="Content\Images\Asus\Asus ROG Zephyrus M-3.png" />
+    <Content Include="Content\Images\Asus\Asus ROG Zephyrus M-banner.png" />
+    <Content Include="Content\Images\Asus\Asus ROG Zephyrus M-info1.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus M15-1.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus M15-2.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus M15-3.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus M15-4.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus M15-5.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus M15-6.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus M15-info1.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus M15-info2.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus M15-info3.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus M15-info4.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus S15-1.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus S15-2.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus S15-3.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus S15-4.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus S15-info1.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus S15-info2.jpg" />
+    <Content Include="Content\Images\Asus\ASUS ROG Zephyrus S15-info3.jpg" />
+    <Content Include="Content\Images\Asus\ASUS TUF F15-.jpg" />
+    <Content Include="Content\Images\Asus\ASUS TUF F15-1.png" />
+    <Content Include="Content\Images\Asus\ASUS TUF F15-2.png" />
+    <Content Include="Content\Images\Asus\ASUS TUF F15-3.png" />
+    <Content Include="Content\Images\Asus\ASUS TUF F15-4.png" />
+    <Content Include="Content\Images\Asus\ASUS TUF F15-6.png" />
+    <Content Include="Content\Images\Asus\Asus TUF f15-banner.jpg" />
+    <Content Include="Content\Images\Asus\ASUS TUF F15-info.jpg" />
+    <Content Include="Content\Images\Asus\ASUS TUF F15-info2.jpg" />
+    <Content Include="Content\Images\Asus\ASUS TUF F15-info3.jpg" />
+    <Content Include="Content\Images\Asus\ASUS TUF F15-info4.jpg" />
+    <Content Include="Content\Images\Asus\ASUS TUF F15-info5.jpg" />
+    <Content Include="Content\Images\Asus\Asus-ROG-Zephyrus-G-GA502-4.jpg" />
+    <Content Include="Content\Images\Asus\Asus-ROG-Zephyrus-G-GA502.-info2.jpg" />
+    <Content Include="Content\Images\Asus\Asus-ROG-Zephyrus-G-GA502.-info3.jpg" />
+    <Content Include="Content\Images\Asus\ASUS-ROG-Zephyrus-G14-tan-nhiet.jpg" />
+    <Content Include="Content\Images\Asus\ASUS-ROG-Zephyrus-M-info2.jpg" />
+    <Content Include="Content\Images\Asus\ASUS-ROG-Zephyrus-M-info3.jpg" />
+    <Content Include="Content\Images\Asus\ASUS-ROG-Zephyrus-M-info4.jpg" />
+    <Content Include="Content\Images\Asus\ASUS_G14_Performance.jpg" />
+    <Content Include="Content\Images\Asus\Duo 15 - info1.jpg" />
+    <Content Include="Content\Images\Asus\Duo 15- info2.jpg" />
+    <Content Include="Content\Images\Asus\Duo 15- info3.jpg" />
+    <Content Include="Content\Images\Asus\Duo 15- info4.jpg" />
+    <Content Include="Content\Images\Asus\Duo 15-1.jpg" />
+    <Content Include="Content\Images\Asus\Duo 15-2.jpg" />
+    <Content Include="Content\Images\Asus\Duo 15-3.jpg" />
+    <Content Include="Content\Images\Asus\Duo 15-4.jpg" />
+    <Content Include="Content\Images\Asus\Duo 15-5.jpg" />
+    <Content Include="Content\Images\Asus\Duo 15-6.jpg" />
+    <Content Include="Content\Images\Asus\Duo 15-7.jpg" />
+    <Content Include="Content\Images\Asus\Duo 15-info3.jpg" />
+    <Content Include="Content\Images\Asus\g14-1.jpg" />
+    <Content Include="Content\Images\Asus\g14-2.png" />
+    <Content Include="Content\Images\Asus\g14-3.png" />
+    <Content Include="Content\Images\Asus\g14-3z.png" />
+    <Content Include="Content\Images\Asus\g14-banner.jpg" />
+    <Content Include="Content\Images\Asus\g14-banner.png" />
+    <Content Include="Content\Images\Asus\G14-info.png" />
+    <Content Include="Content\Images\Asus\G14-info1.jpg" />
+    <Content Include="Content\Images\Asus\G14-info2.jpg" />
+    <Content Include="Content\Images\Asus\G14-info2a.jpg" />
+    <Content Include="Content\Images\Asus\G14-info3.jpg" />
+    <Content Include="Content\Images\Asus\G14.jpg" />
+    <Content Include="Content\Images\Asus\G15-Banner.jpg" />
+    <Content Include="Content\Images\Asus\G17-1.png" />
+    <Content Include="Content\Images\Asus\G17-2.jpg" />
+    <Content Include="Content\Images\Asus\G17-3.jpg" />
+    <Content Include="Content\Images\Asus\G17-4.jpg" />
+    <Content Include="Content\Images\Asus\G17-info1.png" />
+    <Content Include="Content\Images\Asus\Laptop-ASUS-ROG-Zephyrus-M-GU502-4a.jpg" />
+    <Content Include="Content\Images\Asus\ROG Zephyrus Duo 15 1.jpg" />
+    <Content Include="Content\Images\Asus\ROG Zephyrus Duo 15 png.png" />
+    <Content Include="Content\Images\Asus\s15-banner.jpg" />
+    <Content Include="Content\Images\Asus\S15-info4.png" />
+    <Content Include="Content\Images\background.png" />
+    <Content Include="Content\Images\background2k.png" />
+    <Content Include="Content\Images\banner.jpg" />
+    <Content Include="Content\Images\Banner\Acer banner.jpg" />
+    <Content Include="Content\Images\Banner\Acer left.jpg" />
+    <Content Include="Content\Images\Banner\Acer right 1.jpg" />
+    <Content Include="Content\Images\Banner\Acer right 2.jpg" />
+    <Content Include="Content\Images\Banner\Acer right.jpg" />
+    <Content Include="Content\Images\Banner\ASUS Banner.jpg" />
+    <Content Include="Content\Images\Banner\Asus left.jpg" />
+    <Content Include="Content\Images\Banner\Asus right 1.jpg" />
+    <Content Include="Content\Images\Banner\Asus right 2.jpg" />
+    <Content Include="Content\Images\Banner\MSI Banner.jpg" />
+    <Content Include="Content\Images\Banner\MSI left.jpg" />
+    <Content Include="Content\Images\Banner\MSI right 1.jpg" />
+    <Content Include="Content\Images\Banner\MSI right 2.jpg" />
+    <Content Include="Content\Images\Banner\MSI right.jpg" />
+    <Content Include="Content\Images\COMPUTPIXELS.jpg" />
+    <Content Include="Content\Images\CPU\123.jpg" />
+    <Content Include="Content\Images\CPU\CPU-Coffee-Lake-1-768x768.jpg" />
+    <Content Include="Content\Images\CPU\i5-10400_compressed-768x768.jpg" />
+    <Content Include="Content\Images\CPU\i9 2.jpg" />
+    <Content Include="Content\Images\CPU\i9 3.jpg" />
+    <Content Include="Content\Images\CPU\i9-9900KS_compressed-1.jpg" />
+    <Content Include="Content\Images\CPU\i9.jpg" />
+    <Content Include="Content\Images\CPU\Intel-Core-i7-8700K-Coffee-Lake-768x768 %281%29.jpg" />
+    <Content Include="Content\Images\CPU\Intel-Core-i7-8700K-Coffee-Lake-768x768.jpg" />
+    <Content Include="Content\Images\CPU\r5.jpg" />
+    <Content Include="Content\Images\CPU\r51.jpg" />
+    <Content Include="Content\Images\CPU\r52.jpg" />
+    <Content Include="Content\Images\CPU\r53.jpg" />
+    <Content Include="Content\Images\CPU\r54.jpg" />
+    <Content Include="Content\Images\CPU\r55.jpg" />
+    <Content Include="Content\Images\CPU\R7.jpg" />
+    <Content Include="Content\Images\CPU\r71.jpg" />
+    <Content Include="Content\Images\CPU\r72.jpg" />
+    <Content Include="Content\Images\CPU\r73.jpg" />
+    <Content Include="Content\Images\Dell\Dell G7 15 Gaming Laptop Slider fix.png" />
+    <Content Include="Content\Images\Dell\Dell G7 15 Gaming Laptop Slider.png" />
+    <Content Include="Content\Images\Dell\Dell Icon.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 14-1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 14-2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 14-3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 14-info.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 14-info2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 14-info3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 14-info4.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 15-1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 15-2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 15-3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 15-info1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 15-info2.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 15-info3.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 15-info4.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 3593 -2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 3593 -3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 3593 -4.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 3593-1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 3593-info1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 3593-info2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 3593-info3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 3593-info3.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 3593-info4.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 5593-1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 5593-2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 5593-3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 5593-4.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 5593-banner.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 5593-info1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 5593-info2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 5593-info3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron 5593-info4.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G3 3590-info2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G3 3590-info3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G3 3590-info4.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G3-1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G3-2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G3-3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G3-4.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G3-banner.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G3-info1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G5 5590-1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G5 5590-2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G5 5590-3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G5 5590-4.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G5 5590-5.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G5 5590-banner.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G5 5590-info1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G5 5590-info2.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G5 5590-info3.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G5 5590-info4.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 15 -3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 15-1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 15-2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 15-3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 15-banner.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 15-info1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 15-info2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 15-info3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 15-info4.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-4.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-info1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-info2.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-info3.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-info4.png" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7-info1.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7-info2.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7-info3.jpg" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7-info4.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 13-1.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 13-2.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 13-3.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 13-info1.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 13-info2.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 13-info3.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 13-info4.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 15-1.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 15-2.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 15-3.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 15-4.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 15-5.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 15-banner.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 15-info1.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 15-info2.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 15-info3.jpg" />
+    <Content Include="Content\Images\Dell\Dell XPS 15-info4.jpg" />
+    <Content Include="Content\Images\fb.png" />
+    <Content Include="Content\Images\gp.png" />
+    <Content Include="Content\Images\index\0907_laptop-gaming-msi.jpg" />
+    <Content Include="Content\Images\index\120342024_1477693199090216_3563555261851398945_o.jpg" />
+    <Content Include="Content\Images\index\201125_Intel-Fortnite_Bundle_Promotions_EN.jpg" />
+    <Content Include="Content\Images\index\29-9-3_640x360-300x200.gif" />
+    <Content Include="Content\Images\index\600px-NBK-_at_DreamHack_Masters_Dallas_2019.jpg" />
+    <Content Include="Content\Images\index\ACER.jpg" />
+    <Content Include="Content\Images\index\Asus.jpg" />
+    <Content Include="Content\Images\index\b87555e2dc01ea2c3dcc370eac7ceafa-300x200.jpg" />
+    <Content Include="Content\Images\index\banner-16-01-1-scaled.jpg" />
+    <Content Include="Content\Images\index\circle-2.svg" />
+    <Content Include="Content\Images\index\colorbar.gif" />
+    <Content Include="Content\Images\index\COMPUTPIXELS.jpg" />
+    <Content Include="Content\Images\index\gaming-gear-spotlight.jpg" />
+    <Content Include="Content\Images\index\ghegamingakracing.png" />
+    <Content Include="Content\Images\index\ghegamingcougar.png" />
+    <Content Include="Content\Images\index\ghegamingdxracer.png" />
+    <Content Include="Content\Images\index\ghegamingsoleseat.png" />
+    <Content Include="Content\Images\index\ghegamingwhiteshark.png" />
+    <Content Include="Content\Images\index\huong-dan-mua-may-tinh-xach-tay-choi-game-nam-2020-danh-cho-game-thu.jpg" />
+    <Content Include="Content\Images\index\i5.jpg" />
+    <Content Include="Content\Images\index\i7.png" />
+    <Content Include="Content\Images\index\i9.png" />
+    <Content Include="Content\Images\index\img-2017-300x200.jpg" />
+    <Content Include="Content\Images\index\Logo.png" />
+    <Content Include="Content\Images\index\Logopng.png" />
+    <Content Include="Content\Images\index\main-1000x600-vn-1.jpg" />
+    <Content Include="Content\Images\index\manhinhacer.png" />
+    <Content Include="Content\Images\index\manhinhasus.png" />
+    <Content Include="Content\Images\index\manhinhdell.png" />
+    <Content Include="Content\Images\index\manhinhsamsung.png" />
+    <Content Include="Content\Images\index\manhinhviewsonic.png" />
+    <Content Include="Content\Images\index\MSI.jpg" />
+    <Content Include="Content\Images\index\new logo.png" />
+    <Content Include="Content\Images\index\newest laptop 1.png" />
+    <Content Include="Content\Images\index\newest product 2.png" />
+    <Content Include="Content\Images\index\newest product 3.png" />
+    <Content Include="Content\Images\index\papers.co-ht81-girl-kpop-itzy-1920x1080.jpg" />
+    <Content Include="Content\Images\index\papers.co-ht81-girl-kpop-itzy-2560x1600.jpg" />
+    <Content Include="Content\Images\index\rog_3.jpg" />
+    <Content Include="Content\Images\index\ryzen5.png" />
+    <Content Include="Content\Images\index\ryzen7.jpg" />
+    <Content Include="Content\Images\index\vgaaorus.png" />
+    <Content Include="Content\Images\index\vgaasus.png" />
+    <Content Include="Content\Images\index\vgaevga.png" />
+    <Content Include="Content\Images\index\vgagigabyte.png" />
+    <Content Include="Content\Images\index\vgamsi.png" />
+    <Content Include="Content\Images\loading.gif" />
+    <Content Include="Content\Images\login-left.jpg" />
+    <Content Include="Content\Images\login-right.jpg" />
+    <Content Include="Content\Images\Logo.png" />
+    <Content Include="Content\Images\Logopng.png" />
+    <Content Include="Content\Images\Macbook\637269498448943539_mb-pro-13-2020-xam-1.png" />
+    <Content Include="Content\Images\Macbook\apple-macbook-pro-touch-2020-i5-slider-fix.jpg" />
+    <Content Include="Content\Images\Macbook\apple-macbook-pro-touch-2020-i5-slider.jpg.png" />
+    <Content Include="Content\Images\Macbook\M.jpg" />
+    <Content Include="Content\Images\Macbook\M1.jpg" />
+    <Content Include="Content\Images\Macbook\m10.jpg" />
+    <Content Include="Content\Images\Macbook\m1pro2018.png" />
+    <Content Include="Content\Images\Macbook\m2.jpg" />
+    <Content Include="Content\Images\Macbook\m2pro2018.jpeg" />
+    <Content Include="Content\Images\Macbook\m3.jpg" />
+    <Content Include="Content\Images\Macbook\m3pro2018.png" />
+    <Content Include="Content\Images\Macbook\m4.jpg" />
+    <Content Include="Content\Images\Macbook\m4pro2018.jpg" />
+    <Content Include="Content\Images\Macbook\m5.png" />
+    <Content Include="Content\Images\Macbook\m6.jpg" />
+    <Content Include="Content\Images\Macbook\m7.jpg" />
+    <Content Include="Content\Images\Macbook\m8.jpg" />
+    <Content Include="Content\Images\Macbook\m9.jpg" />
+    <Content Include="Content\Images\Macbook\Mac Icon.png" />
+    <Content Include="Content\Images\Macbook\Macbook Pro i5-1.jpg" />
+    <Content Include="Content\Images\Macbook\Macbook Pro i5-2.jpg" />
+    <Content Include="Content\Images\Macbook\Macbook Pro i5-3.jpg" />
+    <Content Include="Content\Images\Macbook\Macbook Pro i5-4.jpg" />
+    <Content Include="Content\Images\Macbook\macbook-pro-touch-2020-i5-14ghz-8gb-256gb-mxk32sa-600x600.jpg" />
+    <Content Include="Content\Images\Macbook\mm1.jfif" />
+    <Content Include="Content\Images\Macbook\mm1.jpg" />
+    <Content Include="Content\Images\Macbook\mm10.jfif" />
+    <Content Include="Content\Images\Macbook\mm11.jfif" />
+    <Content Include="Content\Images\Macbook\mm12.jfif" />
+    <Content Include="Content\Images\Macbook\mm13.jfif" />
+    <Content Include="Content\Images\Macbook\mm14.jfif" />
+    <Content Include="Content\Images\Macbook\mm15.jfif" />
+    <Content Include="Content\Images\Macbook\mm16.jfif" />
+    <Content Include="Content\Images\Macbook\mm17.jfif" />
+    <Content Include="Content\Images\Macbook\mm18.jfif" />
+    <Content Include="Content\Images\Macbook\mm2.jpg" />
+    <Content Include="Content\Images\Macbook\mm3.jpg" />
+    <Content Include="Content\Images\Macbook\mm4.jpg" />
+    <Content Include="Content\Images\Macbook\mm5.jpg" />
+    <Content Include="Content\Images\Macbook\mm6.jfif" />
+    <Content Include="Content\Images\Macbook\mm7.jfif" />
+    <Content Include="Content\Images\Macbook\mm8.jfif" />
+    <Content Include="Content\Images\Macbook\mm9.jfif" />
+    <Content Include="Content\Images\Me.png" />
+    <Content Include="Content\Images\MSI\MSI Bravo 15-1.jpg" />
+    <Content Include="Content\Images\MSI\MSI Bravo 15-2.jpg" />
+    <Content Include="Content\Images\MSI\MSI Bravo 15-3.jpg" />
+    <Content Include="Content\Images\MSI\MSI Bravo 15-4.jpg" />
+    <Content Include="Content\Images\MSI\MSI Bravo 15-5.jpg" />
+    <Content Include="Content\Images\MSI\MSI Bravo 15-info1.jpg" />
+    <Content Include="Content\Images\MSI\MSI Bravo 15-info2.jpg" />
+    <Content Include="Content\Images\MSI\MSI Bravo 15-info3.jpg" />
+    <Content Include="Content\Images\MSI\MSI Bravo 15-info4.jpg" />
+    <Content Include="Content\Images\MSI\MSI GE66 Raider-1.jpg" />
+    <Content Include="Content\Images\MSI\MSI GE66 Raider-2.jpg" />
+    <Content Include="Content\Images\MSI\MSI GE66 Raider-3.jpg" />
+    <Content Include="Content\Images\MSI\MSI GE66 Raider-4.jpg" />
+    <Content Include="Content\Images\MSI\MSI GE66 Raider-5.jpg" />
+    <Content Include="Content\Images\MSI\MSI GE66 Raider-info1.jpg" />
+    <Content Include="Content\Images\MSI\MSI GE66 Raider-info2.png" />
+    <Content Include="Content\Images\MSI\MSI GE66 Raider-info3.png" />
+    <Content Include="Content\Images\MSI\MSI GE66 Raider-info4.png" />
+    <Content Include="Content\Images\MSI\MSI GF63 Thin-1.png" />
+    <Content Include="Content\Images\MSI\MSI GF63 Thin-2.png" />
+    <Content Include="Content\Images\MSI\MSI GF63 Thin-3.png" />
+    <Content Include="Content\Images\MSI\MSI GF63 Thin-4.png" />
+    <Content Include="Content\Images\MSI\MSI GF63 Thin-info1.jpg" />
+    <Content Include="Content\Images\MSI\MSI GF63 Thin-info2.jpg" />
+    <Content Include="Content\Images\MSI\MSI GF63 Thin-info3.jpg" />
+    <Content Include="Content\Images\MSI\MSI GF63 Thin-info4.jpg" />
+    <Content Include="Content\Images\MSI\MSI GF65 Thin-1.png" />
+    <Content Include="Content\Images\MSI\MSI GF65 Thin-2.png" />
+    <Content Include="Content\Images\MSI\MSI GF65 Thin-3.png" />
+    <Content Include="Content\Images\MSI\MSI GF65 Thin-4.png" />
+    <Content Include="Content\Images\MSI\MSI GF65 Thin-5.png" />
+    <Content Include="Content\Images\MSI\MSI GF65 Thin-info1.png" />
+    <Content Include="Content\Images\MSI\MSI GL75 Leopard-1.png" />
+    <Content Include="Content\Images\MSI\MSI GL75 Leopard-2.png" />
+    <Content Include="Content\Images\MSI\MSI GL75 Leopard-3.png" />
+    <Content Include="Content\Images\MSI\MSI GL75 Leopard-4.png" />
+    <Content Include="Content\Images\MSI\MSI GL75 Leopard-5.png" />
+    <Content Include="Content\Images\MSI\MSI GL75 Leopard-info1.jpg" />
+    <Content Include="Content\Images\MSI\MSI GL75 Leopard-info2.jpg" />
+    <Content Include="Content\Images\MSI\MSI GL75 Leopard-info3.jpg" />
+    <Content Include="Content\Images\MSI\MSI GL75 Leopard-info4.jpg" />
+    <Content Include="Content\Images\MSI\MSI GS66 Stealth-1.png" />
+    <Content Include="Content\Images\MSI\MSI GS66 Stealth-2.png" />
+    <Content Include="Content\Images\MSI\MSI GS66 Stealth-3.png" />
+    <Content Include="Content\Images\MSI\MSI GS66 Stealth-4.png" />
+    <Content Include="Content\Images\MSI\MSI GS66 Stealth-info1.jpg" />
+    <Content Include="Content\Images\MSI\MSI GS66 Stealth-info2.png" />
+    <Content Include="Content\Images\MSI\MSI GS66 Stealth-info3.jpg" />
+    <Content Include="Content\Images\MSI\MSI GS66 Stealth-info4.jpg" />
+    <Content Include="Content\Images\MSI\MSI GT76 Titan-1.jpg" />
+    <Content Include="Content\Images\MSI\MSI GT76 Titan-2.jpg" />
+    <Content Include="Content\Images\MSI\MSI GT76 Titan-3.jpg" />
+    <Content Include="Content\Images\MSI\MSI GT76 Titan-4.jpg" />
+    <Content Include="Content\Images\MSI\MSI GT76 Titan-banner.png" />
+    <Content Include="Content\Images\MSI\MSI GT76 Titan-info1.jpg" />
+    <Content Include="Content\Images\MSI\MSI GT76 Titan-info2.png" />
+    <Content Include="Content\Images\MSI\MSI GT76 Titan-info3.png" />
+    <Content Include="Content\Images\MSI\MSI GT76 Titan-info4.png" />
+    <Content Include="Content\Images\MSI\MSI Prestige 15-1.jpg" />
+    <Content Include="Content\Images\MSI\MSI Prestige 15-2.jpg" />
+    <Content Include="Content\Images\MSI\MSI Prestige 15-3.jpg" />
+    <Content Include="Content\Images\MSI\MSI Prestige 15-banner.jpg" />
+    <Content Include="Content\Images\MSI\MSI Prestige 15-info1.jpg" />
+    <Content Include="Content\Images\MSI\MSI Prestige 15-info2.png" />
+    <Content Include="Content\Images\MSI\MSI Prestige 15-info3.png" />
+    <Content Include="Content\Images\MSI\MSI Prestige 15-info4.png" />
+    <Content Include="Content\Images\MSI\MSI Stealth 15M-1.png" />
+    <Content Include="Content\Images\MSI\MSI Stealth 15M-2.png" />
+    <Content Include="Content\Images\MSI\MSI Stealth 15M-3.png" />
+    <Content Include="Content\Images\MSI\MSI Stealth 15M-4.png" />
+    <Content Include="Content\Images\MSI\MSI Stealth 15M-5.png" />
+    <Content Include="Content\Images\MSI\MSI Stealth 15M-6.png" />
+    <Content Include="Content\Images\MSI\MSI Stealth 15M-7.png" />
+    <Content Include="Content\Images\MSI\MSI Stealth 15M-info1.jpg" />
+    <Content Include="Content\Images\MSI\MSI Stealth 15M-info2.jpg" />
+    <Content Include="Content\Images\MSI\MSI Stealth 15M-info3.jpg" />
+    <Content Include="Content\Images\MSI\MSI Stealth 15M-info4.jpg" />
+    <Content Include="Content\Images\MSI\MSI-logo-png.png" />
+    <Content Include="Content\Images\MSI\Stealth 17M-1.png" />
+    <Content Include="Content\Images\MSI\Stealth 17M-2.png" />
+    <Content Include="Content\Images\MSI\Stealth 17M-3.png" />
+    <Content Include="Content\Images\MSI\Stealth 17M-4.png" />
+    <Content Include="Content\Images\MSI\Stealth 17M-5.png" />
+    <Content Include="Content\Images\MSI\Stealth 17M-info1.jpg" />
+    <Content Include="Content\Images\MSI\Top 5 Laptop MSI tai CES 2020 Slider fix.jpg" />
+    <Content Include="Content\Images\MSI\Top 5 Laptop MSI tai CES 2020 Slider.jpg" />
+    <Content Include="Content\Images\new logo.png" />
+    <Content Include="Content\Images\newest laptop 1.png" />
+    <Content Include="Content\Images\newest product 2.png" />
+    <Content Include="Content\Images\newest product 3.png" />
+    <Content Include="Content\Images\next.png" />
+    <Content Include="Content\Images\prev.png" />
+    <Content Include="Content\Images\Sang.jpg" />
+    <Content Include="Content\Images\tw.png" />
+    <Content Include="Content\JAVA\aos.js" />
+    <Content Include="Content\JAVA\app.js" />
+    <Content Include="Content\JAVA\cart.js" />
+    <Content Include="Content\JAVA\java.js" />
+    <Content Include="Content\JAVA\lightbox-plus-jquery.min.js" />
+    <Content Include="Content\JAVA\login.js" />
+    <Content Include="Content\JAVA\login2.js" />
+    <Content Include="Content\JAVA\particles.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\QLBMT.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLBMT.edmx</DependentUpon>
+      <LastGenOutput>QLBMT.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QLBMT.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLBMT.edmx</DependentUpon>
+      <LastGenOutput>QLBMT.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Images\Asus\vaz044t_0c63158635aa4ab59152643e593a3994.webp" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-info3.webp" />
+    <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-info4.webp" />
+    <Content Include="Content\Images\MSI\MSI icon.zip" />
+    <Content Include="Content\Images\vecteezy_creative-and-modern-computer-pixels-logo-template-suitable-for-many-themes_203469.zip" />
+    <EntityDeploy Include="Models\QLBMT.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLBMT.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QLBMT.edmx.diagram">
+      <DependentUpon>QLBMT.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\CSBH\CSBH.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62681</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44339/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

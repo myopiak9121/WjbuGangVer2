@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WjbuGangVer2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK_HoaDon_Admin" FromRole="Admin" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
+    <Property Name="Ngay" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="MaMH" Type="Int32" Nullable="false" />
+    <Property Name="AdminID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Admin" Relationship="Self.FK_HoaDon_Admin" FromRole="HoaDon" ToRole="Admin" />
+    <NavigationProperty Name="User" Relationship="WjbuGangVer2Model.UserHoaDon" FromRole="HoaDon" ToRole="User" />
+    <NavigationProperty Name="MatHangs" Relationship="WjbuGangVer2Model.HoaDonMatHang" FromRole="HoaDon" ToRole="MatHang" />
+  </EntityType>
+  <EntityType Name="LoaiMH">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="MaLoai" Type="Int32" Nullable="false" />
+    <Property Name="TenLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="MatHangs" Relationship="Self.FK_MatHang_LoaiMH" FromRole="LoaiMH" ToRole="MatHang" />
+  </EntityType>
+  <EntityType Name="MatHang">
+    <Key>
+      <PropertyRef Name="MaMH" />
+    </Key>
+    <Property Name="MaMH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenMH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DonGia" Type="Double" Nullable="false" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="MaLoai" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="LoaiMH" Relationship="Self.FK_MatHang_LoaiMH" FromRole="MatHang" ToRole="LoaiMH" />
+    <NavigationProperty Name="HoaDon" Relationship="WjbuGangVer2Model.HoaDonMatHang" FromRole="MatHang" ToRole="HoaDon" />
+    <Property Name="HoaDonMaHD" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="HoaDon" Relationship="WjbuGangVer2Model.UserHoaDon" FromRole="User" ToRole="HoaDon" />
+  </EntityType>
+  <Association Name="FK_HoaDon_Admin">
+    <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin">
+        <PropertyRef Name="AdminID" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="AdminID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatHang_LoaiMH">
+    <End Role="LoaiMH" Type="Self.LoaiMH" Multiplicity="1" />
+    <End Role="MatHang" Type="Self.MatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiMH">
+        <PropertyRef Name="MaLoai" />
+      </Principal>
+      <Dependent Role="MatHang">
+        <PropertyRef Name="MaLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WjbuGangVer2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
+    <EntitySet Name="LoaiMHs" EntityType="Self.LoaiMH" />
+    <EntitySet Name="MatHangs" EntityType="Self.MatHang" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_HoaDon_Admin" Association="Self.FK_HoaDon_Admin">
+      <End Role="Admin" EntitySet="Admins" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatHang_LoaiMH" Association="Self.FK_MatHang_LoaiMH">
+      <End Role="LoaiMH" EntitySet="LoaiMHs" />
+      <End Role="MatHang" EntitySet="MatHangs" />
+    </AssociationSet>
+    <AssociationSet Name="UserHoaDon" Association="WjbuGangVer2Model.UserHoaDon">
+      <End Role="User" EntitySet="Users" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="HoaDonMatHang" Association="WjbuGangVer2Model.HoaDonMatHang">
+      <End Role="HoaDon" EntitySet="HoaDons" />
+      <End Role="MatHang" EntitySet="MatHangs" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="UserHoaDon">
+    <End Type="WjbuGangVer2Model.User" Role="User" Multiplicity="1" />
+    <End Type="WjbuGangVer2Model.HoaDon" Role="HoaDon" Multiplicity="1" />
+  </Association>
+  <Association Name="HoaDonMatHang">
+    <End Type="WjbuGangVer2Model.HoaDon" Role="HoaDon" Multiplicity="1" />
+    <End Type="WjbuGangVer2Model.MatHang" Role="MatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="MatHang">
+        <PropertyRef Name="HoaDonMaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

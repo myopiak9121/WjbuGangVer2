@@ -1,0 +1,15 @@
+body h1 {
+    text-align: center;
+    
+}
+body h2 h3{
+    font-size: large;
+    margin:center;
+    vertical-align: middle;
+}
+h1 {text-shadow: 0 0 0.2em #F87, 0 0 0.2em #F87}
+
+#Chinhsach{
+    justify-content: center;
+    padding: 30px;
+}
