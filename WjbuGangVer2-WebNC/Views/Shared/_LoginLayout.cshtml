@@ -1,0 +1,43 @@
+﻿@model WjbuGangVer2_WebNC.Models.Admin
+
+@{
+    ViewBag.Title = "Login";
+}
+<link rel="stylesheet" href="~/Content/CSS/login2.css" type="text/css">
+
+<div class="animated bounceInDown">
+    <div class="container">
+        <span class="error animated tada" id="msg"></span>
+        @using (Html.BeginForm("Adminlogin", "Admin", FormMethod.Post, new { @class = "box" }))
+        {
+            <form name="form1" class="box" action="">
+                <h4>FileFate<span>Đăng nhập</span></h4>
+                <h5>Điền tài khoản & mật khẩu</h5>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <i class="typcn typcn-eye" id="eye"></i>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <a href="#" class="forgetpass" style="position:center">Forget Password?</a>
+                <p style="color:red">@ViewBag.ErrorInfo</p>
+                <input type="submit" value="Sign in" class="btn1">
+            </form>
+        }
+        <a href="/User/RegisterUser/" class="dnthave">Don’t have an account? Sign up</a>
+    </div>
+    @RenderBody();
+</div>
+
+
