@@ -388,8 +388,11 @@ li:hover{
     background-color: #5ac5f1;
     font-family: sans-serif;
 }
-.center{
+.center {
     text-align: center;
+    width: 100%;
+    height: auto;
+    float: left;
 }
 .pagination{
     display: inline-block;

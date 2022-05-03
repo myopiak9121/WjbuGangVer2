@@ -321,7 +321,6 @@ D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\System.
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\Newtonsoft.Json.xml
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\Antlr3.Runtime.pdb
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.csproj.AssemblyReference.cache
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.csproj.CoreCompileInputs.cache
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.csproj.CopyComplete
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.dll
@@ -409,3 +408,13 @@ D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC
 D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.csproj.CopyComplete
 D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.dll
 D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.pdb
+D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\Oracle.ManagedDataAccess.dll
+D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\Slapper.dll
+D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\PagedList.dll
+D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\PagedList.Mvc.dll
+D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\PagedList.xml
+D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\PagedList.Mvc.xml
+D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\JetBrains.Annotations.dll
+D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\X.PagedList.dll
+D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\JetBrains.Annotations.xml
+D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.csproj.AssemblyReference.cache

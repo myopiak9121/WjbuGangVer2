@@ -1,7 +1,7 @@
-﻿using System;
+﻿using PagedList;
+using PagedList.Mvc;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using WjbuGangVer2_WebNC.Models;
 
@@ -11,16 +11,17 @@ namespace WjbuGangVer2_WebNC.Controllers
     {
         QLBMTEntities db = new QLBMTEntities();
         // GET: Product
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int pagesize = 4)
         {
-            List<MatHang> list = db.MatHangs.ToList();
+            var list = db.MatHangs.ToList().ToPagedList(page, pagesize);
             return View(list);
         }
 
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            MatHang chitiet = db.MatHangs.Find(id);
+            return View(chitiet);
         }
 
         // GET: Product/Create
