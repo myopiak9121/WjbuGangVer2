@@ -24,12 +24,7 @@ namespace WjbuGangVer2_WebNC.Models
         {
             throw new UnintentionalCodeFirstException();
         }
-
-        internal T SingleOrDefault<T>(string v, string a)
-        {
-            throw new NotImplementedException();
-        }
-
+    
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<HoaDon> HoaDons { get; set; }
