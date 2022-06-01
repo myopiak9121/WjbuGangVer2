@@ -24,10 +24,10 @@ namespace WjbuGangVer2_WebNC.Models
         public int MaHD { get; set; }
         public Nullable<System.DateTime> Ngay { get; set; }
 
-        internal void Add(MatHang pro)
-        {
-            throw new NotImplementedException();
-        }
+        //internal void Add(MatHang pro)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public Nullable<int> SoLuong { get; set; }
         public Nullable<int> TongTien { get; set; }
@@ -38,26 +38,24 @@ namespace WjbuGangVer2_WebNC.Models
         public virtual PhuongThucThanhToan PhuongThucThanhToan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MatHang> MatHangs { get; set; }
-    }
-    public class GiohangItem
-    {
-        public MatHang _shopping_product { get; set; }
-        public int _shopping_quantity { get; set; }
-    }
-    //Gio hang
-    public class Giohang
-    {
-        List<GiohangItem> items =new List<GiohangItem>();
-        public IEnumerable<GiohangItem> Items
+
+        //Gio hàng
+
+        List<HoaDonItem> items = new List<HoaDonItem>();
+        public IEnumerable<HoaDonItem> Items
         {
             get { return items; }
+        }
+        public MatHang GetProduct(int id)
+        {
+            return items.SingleOrDefault(s => s._shopping_product.MaMH == id)._shopping_product;
         }
         public void Add(MatHang _pro, int _quantity = 1)
         {
             var item = items.FirstOrDefault(s => s._shopping_product.MaMH == _pro.MaMH);
             if (item == null)
             {
-                items.Add(new GiohangItem
+                items.Add(new HoaDonItem
                 {
                     _shopping_product = _pro,
                     _shopping_quantity = _quantity
@@ -66,7 +64,12 @@ namespace WjbuGangVer2_WebNC.Models
             else
             {
                 item._shopping_quantity += _quantity;
-            }   
+            }
         }
+    }
+    public class HoaDonItem
+    {
+        public MatHang _shopping_product { get; set; }
+        public int _shopping_quantity { get; set; }
     }
 }
