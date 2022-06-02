@@ -4,14 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QLBMTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QLBMTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="AccountID" />
           </Key>
           <Property Name="AccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Username" Type="varchar" MaxLength="50" />
-          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="HoTen" Type="nvarchar" MaxLength="255" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
           <Property Name="Email" Type="varchar" MaxLength="255" />
@@ -23,17 +23,17 @@
             <PropertyRef Name="AdminID" />
           </Key>
           <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Username" Type="varchar" MaxLength="50" />
-          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
             <PropertyRef Name="MaHD" />
           </Key>
           <Property Name="MaHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Ngay" Type="datetime" />
-          <Property Name="SoLuong" Type="int" />
-          <Property Name="TongTien" Type="int" />
+          <Property Name="Ngay" Type="datetime" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="TongTien" Type="int" Nullable="false" />
           <Property Name="MaPT" Type="int" Nullable="false" />
           <Property Name="AccountID" Type="int" Nullable="false" />
         </EntityType>
@@ -50,7 +50,7 @@
             <PropertyRef Name="MaLoai" />
           </Key>
           <Property Name="MaLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenLoai" Type="nvarchar" MaxLength="255" />
+          <Property Name="TenLoai" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="MatHang">
           <Key>
@@ -58,9 +58,10 @@
           </Key>
           <Property Name="MaMH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaLoai" Type="int" Nullable="false" />
-          <Property Name="TenMH" Type="nvarchar" MaxLength="255" />
-          <Property Name="DonGia" Type="int" />
+          <Property Name="DonGia" Type="int" Nullable="false" />
+          <Property Name="TenMH" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+          <Property Name="Hang" Type="nvarchar" MaxLength="50" />
           <Property Name="HinhChinh" Type="nvarchar" MaxLength="255" />
           <Property Name="Hinh1" Type="nvarchar" MaxLength="255" />
           <Property Name="Hinh2" Type="nvarchar" MaxLength="255" />
@@ -72,7 +73,7 @@
             <PropertyRef Name="MaPT" />
           </Key>
           <Property Name="MaPT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenPT" Type="nvarchar" MaxLength="255" />
+          <Property Name="TenPT" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <Association Name="FK__HoaDon__AccountI__45F365D3">
           <End Role="Account" Type="Self.Account" Multiplicity="1" />
@@ -163,8 +164,7 @@
             <End Role="MatHang" EntitySet="MatHang" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLBMTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -173,8 +173,8 @@
             <PropertyRef Name="AccountID" />
           </Key>
           <Property Name="AccountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="HoTen" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -187,17 +187,17 @@
             <PropertyRef Name="AdminID" />
           </Key>
           <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
             <PropertyRef Name="MaHD" />
           </Key>
           <Property Name="MaHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ngay" Type="DateTime" Precision="3" />
-          <Property Name="SoLuong" Type="Int32" />
-          <Property Name="TongTien" Type="Int32" />
+          <Property Name="Ngay" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <Property Name="TongTien" Type="Int32" Nullable="false" />
           <Property Name="MaPT" Type="Int32" Nullable="false" />
           <Property Name="AccountID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Account" Relationship="Self.FK__HoaDon__AccountI__45F365D3" FromRole="HoaDon" ToRole="Account" />
@@ -209,7 +209,7 @@
             <PropertyRef Name="MaLoai" />
           </Key>
           <Property Name="MaLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenLoai" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TenLoai" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="MatHangs" Relationship="Self.FK__MatHang__MaLoai__4316F928" FromRole="LoaiMH" ToRole="MatHang" />
         </EntityType>
         <EntityType Name="MatHang">
@@ -218,8 +218,8 @@
           </Key>
           <Property Name="MaMH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaLoai" Type="Int32" Nullable="false" />
-          <Property Name="TenMH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="DonGia" Type="Int32" />
+          <Property Name="TenMH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DonGia" Type="Int32" Nullable="false" />
           <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="HinhChinh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Hinh1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -228,13 +228,14 @@
           <Property Name="Hinh4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="LoaiMH" Relationship="Self.FK__MatHang__MaLoai__4316F928" FromRole="MatHang" ToRole="LoaiMH" />
           <NavigationProperty Name="HoaDons" Relationship="Self.HoaDonChiTiet" FromRole="MatHang" ToRole="HoaDon" />
+          <Property Name="Hang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="PhuongThucThanhToan">
           <Key>
             <PropertyRef Name="MaPT" />
           </Key>
           <Property Name="MaPT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenPT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TenPT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__MaPT__44FF419A" FromRole="PhuongThucThanhToan" ToRole="HoaDon" />
         </EntityType>
         <Association Name="FK__HoaDon__AccountI__45F365D3">
@@ -353,6 +354,7 @@
           <EntitySetMapping Name="MatHangs">
             <EntityTypeMapping TypeName="QLBMTModel.MatHang">
               <MappingFragment StoreEntitySet="MatHang">
+                <ScalarProperty Name="Hang" ColumnName="Hang" />
                 <ScalarProperty Name="MaMH" ColumnName="MaMH" />
                 <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
                 <ScalarProperty Name="TenMH" ColumnName="TenMH" />

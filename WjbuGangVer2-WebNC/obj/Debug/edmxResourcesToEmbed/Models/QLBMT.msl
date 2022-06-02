@@ -47,6 +47,7 @@
     <EntitySetMapping Name="MatHangs">
       <EntityTypeMapping TypeName="QLBMTModel.MatHang">
         <MappingFragment StoreEntitySet="MatHang">
+          <ScalarProperty Name="Hang" ColumnName="Hang" />
           <ScalarProperty Name="MaMH" ColumnName="MaMH" />
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
           <ScalarProperty Name="TenMH" ColumnName="TenMH" />

@@ -11,7 +11,8 @@ namespace WjbuGangVer2_WebNC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web;
+
     public partial class MatHang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,16 +24,20 @@ namespace WjbuGangVer2_WebNC.Models
         public int MaMH { get; set; }
         public int MaLoai { get; set; }
         public string TenMH { get; set; }
-        public Nullable<int> DonGia { get; set; }
+        public int DonGia { get; set; }
         public string MoTa { get; set; }
         public string HinhChinh { get; set; }
         public string Hinh1 { get; set; }
         public string Hinh2 { get; set; }
         public string Hinh3 { get; set; }
         public string Hinh4 { get; set; }
+        public string Hang { get; set; }
     
         public virtual LoaiMH LoaiMH { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }
+
+        public HttpPostedFileBase ImageFile { get; set; }
+
     }
 }
