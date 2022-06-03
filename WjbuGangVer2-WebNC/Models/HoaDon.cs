@@ -66,6 +66,14 @@ namespace WjbuGangVer2_WebNC.Models
                 item._shopping_quantity += _quantity;
             }
         }
+        public void Update_Quantity_Shopping(int id,int _quatity)
+        {
+            var item=items.Find (s => s._shopping_product.MaMH == id);
+            if(item == null)
+            {
+                item._shopping_quantity = _quatity;
+            }
+        }
     }
     public class HoaDonItem
     {

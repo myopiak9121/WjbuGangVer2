@@ -4,8 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Giỏ hàng</h2>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -160,6 +158,7 @@
                 </div>
             </div>
         </div>
+        <h2>Giỏ hàng</h2>
         @if (Model != null)
         {
             <table class="table">
@@ -187,7 +186,12 @@
                                 @Html.DisplayFor(Model => item._shopping_product.DonGia)
                             </td>
                             <td>
-                                <input type="number" value="@item._shopping_quantity" />
+                                @using (Html.BeginForm("Update_Quantity_Cart", "HoaDon"))
+                                {
+                                    <input type="hidden" value="@item._shopping_product.MaMH" name="Ma_MH" />
+                                    <input type="number" value="@item._shopping_quantity" name="Quantity" />
+                                    <input type="submit" value="Cập nhật số lượng" />
+                                }
                             </td>
                             <td>
                                 @total
