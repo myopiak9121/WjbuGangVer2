@@ -135,6 +135,7 @@
     <Compile Include="Controllers\LoaiMHController.cs" />
     <Compile Include="Controllers\MatHangController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -5381,6 +5382,7 @@
     <Content Include="Content\Images\Acer\MSI GE66 Raider-5.jpg" />
     <Content Include="Content\Images\Acer\MSI GE66 Raider-info1.jpg" />
     <Content Include="Content\Images\Acer\PH315-52-10-4.jpg" />
+    <Content Include="Content\Images\add.png" />
     <Content Include="Content\Images\Asus\Asus ad1.jpg" />
     <Content Include="Content\Images\Asus\Asus ad2.jpg" />
     <Content Include="Content\Images\Asus\Asus ad3.jpg" />
@@ -5831,6 +5833,7 @@
     <Content Include="Content\JAVA\login.js" />
     <Content Include="Content\JAVA\login2.js" />
     <Content Include="Content\JAVA\particles.js" />
+    <Content Include="Content\JAVA\showImagePreview.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -6203,10 +6206,13 @@
     <Content Include="Views\MatHang\Details.cshtml" />
     <Content Include="Views\MatHang\Edit.cshtml" />
     <Content Include="Views\MatHang\Index.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Loggedin.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

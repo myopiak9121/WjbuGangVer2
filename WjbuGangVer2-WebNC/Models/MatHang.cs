@@ -18,6 +18,12 @@ namespace WjbuGangVer2_WebNC.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MatHang()
         {
+            HinhChinh = "~/Content/Images/add.png";
+            Hinh1 = "~/Content/Images/add.png";
+            Hinh2 = "~/Content/Images/add.png";
+            Hinh3 = "~/Content/Images/add.png";
+            Hinh4 = "~/Content/Images/add.png";
+
             this.HoaDons = new HashSet<HoaDon>();
         }
     
@@ -38,6 +44,13 @@ namespace WjbuGangVer2_WebNC.Models
         public virtual ICollection<HoaDon> HoaDons { get; set; }
 
         public HttpPostedFileBase ImageFile { get; set; }
+        public HttpPostedFileBase ImageFile1 { get; set; }
+        public HttpPostedFileBase ImageFile2 { get; set; }
+        public HttpPostedFileBase ImageFile3 { get; set; }
+        public HttpPostedFileBase ImageFile4 { get; set; }
+
+
+
 
     }
 }
