@@ -42,6 +42,7 @@ body, html {
     color: #5c6bc0;
     font-size: 18px;
     margin-top: 94px;
+    ;
 }
 
     .box h4 span {
@@ -201,4 +202,5 @@ label span {
 
     .footer .fa {
         color: #7f5feb;
+        ;
     }

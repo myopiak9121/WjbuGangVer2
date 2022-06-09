@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -18,7 +17,6 @@ namespace WjbuGangVer2_WebNC.Controllers
         // GET: MatHang
         public ActionResult Index()
         {
-           
             var matHangs = db.MatHangs.Include(m => m.LoaiMH);
             return View(matHangs.ToList());
         }
@@ -39,18 +37,22 @@ namespace WjbuGangVer2_WebNC.Controllers
         }
 
         // GET: MatHang/Create
-        [HttpGet]
         public ActionResult Create()
         {
-            var list = new List<string>() { "Asus", "Acer", "Dell", "Macbook", "Msi", "CPU" };
-            ViewBag.list = list;
             ViewBag.MaLoai = new SelectList(db.LoaiMHs, "MaLoai", "TenLoai");
-            MatHang matHang = new MatHang();
-            return View(matHang);
+            return View();
         }
+
+        // POST: MatHang/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( MatHang matHang)
+<<<<<<< Updated upstream
+        public ActionResult Create([Bind(Include = "MaMH,MaLoai,TenMH,DonGia,MoTa,HinhChinh,Hinh1,Hinh2,Hinh3,Hinh4")] MatHang matHang)
+        {
+=======
+        public ActionResult Create(MatHang matHang)
         {
 
             string fileName = Path.GetFileNameWithoutExtension(matHang.ImageFile.FileName);
@@ -82,7 +84,7 @@ namespace WjbuGangVer2_WebNC.Controllers
             matHang.Hinh3 = "~/Content/Images/" + matHang.Hang + "/" + fileName3;
             matHang.Hinh4 = "~/Content/Images/" + matHang.Hang + "/" + fileName4;
 
-            fileName = Path.Combine(Server.MapPath("~/Content/Images/"),matHang.Hang, fileName);
+            fileName = Path.Combine(Server.MapPath("~/Content/Images/"), matHang.Hang, fileName);
             fileName1 = Path.Combine(Server.MapPath("~/Content/Images/"), matHang.Hang, fileName1);
             fileName2 = Path.Combine(Server.MapPath("~/Content/Images/"), matHang.Hang, fileName2);
             fileName3 = Path.Combine(Server.MapPath("~/Content/Images/"), matHang.Hang, fileName3);
@@ -100,6 +102,7 @@ namespace WjbuGangVer2_WebNC.Controllers
 
             ViewBag.MaLoai = new SelectList(db.LoaiMHs, "MaLoai", "TenLoai", matHang.MaLoai);
 
+>>>>>>> Stashed changes
             if (ModelState.IsValid)
             {
                 db.MatHangs.Add(matHang);
@@ -107,7 +110,7 @@ namespace WjbuGangVer2_WebNC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ModelState.Clear();
+            ViewBag.MaLoai = new SelectList(db.LoaiMHs, "MaLoai", "TenLoai", matHang.MaLoai);
             return View(matHang);
         }
 
@@ -132,7 +135,7 @@ namespace WjbuGangVer2_WebNC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaMH,MaLoai,TenMH,DonGia,MoTa,Hang,HinhChinh,Hinh1,Hinh2,Hinh3,Hinh4")] MatHang matHang)
+        public ActionResult Edit([Bind(Include = "MaMH,MaLoai,TenMH,DonGia,MoTa,HinhChinh,Hinh1,Hinh2,Hinh3,Hinh4")] MatHang matHang)
         {
             if (ModelState.IsValid)
             {
