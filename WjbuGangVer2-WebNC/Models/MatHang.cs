@@ -10,6 +10,7 @@
 namespace WjbuGangVer2_WebNC.Models
 {
     using System;
+    using System.Web;
     using System.Collections.Generic;
     
     public partial class MatHang
