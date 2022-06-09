@@ -5,30 +5,31 @@
       <PropertyRef Name="AccountID" />
     </Key>
     <Property Name="AccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Username" Type="varchar" MaxLength="50" />
-    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="HoTen" Type="nvarchar" MaxLength="255" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
     <Property Name="Email" Type="varchar" MaxLength="255" />
     <Property Name="SDT" Type="int" />
     <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="Role" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="Admin">
     <Key>
       <PropertyRef Name="AdminID" />
     </Key>
     <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Username" Type="varchar" MaxLength="50" />
-    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="HoaDon">
     <Key>
       <PropertyRef Name="MaHD" />
     </Key>
     <Property Name="MaHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Ngay" Type="datetime" />
-    <Property Name="SoLuong" Type="int" />
-    <Property Name="TongTien" Type="int" />
+    <Property Name="Ngay" Type="datetime" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="TongTien" Type="int" Nullable="false" />
     <Property Name="MaPT" Type="int" Nullable="false" />
     <Property Name="AccountID" Type="int" Nullable="false" />
   </EntityType>
@@ -45,7 +46,7 @@
       <PropertyRef Name="MaLoai" />
     </Key>
     <Property Name="MaLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TenLoai" Type="nvarchar" MaxLength="255" />
+    <Property Name="TenLoai" Type="nvarchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="MatHang">
     <Key>
@@ -53,21 +54,36 @@
     </Key>
     <Property Name="MaMH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaLoai" Type="int" Nullable="false" />
-    <Property Name="TenMH" Type="nvarchar" MaxLength="255" />
-    <Property Name="DonGia" Type="int" />
-    <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+    <Property Name="DonGia" Type="int" Nullable="false" />
+    <Property Name="TenMH" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="MoTa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Hang" Type="nvarchar" MaxLength="50" />
     <Property Name="HinhChinh" Type="nvarchar" MaxLength="255" />
     <Property Name="Hinh1" Type="nvarchar" MaxLength="255" />
     <Property Name="Hinh2" Type="nvarchar" MaxLength="255" />
     <Property Name="Hinh3" Type="nvarchar" MaxLength="255" />
     <Property Name="Hinh4" Type="nvarchar" MaxLength="255" />
+    <Property Name="BaoHanh" Type="nvarchar" MaxLength="50" />
+    <Property Name="CPU" Type="nvarchar(max)" />
+    <Property Name="RAM" Type="nvarchar(max)" />
+    <Property Name="HDD" Type="nvarchar(max)" />
+    <Property Name="VGA" Type="nvarchar(max)" />
+    <Property Name="Monitor" Type="nvarchar(max)" />
+    <Property Name="Port" Type="nvarchar(max)" />
+    <Property Name="Audio" Type="nvarchar(max)" />
+    <Property Name="NumberPad" Type="nvarchar(max)" />
+    <Property Name="HDH" Type="nvarchar(max)" />
+    <Property Name="Pin" Type="nvarchar(max)" />
+    <Property Name="Weight" Type="nvarchar(max)" />
+    <Property Name="Color" Type="nvarchar(max)" />
+    <Property Name="Size" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="PhuongThucThanhToan">
     <Key>
       <PropertyRef Name="MaPT" />
     </Key>
     <Property Name="MaPT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TenPT" Type="nvarchar" MaxLength="255" />
+    <Property Name="TenPT" Type="nvarchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <Association Name="FK__HoaDon__AccountI__45F365D3">
     <End Role="Account" Type="Self.Account" Multiplicity="1" />

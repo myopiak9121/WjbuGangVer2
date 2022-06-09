@@ -921,13 +921,6 @@
     <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-info4.webp" />
     <Content Include="Content\Images\MSI\MSI icon.zip" />
     <Content Include="Content\Images\vecteezy_creative-and-modern-computer-pixels-logo-template-suitable-for-many-themes_203469.zip" />
-    <EntityDeploy Include="Models\QLBMT.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLBMT.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QLBMT.edmx.diagram">
-      <DependentUpon>QLBMT.edmx</DependentUpon>
-    </Content>
     <Content Include="AdminPage\fonts\fontawesome-webfont.eot" />
     <Content Include="AdminPage\fonts\fontawesome-webfont.ttf" />
     <Content Include="AdminPage\fonts\fontawesome-webfont.woff" />
@@ -937,6 +930,13 @@
     <Content Include="AdminPage\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="AdminPage\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="AdminPage\fonts\glyphicons-halflings-regular.woff2" />
+    <EntityDeploy Include="Models\QLBMT.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLBMT.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QLBMT.edmx.diagram">
+      <DependentUpon>QLBMT.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
