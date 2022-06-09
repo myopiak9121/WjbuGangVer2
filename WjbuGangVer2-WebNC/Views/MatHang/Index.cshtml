@@ -4,79 +4,106 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<style>
+    .shortDisplay:hover {
+        overflow: visible;
+        white-space: pre-line;
+        width: 500px;
+        line-break: auto;
+    }
 
-<h2>Index</h2>
+    .shortDisplay {
+        display: inline-block;
+        max-width: 300px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+</style>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TenMH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DonGia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MoTa)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HinhChinh)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hinh1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hinh2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hinh3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hinh4)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LoaiMH.TenLoai)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenMH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DonGia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MoTa)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HinhChinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hinh1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hinh2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hinh3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hinh4)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LoaiMH.TenLoai)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaMH }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaMH }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaMH })
-        </td>
-    </tr>
-}
+<div style="margin-left:50px; margin-top:50px">
+    <h2>Thêm sản phẩm</h2>
+    <div style="margin-left:100px">
+        <p>
+            @Html.ActionLink("Thêm sản phẩm mới", "Create")
+        </p>
+        <table class="table table-striped" style=" margin-left: 50px">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenMH)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonGia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MoTa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hang)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HinhChinh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hinh1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hinh2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hinh3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hinh4)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LoaiMH.TenLoai)
+                </th>
+                <th></th>
+            </tr>
 
-</table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenMH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonGia)
+                    </td>
+                    <td>
+                        <span class="shortDisplay"> @Html.DisplayFor(modelItem => item.MoTa)</span>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hang)
+                    </td>
+                    <td>
+                        <img src="@Url.Content(item.HinhChinh ?? "~/Content/Images/add.png")"  width="100" height="100" />
+                    </td>
+                    <td>
+
+                        <img src="@Url.Content(item.Hinh1 ?? "~/Content/Images/add.png")" width="100" height="100" />
+                    </td>
+                    <td>
+                        <img src="@Url.Content(item.Hinh2 ?? "~/Content/Images/add.png")" width="100" height="100" />
+                    </td>
+                    <td>
+                        <img src="@Url.Content(item.Hinh3 ?? "~/Content/Images/add.png")" width="100" height="100" />
+                    </td>
+                    <td>
+                        <img src="@Url.Content(item.Hinh4 ?? "~/Content/Images/add.png")" width="100" height="100" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LoaiMH.TenLoai)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.MaMH }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.MaMH }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.MaMH })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
