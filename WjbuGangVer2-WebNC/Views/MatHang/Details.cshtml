@@ -10,7 +10,7 @@
 <div>
     <h4>MatHang</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" style=" margin-left: 400px;">
         <dt>
             @Html.DisplayNameFor(model => model.TenMH)
         </dt>
@@ -36,19 +36,26 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Hang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hang)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.HinhChinh)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.HinhChinh)
+            <img src="@Url.Content(Model.HinhChinh)" width="250" height="250" />
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Hinh1)
         </dt>
-
+            @Html.DisplayNameFor(model => model.Hinh1)
         <dd>
-            @Html.DisplayFor(model => model.Hinh1)
+            <img src="@Url.Content(Model.Hinh1)" width="250" height="250" />
         </dd>
 
         <dt>
@@ -56,7 +63,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Hinh2)
+            <img src="@Url.Content(Model.Hinh2)" width="250" height="250" />
         </dd>
 
         <dt>
@@ -64,7 +71,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Hinh3)
+            <img src="@Url.Content(Model.Hinh3)" width="250" height="250" />
         </dd>
 
         <dt>
@@ -72,7 +79,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Hinh4)
+            <img src="@Url.Content(Model.Hinh4)" width="250" height="250" />
         </dd>
 
         <dt>
