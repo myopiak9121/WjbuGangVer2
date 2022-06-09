@@ -21,9 +21,9 @@ namespace WjbuGangVer2_WebNC.Models
         }
     
         public int MaHD { get; set; }
-        public Nullable<System.DateTime> Ngay { get; set; }
-        public Nullable<int> SoLuong { get; set; }
-        public Nullable<int> TongTien { get; set; }
+        public System.DateTime Ngay { get; set; }
+        public int SoLuong { get; set; }
+        public int TongTien { get; set; }
         public int MaPT { get; set; }
         public int AccountID { get; set; }
     

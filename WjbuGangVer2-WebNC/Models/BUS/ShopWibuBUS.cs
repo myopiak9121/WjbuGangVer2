@@ -13,10 +13,10 @@ namespace WjbuGangVer2_WebNC.Models.BUS
         //    var db = new QLBMTEntities();
         //    return db.Query<MatHang>
         //}
-        public static MatHang Product(string a)
-        {
-            QLBMTEntities db = new QLBMTEntities();
-            return db.SingleOrDefault<MatHang>("Select * from MatHang where MaMH = @0", a);
-        }
+        //public static MatHang Product(string a)
+        //{
+        //    QLBMTEntities db = new QLBMTEntities();
+        //    return db.SingleOrDefault<MatHang>("Select * from MatHang where MaMH = @0", a);
+        //}
     }
 }

@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="017b1a79841c4e3f8d53bd76933fc259" Name="Diagram1">
-        <EntityTypeShape EntityType="QLBMTModel.Account" Width="1.5" PointX="0.5" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBMTModel.Admin" Width="1.5" PointX="7.875" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBMTModel.HoaDon" Width="1.5" PointX="3.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBMTModel.LoaiMH" Width="1.5" PointX="3.875" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBMTModel.MatHang" Width="1.5" PointX="7.25" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBMTModel.PhuongThucThanhToan" Width="1.5" PointX="1.125" PointY="4.625" IsExpanded="true" />
+      <Diagram DiagramId="dba2281e9ad44b38a267c82011b930cf" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBMTModel.Account" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBMTModel.Admin" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBMTModel.HoaDon" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBMTModel.LoaiMH" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBMTModel.MatHang" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBMTModel.PhuongThucThanhToan" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="QLBMTModel.FK__HoaDon__AccountI__45F365D3" ManuallyRouted="false" />
         <AssociationConnector Association="QLBMTModel.FK__HoaDon__MaPT__44FF419A" ManuallyRouted="false" />
         <AssociationConnector Association="QLBMTModel.FK__MatHang__MaLoai__4316F928" ManuallyRouted="false" />

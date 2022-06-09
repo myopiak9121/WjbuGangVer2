@@ -417,7 +417,6 @@ D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\PagedLi
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\JetBrains.Annotations.dll
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\X.PagedList.dll
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\JetBrains.Annotations.xml
-D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.csproj.AssemblyReference.cache
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\WjbuGangVer2-WebNC.dll.config
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\WjbuGangVer2-WebNC.dll
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\WjbuGangVer2-WebNC.pdb
