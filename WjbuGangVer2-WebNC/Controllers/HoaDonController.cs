@@ -40,10 +40,16 @@ namespace WjbuGangVer2_WebNC.Controllers
         }
         public ActionResult Update_Quantity_Cart(FormCollection form)
         {
-            HoaDon hoadon=Session["HoaDon"] as HoaDon;
+            HoaDon hoadon = Session["HoaDon"] as HoaDon;
             int id_pro = int.Parse(form["Ma_MH"]);
             int quantity = int.Parse(form["Quantity"]);
             hoadon.Update_Quantity_Shopping(id_pro, quantity);
+            return RedirectToAction("ShowToCart", "HoaDon");
+        }
+        public ActionResult RemoveCart(int id)
+        {
+            HoaDon hoadon = Session["HoaDon"] as HoaDon;
+            hoadon.Remove_CartItem(id);
             return RedirectToAction("ShowToCart", "HoaDon");
         }
     }

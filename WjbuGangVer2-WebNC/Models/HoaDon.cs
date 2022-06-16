@@ -68,11 +68,20 @@ namespace WjbuGangVer2_WebNC.Models
         }
         public void Update_Quantity_Shopping(int id,int _quatity)
         {
-            var item=items.Find (s => s._shopping_product.MaMH == id);
-            if(item == null)
+            var item = items.Where(s => s._shopping_product.MaMH == id).FirstOrDefault();
+            if(item != null)
             {
                 item._shopping_quantity = _quatity;
             }
+        }
+        public double Total_Money()
+        {
+            var total = items.Sum(s => s._shopping_product.DonGia * s._shopping_quantity);
+            return (double)total;
+        }
+        public void Remove_CartItem(int id)
+        {
+            items.RemoveAll(s => s._shopping_product.MaMH==id);
         }
     }
     public class HoaDonItem
