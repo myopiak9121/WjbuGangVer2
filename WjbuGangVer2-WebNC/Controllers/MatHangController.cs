@@ -42,9 +42,17 @@ namespace WjbuGangVer2_WebNC.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var list = new List<string>() { "Asus", "Acer", "Dell", "Macbook", "Msi", "CPU" };
-            ViewBag.list = list;
+            var listHang = new List<string>() { "Asus", "Acer", "Dell", "Macbook", "Msi"};
+            var listRam = new List<string>() { "8gb", "16gb", "32gb", "64gb" };
+            var listHdd = new List<string>() { "128gb", "256gb", "512gb", "1tb" };
+            var listHdh = new List<string>() { "Mac", "Linus", "Window 10 64 bit" };
+
+            ViewBag.listHang = listHang;
+            ViewBag.listRam = listRam;
+            ViewBag.listHdd = listHdd;
+            ViewBag.listHdh = listHdh;
             ViewBag.MaLoai = new SelectList(db.LoaiMHs, "MaLoai", "TenLoai");
+
             MatHang matHang = new MatHang();
             return View(matHang);
         }

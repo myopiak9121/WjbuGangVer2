@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QLBMTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QLBMTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="AccountID" />
@@ -17,6 +17,7 @@
           <Property Name="Email" Type="varchar" MaxLength="255" />
           <Property Name="SDT" Type="int" />
           <Property Name="NgaySinh" Type="datetime" />
+          <Property Name="Role" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Admin">
           <Key>
@@ -60,13 +61,28 @@
           <Property Name="MaLoai" Type="int" Nullable="false" />
           <Property Name="DonGia" Type="int" Nullable="false" />
           <Property Name="TenMH" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+          <Property Name="MoTa" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Hang" Type="nvarchar" MaxLength="50" />
           <Property Name="HinhChinh" Type="nvarchar" MaxLength="255" />
           <Property Name="Hinh1" Type="nvarchar" MaxLength="255" />
           <Property Name="Hinh2" Type="nvarchar" MaxLength="255" />
           <Property Name="Hinh3" Type="nvarchar" MaxLength="255" />
           <Property Name="Hinh4" Type="nvarchar" MaxLength="255" />
+          <Property Name="BaoHanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="CPU" Type="nvarchar(max)" />
+          <Property Name="RAM" Type="nvarchar(max)" />
+          <Property Name="HDD" Type="nvarchar(max)" />
+          <Property Name="VGA" Type="nvarchar(max)" />
+          <Property Name="Monitor" Type="nvarchar(max)" />
+          <Property Name="Port" Type="nvarchar(max)" />
+          <Property Name="Audio" Type="nvarchar(max)" />
+          <Property Name="NumberPad" Type="nvarchar(max)" />
+          <Property Name="HDH" Type="nvarchar(max)" />
+          <Property Name="Pin" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="nvarchar(max)" />
+          <Property Name="Color" Type="nvarchar(max)" />
+          <Property Name="Size" Type="nvarchar(max)" />
+          <Property Name="NSX" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="PhuongThucThanhToan">
           <Key>
@@ -164,7 +180,8 @@
             <End Role="MatHang" EntitySet="MatHang" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLBMTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -180,6 +197,7 @@
           <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="SDT" Type="Int32" />
           <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+          <Property Name="Role" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__AccountI__45F365D3" FromRole="Account" ToRole="HoaDon" />
         </EntityType>
         <EntityType Name="Admin">
@@ -195,7 +213,7 @@
             <PropertyRef Name="MaHD" />
           </Key>
           <Property Name="MaHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ngay" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="Ngay" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
           <Property Name="TongTien" Type="Int32" Nullable="false" />
           <Property Name="MaPT" Type="Int32" Nullable="false" />
@@ -218,17 +236,32 @@
           </Key>
           <Property Name="MaMH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaLoai" Type="Int32" Nullable="false" />
-          <Property Name="TenMH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DonGia" Type="Int32" Nullable="false" />
-          <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TenMH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Hang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="HinhChinh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Hinh1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Hinh2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Hinh3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Hinh4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="BaoHanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CPU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RAM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HDD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VGA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Monitor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Port" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Audio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NumberPad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HDH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NSX" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="LoaiMH" Relationship="Self.FK__MatHang__MaLoai__4316F928" FromRole="MatHang" ToRole="LoaiMH" />
           <NavigationProperty Name="HoaDons" Relationship="Self.HoaDonChiTiet" FromRole="MatHang" ToRole="HoaDon" />
-          <Property Name="Hang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="PhuongThucThanhToan">
           <Key>
@@ -319,6 +352,7 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
                 <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -354,17 +388,32 @@
           <EntitySetMapping Name="MatHangs">
             <EntityTypeMapping TypeName="QLBMTModel.MatHang">
               <MappingFragment StoreEntitySet="MatHang">
-                <ScalarProperty Name="Hang" ColumnName="Hang" />
                 <ScalarProperty Name="MaMH" ColumnName="MaMH" />
                 <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
-                <ScalarProperty Name="TenMH" ColumnName="TenMH" />
                 <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="TenMH" ColumnName="TenMH" />
                 <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="Hang" ColumnName="Hang" />
                 <ScalarProperty Name="HinhChinh" ColumnName="HinhChinh" />
                 <ScalarProperty Name="Hinh1" ColumnName="Hinh1" />
                 <ScalarProperty Name="Hinh2" ColumnName="Hinh2" />
                 <ScalarProperty Name="Hinh3" ColumnName="Hinh3" />
                 <ScalarProperty Name="Hinh4" ColumnName="Hinh4" />
+                <ScalarProperty Name="BaoHanh" ColumnName="BaoHanh" />
+                <ScalarProperty Name="CPU" ColumnName="CPU" />
+                <ScalarProperty Name="RAM" ColumnName="RAM" />
+                <ScalarProperty Name="HDD" ColumnName="HDD" />
+                <ScalarProperty Name="VGA" ColumnName="VGA" />
+                <ScalarProperty Name="Monitor" ColumnName="Monitor" />
+                <ScalarProperty Name="Port" ColumnName="Port" />
+                <ScalarProperty Name="Audio" ColumnName="Audio" />
+                <ScalarProperty Name="NumberPad" ColumnName="NumberPad" />
+                <ScalarProperty Name="HDH" ColumnName="HDH" />
+                <ScalarProperty Name="Pin" ColumnName="Pin" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="NSX" ColumnName="NSX" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

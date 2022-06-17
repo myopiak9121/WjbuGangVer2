@@ -12,6 +12,7 @@
     <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="SDT" Type="Int32" />
     <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+    <Property Name="Role" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__AccountI__45F365D3" FromRole="Account" ToRole="HoaDon" />
   </EntityType>
   <EntityType Name="Admin">
@@ -27,7 +28,7 @@
       <PropertyRef Name="MaHD" />
     </Key>
     <Property Name="MaHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Ngay" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="Ngay" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="SoLuong" Type="Int32" Nullable="false" />
     <Property Name="TongTien" Type="Int32" Nullable="false" />
     <Property Name="MaPT" Type="Int32" Nullable="false" />
@@ -50,17 +51,32 @@
     </Key>
     <Property Name="MaMH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MaLoai" Type="Int32" Nullable="false" />
-    <Property Name="TenMH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DonGia" Type="Int32" Nullable="false" />
-    <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TenMH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Hang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="HinhChinh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Hinh1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Hinh2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Hinh3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Hinh4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BaoHanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CPU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RAM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HDD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VGA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Monitor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Port" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Audio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NumberPad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HDH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NSX" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="LoaiMH" Relationship="Self.FK__MatHang__MaLoai__4316F928" FromRole="MatHang" ToRole="LoaiMH" />
     <NavigationProperty Name="HoaDons" Relationship="Self.HoaDonChiTiet" FromRole="MatHang" ToRole="HoaDon" />
-    <Property Name="Hang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="PhuongThucThanhToan">
     <Key>

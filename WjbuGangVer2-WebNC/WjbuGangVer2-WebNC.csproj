@@ -128,14 +128,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountEntityController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CSBHController.cs" />
+    <Compile Include="Controllers\CustomAuthorizeAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LienHeController.cs" />
     <Compile Include="Controllers\LoaiMHController.cs" />
     <Compile Include="Controllers\MatHangController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -5825,6 +5827,7 @@
     <Content Include="Content\Images\prev.png" />
     <Content Include="Content\Images\Sang.jpg" />
     <Content Include="Content\Images\tw.png" />
+    <Content Include="Content\Images\user.jpg" />
     <Content Include="Content\JAVA\aos.js" />
     <Content Include="Content\JAVA\app.js" />
     <Content Include="Content\JAVA\cart.js" />
@@ -5855,13 +5858,6 @@
     <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-info4.webp" />
     <Content Include="Content\Images\MSI\MSI icon.zip" />
     <Content Include="Content\Images\vecteezy_creative-and-modern-computer-pixels-logo-template-suitable-for-many-themes_203469.zip" />
-    <EntityDeploy Include="Models\QLBMT.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLBMT.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QLBMT.edmx.diagram">
-      <DependentUpon>QLBMT.edmx</DependentUpon>
-    </Content>
     <Content Include="AdminPages\assets\icon\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="AdminPages\assets\icon\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="AdminPages\assets\icon\font-awesome\fonts\fontawesome-webfont.woff" />
@@ -6167,6 +6163,13 @@
     <Content Include="AdminPages\plugins\typeahedjs\dist\nba.json" />
     <Content Include="AdminPages\plugins\typeahedjs\dist\nfl.json" />
     <Content Include="AdminPages\plugins\typeahedjs\dist\nhl.json" />
+    <EntityDeploy Include="Models\QLBMT.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLBMT.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QLBMT.edmx.diagram">
+      <DependentUpon>QLBMT.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -6194,8 +6197,6 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Views\Admin\Adminlogin.cshtml" />
-    <Content Include="Views\Admin\Dashboard.cshtml" />
     <Content Include="Views\LoaiMH\Create.cshtml" />
     <Content Include="Views\LoaiMH\Delete.cshtml" />
     <Content Include="Views\LoaiMH\Details.cshtml" />
@@ -6206,13 +6207,19 @@
     <Content Include="Views\MatHang\Details.cshtml" />
     <Content Include="Views\MatHang\Edit.cshtml" />
     <Content Include="Views\MatHang\Index.cshtml" />
-    <Content Include="Views\User\Register.cshtml" />
-    <Content Include="Views\User\Login.cshtml" />
-    <Content Include="Views\User\Loggedin.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Account\Dashboard.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\AccountLogic.cshtml" />
+    <Content Include="Views\AccountEntity\Create.cshtml" />
+    <Content Include="Views\AccountEntity\Delete.cshtml" />
+    <Content Include="Views\AccountEntity\Details.cshtml" />
+    <Content Include="Views\AccountEntity\Edit.cshtml" />
+    <Content Include="Views\AccountEntity\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\CustomAuthorizeAttribute\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

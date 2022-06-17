@@ -12,6 +12,7 @@
     <Property Name="Email" Type="varchar" MaxLength="255" />
     <Property Name="SDT" Type="int" />
     <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="Role" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="Admin">
     <Key>
@@ -55,13 +56,28 @@
     <Property Name="MaLoai" Type="int" Nullable="false" />
     <Property Name="DonGia" Type="int" Nullable="false" />
     <Property Name="TenMH" Type="nvarchar" MaxLength="255" Nullable="false" />
-    <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+    <Property Name="MoTa" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Hang" Type="nvarchar" MaxLength="50" />
     <Property Name="HinhChinh" Type="nvarchar" MaxLength="255" />
     <Property Name="Hinh1" Type="nvarchar" MaxLength="255" />
     <Property Name="Hinh2" Type="nvarchar" MaxLength="255" />
     <Property Name="Hinh3" Type="nvarchar" MaxLength="255" />
     <Property Name="Hinh4" Type="nvarchar" MaxLength="255" />
+    <Property Name="BaoHanh" Type="nvarchar" MaxLength="50" />
+    <Property Name="CPU" Type="nvarchar(max)" />
+    <Property Name="RAM" Type="nvarchar(max)" />
+    <Property Name="HDD" Type="nvarchar(max)" />
+    <Property Name="VGA" Type="nvarchar(max)" />
+    <Property Name="Monitor" Type="nvarchar(max)" />
+    <Property Name="Port" Type="nvarchar(max)" />
+    <Property Name="Audio" Type="nvarchar(max)" />
+    <Property Name="NumberPad" Type="nvarchar(max)" />
+    <Property Name="HDH" Type="nvarchar(max)" />
+    <Property Name="Pin" Type="nvarchar(max)" />
+    <Property Name="Weight" Type="nvarchar(max)" />
+    <Property Name="Color" Type="nvarchar(max)" />
+    <Property Name="Size" Type="nvarchar(max)" />
+    <Property Name="NSX" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="PhuongThucThanhToan">
     <Key>

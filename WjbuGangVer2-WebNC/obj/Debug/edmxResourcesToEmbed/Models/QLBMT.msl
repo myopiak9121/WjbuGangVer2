@@ -12,6 +12,7 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -47,17 +48,32 @@
     <EntitySetMapping Name="MatHangs">
       <EntityTypeMapping TypeName="QLBMTModel.MatHang">
         <MappingFragment StoreEntitySet="MatHang">
-          <ScalarProperty Name="Hang" ColumnName="Hang" />
           <ScalarProperty Name="MaMH" ColumnName="MaMH" />
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
-          <ScalarProperty Name="TenMH" ColumnName="TenMH" />
           <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="TenMH" ColumnName="TenMH" />
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="Hang" ColumnName="Hang" />
           <ScalarProperty Name="HinhChinh" ColumnName="HinhChinh" />
           <ScalarProperty Name="Hinh1" ColumnName="Hinh1" />
           <ScalarProperty Name="Hinh2" ColumnName="Hinh2" />
           <ScalarProperty Name="Hinh3" ColumnName="Hinh3" />
           <ScalarProperty Name="Hinh4" ColumnName="Hinh4" />
+          <ScalarProperty Name="BaoHanh" ColumnName="BaoHanh" />
+          <ScalarProperty Name="CPU" ColumnName="CPU" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="HDD" ColumnName="HDD" />
+          <ScalarProperty Name="VGA" ColumnName="VGA" />
+          <ScalarProperty Name="Monitor" ColumnName="Monitor" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="Audio" ColumnName="Audio" />
+          <ScalarProperty Name="NumberPad" ColumnName="NumberPad" />
+          <ScalarProperty Name="HDH" ColumnName="HDH" />
+          <ScalarProperty Name="Pin" ColumnName="Pin" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="NSX" ColumnName="NSX" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
