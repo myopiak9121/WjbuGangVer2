@@ -26,7 +26,12 @@
                 </div>
             </div>
             <a href="@Url.Action("Adminlogin","Admin","Adminlogin")"><div id="login"><i class="fa fa-user fa-2x"></i><p>Đăng nhập</p></div></a>    
-            <a href="./HTML/Gio Hang.html"><div id="cart"><i class="fa fa-shopping-cart fa-2x"></i></div></a>
+            <a href="@Url.Action("ShowToCart","HoaDon")">
+                <div id="cart">
+                    <i class="fa fa-shopping-cart fa-2x"></i>
+                    @Html.Action("BagCart", "HoaDon")
+                </div>
+            </a>
         </div>
     </div>
     @RenderBody()

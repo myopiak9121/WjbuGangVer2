@@ -52,5 +52,16 @@ namespace WjbuGangVer2_WebNC.Controllers
             hoadon.Remove_CartItem(id);
             return RedirectToAction("ShowToCart", "HoaDon");
         }
+        public PartialViewResult BagCart()
+        {
+            int _t_item = 0;
+            HoaDon hoadon = Session["HoaDon"] as HoaDon;
+            if (hoadon != null)
+            {
+                _t_item = hoadon.Total_Quantity();
+            }
+            ViewBag.infoCart = _t_item;
+            return PartialView("BagCart");
+        }
     }
 }

@@ -83,6 +83,10 @@ namespace WjbuGangVer2_WebNC.Models
         {
             items.RemoveAll(s => s._shopping_product.MaMH==id);
         }
+        public int Total_Quantity()
+        {
+            return items.Sum(s => s._shopping_quantity);
+        }
     }
     public class HoaDonItem
     {
