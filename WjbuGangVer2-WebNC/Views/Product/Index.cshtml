@@ -30,16 +30,16 @@
                             <li style="width: 250px">
                                 <a href="./HTML/All Products page 1.html">Laptop<i style="float: right;" class="fa fa-angle-right"></i></a>
                                 <ul class="dropdown-laptop">
-                                    <a href="../HTML/Asus/Asus Products.html">
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Asus"})">
                                     <li style="width: 250px; margin-top: -1px;">Asus</li></a>
-                                    <a href="../HTML/Acer/Acer Products.html">
-                                    <li style="width: 250px">Acer</li></a>
-                                    <a href="../HTML/MSI/MSI Products.html">
-                                    <li style="width: 250px">MSI</li></a>
-                                    <a href="../HTML/Dell/Dell Products.html">
-                                    <li style="width: 250px">Dell</li></a>
-                                    <a href="../HTML/Macbook/Mac Products.html">
-                                    <li style="width: 250px">Macbook</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Acer"})">
+                                    <li style="width: 250px; margin-top: -1px;">Acer</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Dell"})">
+                                    <li style="width: 250px; margin-top: -1px;">Dell</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Macbook"})">
+                                    <li style="width: 250px; margin-top: -1px;">Macbook</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Msi"})">
+                                    <li style="width: 250px; margin-top: -1px;">MSI</li></a>
                                 </ul>
                             </li>
                             <li style="width: 250px">
@@ -110,9 +110,9 @@
                     </li>
                     <div class="center">
                         <div class="pagination" style="margin: 0px 0px">
-                            <a href="../index.html"><i class="fa fa-home"></i>Trang Chủ</a>
-                            <a href="../HTML/All Products page 1.html" class="active"><i class="fa fa-tags"></i>Sản Phẩm</a>
-                            <a href="../csbh.html"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
+                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Trang Chủ</a>
+                            <a href="@Url.Action("Index","Product","Index")" class="active"><i class="fa fa-tags"></i>Sản Phẩm</a>
+                            <a href="@Url.Action("CSBH","CSBH","CSBH")"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
                             <a data-modal-target="#modal"><i class="fa fa-phone"></i>Liên Hệ</a>
                             <div class="modal" id="modal">
                                 <div class="modal-header">
@@ -173,9 +173,9 @@
 
         @foreach (var item in Model)
         {
-            <div style="margin-left: 1%" id="products">
+            <div style="margin-left: 1%" id="products" class="Search">
                 <a href="@Url.Action("Details", new { id = @item.MaMH })">
-                    <img style="max-width: 270px; max-height: 230px" id="products-preview" src="~/Content/Images/@item.HinhChinh">
+                    <img style="max-width: 270px; max-height: 230px" id="products-preview" src="@item.HinhChinh">
                     <p>@item.TenMH</p>
                     <h2>@item.DonGia VNĐ</h2>
                 </a>

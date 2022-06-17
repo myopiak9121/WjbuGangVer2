@@ -28,16 +28,16 @@
                             <li style="width: 250px">
                                 <a href="./HTML/All Products page 1.html">Laptop<i style="float: right;" class="fa fa-angle-right"></i></a>
                                 <ul class="dropdown-laptop">
-                                    <a href="~/Conten/HTML/Asus/Asus Products.html">
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Asus"})">
                                     <li style="width: 250px; margin-top: -1px;">Asus</li></a>
-                                    <a href="~/Conten/HTML/Acer/Acer Products.html">
-                                    <li style="width: 250px">Acer</li></a>
-                                    <a href="~/Conten/HTML/MSI/MSI Products.html">
-                                    <li style="width: 250px">MSI</li></a>
-                                    <a href="~/Conten/HTML/Dell/Dell Products.html">
-                                    <li style="width: 250px">Dell</li></a>
-                                    <a href="~/Conten/HTML/Macbook/Mac Products.html">
-                                    <li style="width: 250px">Macbook</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Acer"})">
+                                    <li style="width: 250px; margin-top: -1px;">Acer</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Dell"})">
+                                    <li style="width: 250px; margin-top: -1px;">Dell</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Macbook"})">
+                                    <li style="width: 250px; margin-top: -1px;">Macbook</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Msi"})">
+                                    <li style="width: 250px; margin-top: -1px;">MSI</li></a>
                                 </ul>
                             </li>
                             <li style="width: 250px">
@@ -108,9 +108,9 @@
                     </li>
                     <div class="center">
                         <div class="pagination">
-                            <a href="~/Conten/index.html"><i class="fa fa-home"></i>Trang Chủ</a>
-                            <a href="~/Conten/HTML/All Products page 1.html" class="active"><i class="fa fa-tags"></i>Sản Phẩm</a>
-                            <a href="~/Conten/csbh.html"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
+                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Trang Chủ</a>
+                            <a href="@Url.Action("Index","Product","Index")" class="active"><i class="fa fa-tags"></i>Sản Phẩm</a>
+                            <a href="@Url.Action("CSBH","CSBH","CSBH")"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
                             <a data-modal-target="#modal"><i class="fa fa-phone"></i>Liên Hệ</a>
                             <div class="modal" id="modal">
                                 <div class="modal-header">
@@ -164,10 +164,10 @@
             <div class="layout">
                 <div id="product-images">
                     <a href="~/Content/Images/Asus/G14-info.png"><img style="max-height: 500px; max-width: 500px " src="@Model.HinhChinh"></a>
-                    <a href="@Model.Hinh1" data-lightbox="mylaptop"> <img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="~/Content/Images/@Model.Hinh1"></a>
-                    <a href="@Model.Hinh2" data-lightbox="mylaptop"><img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="~/Content/Images/@Model.Hinh2"></a>
-                    <a href="@Model.Hinh3" data-lightbox="mylaptop"><img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="~/Content/Images/@Model.Hinh3"></a>
-                    <a href="@Model.Hinh4" data-lightbox="mylaptop"> <img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="~/Content/Images/@Model.Hinh4"></a>
+                    <a href="@Model.Hinh1" data-lightbox="mylaptop"> <img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="@Model.Hinh1"></a>
+                    <a href="@Model.Hinh2" data-lightbox="mylaptop"><img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="@Model.Hinh2"></a>
+                    <a href="@Model.Hinh3" data-lightbox="mylaptop"><img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="@Model.Hinh3"></a>
+                    <a href="@Model.Hinh4" data-lightbox="mylaptop"> <img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="@Model.Hinh4"></a>
                 </div>
                 <div id="product-info">
                     <h1>@Model.TenMH</h1>

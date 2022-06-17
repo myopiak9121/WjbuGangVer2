@@ -283,7 +283,6 @@ D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\roslyn\
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\roslyn\System.Security.Cryptography.Primitives.dll
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\roslyn\System.Threading.Tasks.Extensions.dll
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\roslyn\System.ValueTuple.dll
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\roslyn\System.Xml.ReaderWriter.dll
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\roslyn\System.Xml.XmlDocument.dll
@@ -294,9 +293,6 @@ D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\roslyn\
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\roslyn\vbc.rsp
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\roslyn\VBCSCompiler.exe
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\roslyn\VBCSCompiler.exe.config
-D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\Microsoft.Web.Infrastructure.dll
-D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\System.Web.Mvc.dll
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\EntityFramework.xml
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\EntityFramework.SqlServer.xml
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\System.Web.Helpers.xml
@@ -396,12 +392,8 @@ D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC
 D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.csproj.CopyComplete
 D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.dll
 D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.pdb
-D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\Oracle.ManagedDataAccess.dll
-D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\Slapper.dll
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\PagedList.xml
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\PagedList.Mvc.xml
-D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\JetBrains.Annotations.dll
-D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\X.PagedList.dll
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\JetBrains.Annotations.xml
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\WjbuGangVer2-WebNC.dll.config
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\WjbuGangVer2-WebNC.dll
@@ -517,5 +509,4 @@ D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\System.
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\System.Runtime.CompilerServices.Unsafe.xml
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\System.Text.Encodings.Web.xml
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\System.Text.Json.xml
-D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\System.Threading.Tasks.Extensions.xml
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\System.ValueTuple.xml

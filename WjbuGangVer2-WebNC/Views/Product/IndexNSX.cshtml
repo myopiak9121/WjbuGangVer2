@@ -1,0 +1,218 @@
+﻿@model IEnumerable<WjbuGangVer2_WebNC.Models.MatHang>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/CSS/index.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/CSS/All Products.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/CSS/aos.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/PagedList.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>HyperGear Sản Phẩm Trang 1</title>
+</head>
+<body>
+    <div class="body">
+        <div class="menu-bar-container">
+            <div class="menu-bar">
+                <ul>
+                    <li style="width: 250px; font-size: 25px; font-weight: bold; text-align: center;" id="danhmuc">
+                        <i style="color: red;" class="fa fa-bars"></i><a href="#">Danh Mục<i style="float:right;" class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li style="width: 250px">
+                                <a href="./HTML/All Products page 1.html">Laptop<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Asus"})">
+                                    <li style="width: 250px; margin-top: -1px;">Asus</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Acer"})">
+                                    <li style="width: 250px; margin-top: -1px;">Acer</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Dell"})">
+                                    <li style="width: 250px; margin-top: -1px;">Dell</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Macbook"})">
+                                    <li style="width: 250px; margin-top: -1px;">Macbook</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Msi"})">
+                                    <li style="width: 250px; margin-top: -1px;">MSI</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px">
+                                <a href="#">Linh Kiện PC<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#">
+                                    <li style="width: 250px; margin-top: -1px;">VGA</li></a>
+                                    <a href="../HTML/CPU/CPU product.html">
+                                    <li style="width: 250px">CPU</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Mainboard</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">RAM</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">PSU</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Case</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">HDD / SSD</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px">
+                                <a href="#">Gaming Gear<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#">
+                                    <li style="width: 250px; margin-top: -1px;">Bàn phím</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Chuột</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Tai Nghe</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Loa</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Lót Chuột</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px">
+                                <a href="#">Màn Hình<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#">
+                                    <li style="width: 250px; margin-top: -1px;">24''</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">27''- 30''</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">32''</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">60Hz</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">144Hz</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">240Hz</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px">
+                                <a href="#">Ghế Gaming<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#">
+                                    <li style="width: 250px; margin-top: -1px;">DXRacer</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">SoleSeat</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Xtreme</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Cougar</li></a>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <div class="center">
+                        <div class="pagination" style="margin: 0px 0px">
+                            <a href="@Url.Action("Index","Home")" ><i class="fa fa-home"></i>Trang Chủ</a>
+                            <a href="@Url.Action("Index","Product","Index")" class="active"><i class="fa fa-tags"></i>Sản Phẩm</a>
+                            <a href="@Url.Action("CSBH","CSBH","CSBH")"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
+                            <a data-modal-target="#modal"><i class="fa fa-phone"></i>Liên Hệ</a>
+                            <div class="modal" id="modal">
+                                <div class="modal-header">
+                                    <div class="title">Liên Hệ</div>
+                                    <button data-close-button class="close-button">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="300" style="margin-left: -40px;" src="../../Images/Sang.jpg">
+                                    </div>
+                                    <p>
+                                        SĐT:0582754857
+
+                                        <br>
+                                        <a style="margin-left:70px" href="https://www.facebook.com/profile.php?id=100038650591808">Sang Phạm</a>
+                                    </p>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="../../Images/Me.png">
+                                    </div>
+                                    <p>
+                                        SĐT:0931151121
+                                        <br>
+                                        <a style="margin-left:70px" href="https://www.facebook.com/satie0201/">Quốc Tiến</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="overlay"></div>
+                            <script src="~Content/JAVA/java.js"></script>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="row" style="width: 1500px;">
+                <div style="color: red; animation: fadeIn 1s infinite alternate; margin-left: 120px; position: relative; top: 10px; font-size: 20px; font-family: Arial, Helvetica, sans-serif;">
+                    <i class="fa fa-home"></i> HYPER GEAR OFFICIAL STORE <span style="margin-left:200px;">
+                        <i class="fa fa-truck"></i> GIAO HÀNG TOÀN QUỐC
+                    </span><span style="margin-left:200px;">
+                        <i class="fa fa-check"></i> SẢN PHẨM CHÍNH HÃNG
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newstuffs-container" style="height: 450px;">
+        <div class="newstuffs">
+            <div class="banner">
+                <img src="~/Content/Images/Banner/ASUS Banner.jpg" data-aos="fade-up" data-aos-delay="0" data-aos-easing="linear" data-aos-duration="500" style="padding-top: 1%">
+                <img src="~/Content/Images/Banner/Acer Banner.jpg" data-aos="fade-up" data-aos-delay="100" data-aos-easing="linear" data-aos-duration="500">
+                <img src="~/Content/Images/Banner/MSI Banner.jpg" data-aos="fade-up" data-aos-delay="200" data-aos-easing="linear" data-aos-duration="500">
+            </div>
+        </div>
+    </div>
+    <div class="layout" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="500">
+
+        @foreach (var item in Model)
+        {
+            <div style="margin-left: 1%" id="products" class="Search">
+                <a href="@Url.Action("Details", new { id = @item.MaMH })">
+                    <img style="max-width: 270px; max-height: 230px" id="products-preview" src="@item.HinhChinh">
+                    <p>@item.TenMH</p>
+                    <h2>@item.DonGia VNĐ</h2>
+                </a>
+            </div>
+        }
+
+        <div class="center1" style="width: 100%; height: auto; float: left;">
+            <div class="pagination1">
+                @*@Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)*@
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+    <script type="text/javascript">
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function () {
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + '%';
+        }
+    </script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000
+        });
+    </script>
+    <script>
+        hljs.initHighlightingOnLoad();
+
+        $('.hero__scroll').on('click', function (e) {
+            $('html, body').animate({
+                scrollTop: $(window).height()
+            }, 1200);
+        });
+    </script>
+    <script src="~Content/JAVA/java.js"></script>
+</body>
+</html>
+

@@ -17,6 +17,13 @@ namespace WjbuGangVer2_WebNC.Controllers
             return View(list);
         }
 
+        // GET: ProductNSX
+        public ActionResult IndexNSX(string name)
+        {
+            var list = db.MatHangs.Where(x => x.Hang == name).ToList();
+            return View(list);
+        }
+
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {

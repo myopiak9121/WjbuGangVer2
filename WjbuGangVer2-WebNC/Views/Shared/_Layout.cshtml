@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <a href="@Url.Action("Adminlogin","Admin","Adminlogin")"><div id="login"><i class="fa fa-user fa-2x"></i><p>Đăng nhập</p></div></a>    
+            <a href="@Url.Action("Adminlogin","Admin","Adminlogin")"><div id="login"><i class="fa fa-user fa-2x"></i><p>Đăng nhập</p></div></a>
             <a href="./HTML/Gio Hang.html"><div id="cart"><i class="fa fa-shopping-cart fa-2x"></i></div></a>
         </div>
     </div>
@@ -69,17 +69,6 @@
             </div>
         </div>
     </div>
-    <div class="endless-footer"></div>
-    <div class="banner2ben">
-        <div id="hot-product-container">
-            <a href="./link/dienthoai.html" class="hinhbanner">
-                <img src="https://xgear.vn/wp-content/uploads/2020/12/Xmas-right-website.png">
-            </a>
-            <a href="./link/dogiadung.html" class="hinhbanner">
-                <img src="https://xgear.vn/wp-content/uploads/2020/12/Xmas-right-website.png">
-            </a>
-        </div>
-    </div>
     <div id="progressbar"></div>
     <div id="scrollPath"></div>
     <script type="text/javascript">
@@ -107,5 +96,31 @@
         });
     </script>
     <script src="./JAVA/java.js"></script>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function Contains(text_one, text_two) {
+                if (text_one.indexOf(text_two) != -1)
+                    return true;
+            }
+            $("#Search").keyup(function () {
+                var searchText = $("#Search").val().toLowerCase();
+                $(".Search").each(function () {
+                    if (!Contains($(this).text().toLowerCase(), searchText)) {
+                        $(this).hide();
+                    }
+                    else {
+                        $(this).show();
+                    }
+                });
+            });
+            $('table tbody tr').click(function () {
+                var text = $(this).find('td:first-child')[0].innerText;
+                console.log(text);
+                document.getElementById("test").innerText = $(this).text();
+            });
+        });
+    </script>
 </body>
 </html>
