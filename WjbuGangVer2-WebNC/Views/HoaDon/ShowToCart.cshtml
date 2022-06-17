@@ -1,0 +1,216 @@
+﻿@model WjbuGangVer2_WebNC.Models.HoaDon
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/CSS/index.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/CSS/Products.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/CSS/aos.css" type="text/css">
+    <link href="~/Content/CSS/Gio Hang.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" tyoe="text/css" href="~/Content/CSS/lightbox.min.css">
+    <script src="~/Content/JAVA/lightbox-plus-jquery.min.js"></script>
+    <title>@Model.MaHD</title>
+</head>
+<body>
+    <div class="body">
+        <div class="menu-bar-container">
+            <div class="menu-bar">
+                <ul>
+                    <li style="width: 250px; font-size: 25px; font-weight: bold; text-align: center;" id="danhmuc">
+                        <i style="color: red;" class="fa fa-bars"></i><a href="#">Danh Mục<i style="float:right;" class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li style="width: 250px">
+                                <a href="./HTML/All Products page 1.html">Laptop<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="~/Conten/HTML/Asus/Asus Products.html">
+                                    <li style="width: 250px; margin-top: -1px;">Asus</li></a>
+                                    <a href="~/Conten/HTML/Acer/Acer Products.html">
+                                    <li style="width: 250px">Acer</li></a>
+                                    <a href="~/Conten/HTML/MSI/MSI Products.html">
+                                    <li style="width: 250px">MSI</li></a>
+                                    <a href="~/Conten/HTML/Dell/Dell Products.html">
+                                    <li style="width: 250px">Dell</li></a>
+                                    <a href="~/Conten/HTML/Macbook/Mac Products.html">
+                                    <li style="width: 250px">Macbook</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px">
+                                <a href="#">Linh Kiện PC<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#">
+                                    <li style="width: 250px; margin-top: -1px;">VGA</li></a>
+                                    <a href="~/Conten/HTML/CPU/CPU product.html">
+                                    <li style="width: 250px">CPU</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Mainboard</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">RAM</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">PSU</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Case</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">HDD / SSD</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px">
+                                <a href="#">Gaming Gear<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#">
+                                    <li style="width: 250px; margin-top: -1px;">Bàn phím</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Chuột</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Tai Nghe</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Loa</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Lót Chuột</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px">
+                                <a href="#">Màn Hình<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#">
+                                    <li style="width: 250px; margin-top: -1px;">24''</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">27''- 30''</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">32''</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">60Hz</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">144Hz</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">240Hz</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px">
+                                <a href="#">Ghế Gaming<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#">
+                                    <li style="width: 250px; margin-top: -1px;">DXRacer</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">SoleSeat</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Xtreme</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Cougar</li></a>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <div class="center">
+                        <div class="pagination">
+                            <a href="~/Conten/index.html"><i class="fa fa-home"></i>Trang Chủ</a>
+                            <a href="~/Conten/HTML/All Products page 1.html" class="active"><i class="fa fa-tags"></i>Sản Phẩm</a>
+                            <a href="~/Conten/csbh.html"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
+                            <a data-modal-target="#modal"><i class="fa fa-phone"></i>Liên Hệ</a>
+                            <div class="modal" id="modal">
+                                <div class="modal-header">
+                                    <div class="title">Liên Hệ</div>
+                                    <button data-close-button class="close-button">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="300" style="margin-left: -40px;" src="~Conten/Images/Sang.jpg">
+                                    </div>
+                                    <p>
+                                        SĐT:0582754857
+
+                                        <br>
+                                        <a style="margin-left:70px" href="https://www.facebook.com/profile.php?id=100038650591808">Sang Phạm</a>
+                                    </p>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="~Conten/Images/Me.png">
+                                    </div>
+                                    <p>
+                                        SĐT:0931151121
+                                        <br>
+                                        <a style="margin-left:70px" href="https://www.facebook.com/satie0201/">Quốc Tiến</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="overlay"></div>
+                            <script src="~/Conten/JAVA/java.js"></script>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="row" style="width: 1500px;">
+                <div style="color: red; animation: fadeIn 1s infinite alternate; margin-left: 120px; position: relative; top: 10px; font-size: 20px; font-family: Arial, Helvetica, sans-serif;">
+                    <i class="fa fa-home"></i> HYPER GEAR OFFICIAL STORE <span style="margin-left:200px;">
+                        <i class="fa fa-truck"></i> GIAO HÀNG TOÀN QUỐC
+                    </span><span style="margin-left:200px;">
+                        <i class="fa fa-check"></i> SẢN PHẨM CHÍNH HÃNG
+                    </span>
+                </div>
+            </div>
+        </div>
+        @if (Model != null)
+        {
+            <table class="table" style="font-size:25px; margin:auto; ">
+                <thead>
+                    <tr>
+                        <th style="padding-right:60px">Hình ảnh</th>
+                        <th style="padding-right:150px">Sản phẩm</th>
+                        <th>Giá</th>
+                        <th style="padding-left:100px;">Số lượng</th>
+                        <th style="padding-left:100px;">Tổng cộng</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        double total = Convert.ToDouble(item._shopping_product.DonGia.Value * item._shopping_quantity);
+                        <tr>
+                            <td style="padding-right:50px">
+                                <img src="~/Content/Images/@item._shopping_product.HinhChinh" style="width:150px;height:150px" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(Model => item._shopping_product.TenMH)
+                            </td>
+                            <td style="padding-left:15px">
+                                @Html.DisplayFor(Model => item._shopping_product.DonGia)
+                            </td>
+                            <td style="padding-left:120px">
+                                @using (Html.BeginForm("Update_Quantity_Cart", "HoaDon"))
+                                {
+                                    <input type="hidden" value="@item._shopping_product.MaMH" name="Ma_MH" />
+                                    <input type="number" value="@item._shopping_quantity" name="Quantity" style="width:40px; height:40px; text-align:center" />
+                                    <input type="submit" value="Cập nhật" style="width:80px; height:40px"/>
+                                }
+                            </td>
+                            <td style="padding-left:115px">
+                                @total
+                            </td>
+                            <td>
+                                <a href="/HoaDon/RemoveCart/@item._shopping_product.MaMH" style="font-size:20px; padding-left:60px; color:blue; padding-top:5px;">Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5" style="padding-top:20px;">Tổng cộng: @Model.Total_Money()</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <a href="@Url.Action("Index","Home")" style="margin-left:600px;;">Quay về trang chủ</a>
+        }
+    </div>
+</body>
+</html>

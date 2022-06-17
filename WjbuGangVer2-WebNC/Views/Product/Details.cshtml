@@ -1,0 +1,318 @@
+﻿@model  WjbuGangVer2_WebNC.Models.MatHang
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/CSS/index.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/CSS/Products.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/CSS/aos.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" tyoe="text/css" href="~/Content/CSS/lightbox.min.css">
+    <script src="~/Content/JAVA/lightbox-plus-jquery.min.js"></script>
+    <title>@Model.TenMH</title>
+</head>
+<body>
+    <div class="body">
+        <div class="menu-bar-container">
+            <div class="menu-bar">
+                <ul>
+                    <li style="width: 250px; font-size: 25px; font-weight: bold; text-align: center;" id="danhmuc">
+                        <i style="color: red;" class="fa fa-bars"></i><a href="#">Danh Mục<i style="float:right;" class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li style="width: 250px">
+                                <a href="./HTML/All Products page 1.html">Laptop<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="~/Conten/HTML/Asus/Asus Products.html">
+                                    <li style="width: 250px; margin-top: -1px;">Asus</li></a>
+                                    <a href="~/Conten/HTML/Acer/Acer Products.html">
+                                    <li style="width: 250px">Acer</li></a>
+                                    <a href="~/Conten/HTML/MSI/MSI Products.html">
+                                    <li style="width: 250px">MSI</li></a>
+                                    <a href="~/Conten/HTML/Dell/Dell Products.html">
+                                    <li style="width: 250px">Dell</li></a>
+                                    <a href="~/Conten/HTML/Macbook/Mac Products.html">
+                                    <li style="width: 250px">Macbook</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px">
+                                <a href="#">Linh Kiện PC<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#">
+                                    <li style="width: 250px; margin-top: -1px;">VGA</li></a>
+                                    <a href="~/Conten/HTML/CPU/CPU product.html">
+                                    <li style="width: 250px">CPU</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Mainboard</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">RAM</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">PSU</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Case</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">HDD / SSD</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px">
+                                <a href="#">Gaming Gear<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#">
+                                    <li style="width: 250px; margin-top: -1px;">Bàn phím</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Chuột</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Tai Nghe</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Loa</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Lót Chuột</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px">
+                                <a href="#">Màn Hình<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#">
+                                    <li style="width: 250px; margin-top: -1px;">24''</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">27''- 30''</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">32''</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">60Hz</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">144Hz</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">240Hz</li></a>
+                                </ul>
+                            </li>
+                            <li style="width: 250px">
+                                <a href="#">Ghế Gaming<i style="float: right;" class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-laptop">
+                                    <a href="#">
+                                    <li style="width: 250px; margin-top: -1px;">DXRacer</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">SoleSeat</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Xtreme</li></a>
+                                    <a href="#">
+                                    <li style="width: 250px">Cougar</li></a>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <div class="center">
+                        <div class="pagination">
+                            <a href="~/Conten/index.html"><i class="fa fa-home"></i>Trang Chủ</a>
+                            <a href="~/Conten/HTML/All Products page 1.html" class="active"><i class="fa fa-tags"></i>Sản Phẩm</a>
+                            <a href="~/Conten/csbh.html"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
+                            <a data-modal-target="#modal"><i class="fa fa-phone"></i>Liên Hệ</a>
+                            <div class="modal" id="modal">
+                                <div class="modal-header">
+                                    <div class="title">Liên Hệ</div>
+                                    <button data-close-button class="close-button">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="300" style="margin-left: -40px;" src="~Conten/Images/Sang.jpg">
+                                    </div>
+                                    <p>
+                                        SĐT:0582754857
+
+                                        <br>
+                                        <a style="margin-left:70px" href="https://www.facebook.com/profile.php?id=100038650591808">Sang Phạm</a>
+                                    </p>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="~Conten/Images/Me.png">
+                                    </div>
+                                    <p>
+                                        SĐT:0931151121
+                                        <br>
+                                        <a style="margin-left:70px" href="https://www.facebook.com/satie0201/">Quốc Tiến</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="overlay"></div>
+                            <script src="~/Conten/JAVA/java.js"></script>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="row" style="width: 1500px;">
+                <div style="color: red; animation: fadeIn 1s infinite alternate; margin-left: 120px; position: relative; top: 10px; font-size: 20px; font-family: Arial, Helvetica, sans-serif;">
+                    <i class="fa fa-home"></i> HYPER GEAR OFFICIAL STORE <span style="margin-left:200px;">
+                        <i class="fa fa-truck"></i> GIAO HÀNG TOÀN QUỐC
+                    </span><span style="margin-left:200px;">
+                        <i class="fa fa-check"></i> SẢN PHẨM CHÍNH HÃNG
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+            <div class="body">
+                <div id="menubar"></div>
+            </div>
+            <div class="layout">
+                <div id="product-images">
+                    <a href="~/Content/Images/Asus/G14-info.png"><img style="max-height: 500px; max-width: 500px " src="~/Content/Images/@Model.HinhChinh"></a>
+                    <a href="~/Content/Images/Asus/@Model.Hinh1" data-lightbox="mylaptop"> <img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="~/Content/Images/@Model.Hinh1"></a>
+                    <a href="~/Content/Images/Asus/@Model.Hinh2" data-lightbox="mylaptop"><img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="~/Content/Images/@Model.Hinh2"></a>
+                    <a href="~/Content/Images/Asus/@Model.Hinh3" data-lightbox="mylaptop"><img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="~/Content/Images/@Model.Hinh3"></a>
+                    <a href="~/Content/Images/Asus/@Model.Hinh4" data-lightbox="mylaptop"> <img id="zoomsp" height="70" style="float: left ;margin-right: 20px;" src="~/Content/Images/@Model.Hinh4"></a>
+                </div>
+                <div id="product-info">
+                    <h1>@Model.TenMH</h1>
+                     <p>
+                        <br><b>Nhà sản xuất</b> : ASUS
+                        <br><br><b>Xuất xứ</b> : Chính hãng
+                        <br><br><b>Bảo hành</b> : 24 Tháng
+                        <br><br><b>Tình trạng</b> : Mới 100%
+                        <br><br>Giá:<span style="color: red; margin-left: 50px;">@Model.DonGia</span>
+                        <br><br><br>
+                        <a href="@Url.Action("AddToCart","HoaDon", new { id = @Model.MaMH })"><button style="background-color: red; color: white">Đặt Hàng</button></a>
+                        <button style="background-color: orangered; color: white">Thêm vào giỏ</button>
+
+                    </p>
+                </div>
+                <div id="thongso">
+                    <table id="customers">
+                        <tr>
+                            <caption><h2>THÔNG SỐ KỸ THUẬT:</h2></caption>
+                        </tr>
+                        <tr>
+                            <td>CPU</td>
+                            <td>AMD Ryzen 7 4800HS 2.9GHz up to 4.2GHz 8MB</td>
+                        </tr>
+                        <tr>
+                            <td>RAM</td>
+                            <td>
+                                16GB DDR4 3200MHz (8GB + 8GB Onboard)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ổ Cứng</td>
+                            <td>512GB SSD PCIE G3X4</td>
+                        </tr>
+                        <tr>
+                            <td>Card Đồ Họa</td>
+                            <td>NVIDIA GeForce GTX 1660Ti 6GB GDDR6 VRAM (Boost Clock: 1435MHz, 60W)</td>
+                        </tr>
+                        <tr>
+                            <td>Màn Hình</td>
+                            <td>
+                                14" WQHD (2560 x 1440) IPS, 60Hz, 100% sRGB, Pantone Validated
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cổng Giao Tiếp</td>
+                            <td>
+                                1x USB 3.2 Gen 2 Type-C with DisplayPort™ 1.4 and Power Delivery
+                                1x USB 3.2 Gen 2 Type-C
+                                2x USB 3.2 Gen 1 Type-A
+                                1x HDMI
+                                FingerPrint
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Audio</td>
+                            <td>
+                                2x1W Speakers with Smart AMP Technology
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Numberpad</td>
+                            <td>Có</td>
+                        </tr>
+                        <tr>
+                            <td>Hệ điều hành</td>
+                            <td>
+                                Windows 10 Home
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pin</td>
+                            <td>
+                                4 Cell 76WHr
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Trọng lượng</td>
+                            <td>1.7 kg</td>
+                        </tr>
+                        <tr>
+                            <td>Màu sắc</td>
+                            <td>
+                                ECLIPSE GRAY AniMe Matrix
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Kích thước</td>
+                            <td>
+                                32.4 x 22.2 x 1.99 (cm)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="accordion">
+                    <button type="button" class="accordion-button">Xem Thêm</button>
+                    <div class="accordion-content">
+                        <div id="product-info-expand">
+                            <img src="~/Conten/Images/Asus/G14-info2a.jpg"><br>
+                            <p>
+                                <b>Thiết kế phong cách và di động</b><br>
+                                Được thiết kế với hai phiên bản màu sắc nổi bật là màu Eclipse Gray ánh kim và màu Moonlight White ngọc trai, ASUS ROG Zephyrus G14 GA401IU-HA181T có thể xem là một tuyệt phẩm trong phân khúc laptop gaming hiện tại. Thiết kế nhỏ gọn mang tính thẩm mỹ cao cho phép bạn mang theo và dễ dàng di chuyển từ các quán cà phê cho đến giảng đường với các chi tiết được tinh chỉnh đem lại sự hoàn hảo. Bề mặt được chế tác bằng cách phay CNC chính xác tạo ra 6.536 lỗ trên nắp nhôm tạo ra thiết kế ma trận điểm đặc biệt. Bề mặt phía dưới máy được thiết kế gia cố tổ ong mang lại sức mạnh bền bỉ với vật liệu tối thiểu để giữ cho khung máy nhẹ. Bề mặt chiếu nghỉ tay được làm bằng hợp kim nhôm-magiê có khả năng chống vân tay để giữ sự tươi mới mỗi ngày.
+                                <img src="~/Conten/Images/Asus/G14-info3.jpg"><br>
+                                <b> Màn hình AniMe Matrix độc đáo</b>
+                                <br>
+                                Với màn hình AniMe Matrix™ tích hợp trên vỏ máy đầu tiên trên thế giới, ASUS ROG Zephyrus G14 GA401 mang đến khả năng cá nhân hóa sâu sắc theo cách thực sự độc đáo. Màn hình đột phá được tạo thành từ 1.215 đèn LED mini riêng lẻ có thể được sử dụng để hiển thị hình ảnh tĩnh, hoặc hình ảnh động tùy chỉnh thể hiện sự sáng tạo, hoặc hình ảnh giai điệu âm thanh khi bạn đắm chìm trong âm nhạc. Các bản cập nhật trong tương lai sẽ cho phép thông báo trạng thái giúp bạn liên tục cập nhật tin nhắn mới, thời lượng pin và hơn thế nữa.
+                                <img src="~/Conten/Images/Asus/Asus G14-info4.jpg"><br>
+                                <b>TẢN NHIỆT LUÔN MÁT MẺ</b>
+                                <br>Hệ thống tản nhiệt toàn diện đảm bảo mỗi laptop TUF Gaming F15 có thể duy trì hiệu năng cao và tính hiệu quả trong vòng đời dài của mình. Nhiều ống tản nhiệt và 3 ống dẫn nhiệt đưa nhiệt những thành phần quan trọng và tản nhiệt nhanh chóng trong quá trình chơi game nặng. Thiết kết làm mát tự làm sạch đảm bảo hệ thống tản nhiệt của thiết bị hoạt động ổn định trong thời gian dài, trong khi chế độ hoạt động cân bằng hiệu năng và độ ồn cho các tác vụ đang xử lý.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+    <script type="text/javascript">
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function () {
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + '%';
+        }
+    </script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000
+        });
+    </script>
+    <script>
+        hljs.initHighlightingOnLoad();
+
+        $('.hero__scroll').on('click', function (e) {
+            $('html, body').animate({
+                scrollTop: $(window).height()
+            }, 1200);
+        });
+    </script>
+    <script src="~/Conten/JAVA/java.js"></script>
+</body>
+</html>

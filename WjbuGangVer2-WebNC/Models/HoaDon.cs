@@ -11,7 +11,8 @@ namespace WjbuGangVer2_WebNC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class HoaDon
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +22,15 @@ namespace WjbuGangVer2_WebNC.Models
         }
     
         public int MaHD { get; set; }
-        public System.DateTime Ngay { get; set; }
-        public int SoLuong { get; set; }
-        public int TongTien { get; set; }
+        public Nullable<System.DateTime> Ngay { get; set; }
+
+        //internal void Add(MatHang pro)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public Nullable<int> SoLuong { get; set; }
+        public Nullable<int> TongTien { get; set; }
         public int MaPT { get; set; }
         public int AccountID { get; set; }
     
@@ -31,5 +38,59 @@ namespace WjbuGangVer2_WebNC.Models
         public virtual PhuongThucThanhToan PhuongThucThanhToan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MatHang> MatHangs { get; set; }
+
+        //Gio hàng
+
+        List<HoaDonItem> items = new List<HoaDonItem>();
+        public IEnumerable<HoaDonItem> Items
+        {
+            get { return items; }
+        }
+        public MatHang GetProduct(int id)
+        {
+            return items.SingleOrDefault(s => s._shopping_product.MaMH == id)._shopping_product;
+        }
+        public void Add(MatHang _pro, int _quantity = 1)
+        {
+            var item = items.FirstOrDefault(s => s._shopping_product.MaMH == _pro.MaMH);
+            if (item == null)
+            {
+                items.Add(new HoaDonItem
+                {
+                    _shopping_product = _pro,
+                    _shopping_quantity = _quantity
+                });
+            }
+            else
+            {
+                item._shopping_quantity += _quantity;
+            }
+        }
+        public void Update_Quantity_Shopping(int id,int _quatity)
+        {
+            var item = items.Where(s => s._shopping_product.MaMH == id).FirstOrDefault();
+            if(item != null)
+            {
+                item._shopping_quantity = _quatity;
+            }
+        }
+        public double Total_Money()
+        {
+            var total = items.Sum(s => s._shopping_product.DonGia * s._shopping_quantity);
+            return (double)total;
+        }
+        public void Remove_CartItem(int id)
+        {
+            items.RemoveAll(s => s._shopping_product.MaMH==id);
+        }
+        public int Total_Quantity()
+        {
+            return items.Sum(s => s._shopping_quantity);
+        }
+    }
+    public class HoaDonItem
+    {
+        public MatHang _shopping_product { get; set; }
+        public int _shopping_quantity { get; set; }
     }
 }
