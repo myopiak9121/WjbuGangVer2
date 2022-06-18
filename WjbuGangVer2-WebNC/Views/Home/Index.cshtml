@@ -208,33 +208,33 @@
         </div>
         <div>
             <div id="product-container">
-                <a href="./HTML/Asus/Asus Products.html">
+                <a href="@Url.Action("IndexNSX", "Product", new { name = "Asus"})">
                     <div data-tooltip="Laptop Asus" style="margin-right: 2%;" id="product" data-aos="fade-up" data-aos-delay="0" data-aos-easing="linear" data-aos-duration="500">
                         <img style="width: 35%; margin-left: 32.5%; margin-top: 6%;" src="~/Content/Images/Asus/Asus icon.png">
                     </div>
                 </a>
-                <a href="./HTML/Acer/Acer Products.html">
+                <a href="@Url.Action("IndexNSX", "Product", new { name = "Acer"})">
                     <div data-tooltip="Laptop Acer" style="margin-right: 2%;" id="product" data-aos="fade-up" data-aos-delay="250" data-aos-easing="linear" data-aos-duration="500">
                         <img style="margin-top: 15%; margin-left: 27%" src="~/Content/Images/Acer/Acer icon.png">
                     </div>
                 </a>
-                <a href="./HTML/MSI/MSI Products.html">
+                <a href="@Url.Action("IndexNSX", "Product", new { name = "Msi"})">
                     <div data-tooltip="Laptop MSI" id="product" data-aos="fade-up" data-aos-delay="500" data-aos-easing="linear" data-aos-duration="500">
                         <img style="margin-top: 17%; margin-left: 27%" src="~/Content/Images/MSI/MSI-logo-png.png">
                     </div>
                 </a>
-                <a href="./HTML/Dell/Dell Products.html">
+                <a href="@Url.Action("IndexNSX", "Product", new { name = "Dell"})">
                     <div data-tooltip="Laptop Dell" style="margin-right: 2%;" id="product" data-aos="fade-up" data-aos-delay="0" data-aos-easing="linear" data-aos-duration="500">
                         <img style="margin-top: 15%; margin-left: 25%" src="~/Content/Images/Dell/Dell Icon.png">
                     </div>
                 </a>
-                <a href="./HTML/Macbook/Mac Products.html">
+                <a href="@Url.Action("IndexNSX", "Product", new { name = "Macbook"})">
                     <div data-tooltip="Macbook" style="margin-right: 2%;" id="product" data-aos="fade-up" data-aos-delay="250" data-aos-easing="linear" data-aos-duration="500">
                         <img style="margin-top: 17%; width: 50%" src="~/Content/Images/Macbook/Mac Icon.png">
                     </div>
                 </a>
                 <div id="MoreProducts" style="cursor: pointer; text-align: center;" data-aos="fade-up" data-aos-delay="500" data-aos-easing="linear" data-aos-duration="500">
-                    <p><a style="color: rgb(48,48,48);" href="./HTML/All Products page 1.html">Xem Thêm</a></p>
+                    <p><a style="color: rgb(48,48,48);" href="@Url.Action("Index", "Product", "Index")">Xem Thêm</a></p>
                     <p style="font-family: 'Times New Roman', Times, serif; font-size: 60px; margin-top: -10%;">...</p>
                 </div>
             </div>

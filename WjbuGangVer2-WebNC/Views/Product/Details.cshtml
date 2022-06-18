@@ -174,12 +174,12 @@
                     <p>
                         <br><b>Nhà sản xuất</b> : @Model.Hang
                         <br><br><b>Xuất xứ</b> : Chính hãng
-                        <br><br><b>Bảo hành</b> : 24 Tháng
+                        <br><br><b>Bảo hành</b> : @Model.BaoHanh
                         <br><br><b>Tình trạng</b> : Mới 100%
                         <br><br>Giá:<span style="color: red; margin-left: 50px;">@Model.DonGia</span>
                         <br><br><br>
                         <button style="background-color: red; color: white">Đặt Hàng</button>
-                        <button style="background-color: orangered; color: white">Thêm vào giỏ</button>
+                        <a href="@Url.Action("AddToCart", "HoaDon", new { id = Model.MaMH})"><button style="background-color: orangered; color: white">Thêm vào giỏ</button></a>
                     </p>
                 </div>
                 <div id="thongso">
@@ -193,94 +193,75 @@
                         </tr>
                         <tr>
                             <td>RAM</td>
-                            <td>
-                                16GB DDR4 3200MHz (8GB + 8GB Onboard)
-                            </td>
+                            <td>@Model.RAM</td>
                         </tr>
                         <tr>
                             <td>Ổ Cứng</td>
-                            <td>512GB SSD PCIE G3X4</td>
+                            <td>@Model.HDD</td>
                         </tr>
                         <tr>
                             <td>Card Đồ Họa</td>
-                            <td>NVIDIA GeForce GTX 1660Ti 6GB GDDR6 VRAM (Boost Clock: 1435MHz, 60W)</td>
+                            <td>@Model.VGA</td>
                         </tr>
                         <tr>
                             <td>Màn Hình</td>
-                            <td>
-                                14" WQHD (2560 x 1440) IPS, 60Hz, 100% sRGB, Pantone Validated
-                            </td>
+                            <td>@Model.Monitor</td>
                         </tr>
                         <tr>
                             <td>Cổng Giao Tiếp</td>
-                            <td>
-                                1x USB 3.2 Gen 2 Type-C with DisplayPort™ 1.4 and Power Delivery
-                                1x USB 3.2 Gen 2 Type-C
-                                2x USB 3.2 Gen 1 Type-A
-                                1x HDMI
-                                FingerPrint
-                            </td>
+                            <td>@Model.Port</td>
                         </tr>
                         <tr>
                             <td>Audio</td>
-                            <td>
-                                2x1W Speakers with Smart AMP Technology
-
-                            </td>
+                            <td>@Model.Audio</td>
                         </tr>
                         <tr>
                             <td>Numberpad</td>
-                            <td>Có</td>
+                            <td>@Model.NumberPad</td>
                         </tr>
                         <tr>
                             <td>Hệ điều hành</td>
-                            <td>
-                                Windows 10 Home
-                            </td>
+                            <td>@Model.HDH</td>
                         </tr>
                         <tr>
                             <td>Pin</td>
-                            <td>
-                                4 Cell 76WHr
-
-                            </td>
+                            <td>@Model.Pin</td>
                         </tr>
                         <tr>
                             <td>Trọng lượng</td>
-                            <td>1.7 kg</td>
+                            <td>@Model.Weight</td>
                         </tr>
                         <tr>
                             <td>Màu sắc</td>
-                            <td>
-                                ECLIPSE GRAY AniMe Matrix
-                            </td>
+                            <td>@Model.Color</td>
                         </tr>
                         <tr>
                             <td>Kích thước</td>
-                            <td>
-                                32.4 x 22.2 x 1.99 (cm)
-                            </td>
+                            <td>@Model.Size</td>
                         </tr>
                     </table>
                 </div>
                 <div class="accordion">
                     <button type="button" class="accordion-button">Xem Thêm</button>
                     <div class="accordion-content">
-                        <div id="product-info-expand">
-                            <img src="~/Conten/Images/Asus/G14-info2a.jpg"><br>
-                            <p>
-                                <b>Thiết kế phong cách và di động</b><br>
-                                Được thiết kế với hai phiên bản màu sắc nổi bật là màu Eclipse Gray ánh kim và màu Moonlight White ngọc trai, ASUS ROG Zephyrus G14 GA401IU-HA181T có thể xem là một tuyệt phẩm trong phân khúc laptop gaming hiện tại. Thiết kế nhỏ gọn mang tính thẩm mỹ cao cho phép bạn mang theo và dễ dàng di chuyển từ các quán cà phê cho đến giảng đường với các chi tiết được tinh chỉnh đem lại sự hoàn hảo. Bề mặt được chế tác bằng cách phay CNC chính xác tạo ra 6.536 lỗ trên nắp nhôm tạo ra thiết kế ma trận điểm đặc biệt. Bề mặt phía dưới máy được thiết kế gia cố tổ ong mang lại sức mạnh bền bỉ với vật liệu tối thiểu để giữ cho khung máy nhẹ. Bề mặt chiếu nghỉ tay được làm bằng hợp kim nhôm-magiê có khả năng chống vân tay để giữ sự tươi mới mỗi ngày.
-                                <img src="~/Conten/Images/Asus/G14-info3.jpg"><br>
-                                <b> Màn hình AniMe Matrix độc đáo</b>
-                                <br>
-                                Với màn hình AniMe Matrix™ tích hợp trên vỏ máy đầu tiên trên thế giới, ASUS ROG Zephyrus G14 GA401 mang đến khả năng cá nhân hóa sâu sắc theo cách thực sự độc đáo. Màn hình đột phá được tạo thành từ 1.215 đèn LED mini riêng lẻ có thể được sử dụng để hiển thị hình ảnh tĩnh, hoặc hình ảnh động tùy chỉnh thể hiện sự sáng tạo, hoặc hình ảnh giai điệu âm thanh khi bạn đắm chìm trong âm nhạc. Các bản cập nhật trong tương lai sẽ cho phép thông báo trạng thái giúp bạn liên tục cập nhật tin nhắn mới, thời lượng pin và hơn thế nữa.
-                                <img src="~/Conten/Images/Asus/Asus G14-info4.jpg"><br>
-                                <b>TẢN NHIỆT LUÔN MÁT MẺ</b>
-                                <br>Hệ thống tản nhiệt toàn diện đảm bảo mỗi laptop TUF Gaming F15 có thể duy trì hiệu năng cao và tính hiệu quả trong vòng đời dài của mình. Nhiều ống tản nhiệt và 3 ống dẫn nhiệt đưa nhiệt những thành phần quan trọng và tản nhiệt nhanh chóng trong quá trình chơi game nặng. Thiết kết làm mát tự làm sạch đảm bảo hệ thống tản nhiệt của thiết bị hoạt động ổn định trong thời gian dài, trong khi chế độ hoạt động cân bằng hiệu năng và độ ồn cho các tác vụ đang xử lý.
-                            </p>
-                        </div>
+
                     </div>
+                </div>
+                <div id="product-info-expand">
+                    <img src="@Model.Hinh1 "><br>
+                    <p>
+                        @Model.MoTa
+                        <br />
+                        <b>Thiết kế phong cách và di động</b><br>
+                        Được thiết kế với hai phiên bản màu sắc nổi bật là màu Eclipse Gray ánh kim và màu Moonlight White ngọc trai, ASUS ROG Zephyrus G14 GA401IU-HA181T có thể xem là một tuyệt phẩm trong phân khúc laptop gaming hiện tại. Thiết kế nhỏ gọn mang tính thẩm mỹ cao cho phép bạn mang theo và dễ dàng di chuyển từ các quán cà phê cho đến giảng đường với các chi tiết được tinh chỉnh đem lại sự hoàn hảo. Bề mặt được chế tác bằng cách phay CNC chính xác tạo ra 6.536 lỗ trên nắp nhôm tạo ra thiết kế ma trận điểm đặc biệt. Bề mặt phía dưới máy được thiết kế gia cố tổ ong mang lại sức mạnh bền bỉ với vật liệu tối thiểu để giữ cho khung máy nhẹ. Bề mặt chiếu nghỉ tay được làm bằng hợp kim nhôm-magiê có khả năng chống vân tay để giữ sự tươi mới mỗi ngày.
+                        <img src="@Model.Hinh3"><br>
+                        <b> Màn hình AniMe Matrix độc đáo</b>
+                        <br>
+                        Với màn hình AniMe Matrix™ tích hợp trên vỏ máy đầu tiên trên thế giới, ASUS ROG Zephyrus G14 GA401 mang đến khả năng cá nhân hóa sâu sắc theo cách thực sự độc đáo. Màn hình đột phá được tạo thành từ 1.215 đèn LED mini riêng lẻ có thể được sử dụng để hiển thị hình ảnh tĩnh, hoặc hình ảnh động tùy chỉnh thể hiện sự sáng tạo, hoặc hình ảnh giai điệu âm thanh khi bạn đắm chìm trong âm nhạc. Các bản cập nhật trong tương lai sẽ cho phép thông báo trạng thái giúp bạn liên tục cập nhật tin nhắn mới, thời lượng pin và hơn thế nữa.
+                        <img src="@Model.Hinh4"><br>
+                        <b>TẢN NHIỆT LUÔN MÁT MẺ</b>
+                        <br>Hệ thống tản nhiệt toàn diện đảm bảo mỗi laptop TUF Gaming F15 có thể duy trì hiệu năng cao và tính hiệu quả trong vòng đời dài của mình. Nhiều ống tản nhiệt và 3 ống dẫn nhiệt đưa nhiệt những thành phần quan trọng và tản nhiệt nhanh chóng trong quá trình chơi game nặng. Thiết kết làm mát tự làm sạch đảm bảo hệ thống tản nhiệt của thiết bị hoạt động ổn định trong thời gian dài, trong khi chế độ hoạt động cân bằng hiệu năng và độ ồn cho các tác vụ đang xử lý.
+                    </p>
                 </div>
             </div>
     </div>

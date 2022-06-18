@@ -14,18 +14,23 @@
     <div class="header">
         <div class="header-container">
             <div id="logo" data-aos="zoom-out">
-                <a href="./index.html">
+                <a href="@Url.Action("Index","Home")">
                     <img height="150" src="~/Content/Images/index/new logo.png">
                 </a>
             </div>
-            <div class="searchBox">
-                <div class="search">
-                    <div>
-                        <input type="text" placeholder="Search . . ." required>
+            @using (Html.BeginForm("Index", "Search", FormMethod.Post, new { @class = "box" }))
+            {
+                <form id="search-form">
+                    <div class="searchBox">
+                        <div class="search">
+                            <div>
+                                <input type="text" name="searchstring" placeholder="Search . . ." required>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <a href="@Url.Action("Adminlogin","Admin","Adminlogin")"><div id="login"><i class="fa fa-user fa-2x"></i><p>Đăng nhập</p></div></a>    
+                </form>
+            }
+            <a href="@Url.Action("Adminlogin","Admin","Adminlogin")"><div id="login"><i class="fa fa-user fa-2x"></i><p>Đăng nhập</p></div></a>
             <a href="@Url.Action("ShowToCart","HoaDon")">
                 <div id="cart">
                     <i class="fa fa-shopping-cart fa-2x"></i>

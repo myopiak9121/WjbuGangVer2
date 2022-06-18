@@ -1,6 +1,6 @@
-﻿@model WjbuGangVer2_WebNC.Models.HoaDon
+﻿@model IEnumerable<WjbuGangVer2_WebNC.Models.MatHang>
 @{
-    ViewBag.Title = "Giỏ hàng";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,14 +10,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/Content/CSS/index.css" type="text/css">
-    <link rel="stylesheet" href="~/Content/CSS/Products.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/CSS/All Products.css" type="text/css">
     <link rel="stylesheet" href="~/Content/CSS/aos.css" type="text/css">
-    <link href="~/Content/CSS/Gio Hang.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/PagedList.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" tyoe="text/css" href="~/Content/CSS/lightbox.min.css">
-    <script src="~/Content/JAVA/lightbox-plus-jquery.min.js"></script>
-    <title>@Model.MaHD</title>
+    <title>HyperGear Sản Phẩm Trang 1</title>
 </head>
 <body>
     <div class="body">
@@ -47,7 +45,7 @@
                                 <ul class="dropdown-laptop">
                                     <a href="#">
                                     <li style="width: 250px; margin-top: -1px;">VGA</li></a>
-                                    <a href="~/Conten/HTML/CPU/CPU product.html">
+                                    <a href="../HTML/CPU/CPU product.html">
                                     <li style="width: 250px">CPU</li></a>
                                     <a href="#">
                                     <li style="width: 250px">Mainboard</li></a>
@@ -109,9 +107,9 @@
                         </ul>
                     </li>
                     <div class="center">
-                        <div class="pagination">
-                            <a href="@Url.Action("Index","Home")" class="active"><i class="fa fa-home"></i>Trang Chủ</a>
-                            <a href="@Url.Action("Index","Product","Index")"><i class="fa fa-tags"></i>Sản Phẩm</a>
+                        <div class="pagination" style="margin: 0px 0px">
+                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Trang Chủ</a>
+                            <a href="@Url.Action("Index","Product","Index")" class="active"><i class="fa fa-tags"></i>Sản Phẩm</a>
                             <a href="@Url.Action("CSBH","CSBH","CSBH")"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
                             <a data-modal-target="#modal"><i class="fa fa-phone"></i>Liên Hệ</a>
                             <div class="modal" id="modal">
@@ -121,7 +119,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="testclmm">
-                                        <img height="300" style="margin-left: -40px;" src="~Conten/Images/Sang.jpg">
+                                        <img height="300" style="margin-left: -40px;" src="../../Images/Sang.jpg">
                                     </div>
                                     <p>
                                         SĐT:0582754857
@@ -132,7 +130,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="testclmm">
-                                        <img height="500" style="margin: -150px 0px 0px -300px" src="~Conten/Images/Me.png">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="../../Images/Me.png">
                                     </div>
                                     <p>
                                         SĐT:0931151121
@@ -142,7 +140,7 @@
                                 </div>
                             </div>
                             <div id="overlay"></div>
-                            <script src="~/Conten/JAVA/java.js"></script>
+                            <script src="~Content/JAVA/java.js"></script>
                         </div>
                     </div>
                 </ul>
@@ -159,58 +157,62 @@
                 </div>
             </div>
         </div>
-        @if (Model != null)
-        {
-            <table class="table" style="font-size:25px; margin:auto; ">
-                <thead>
-                    <tr>
-                        <th style="padding-right:60px">Hình ảnh</th>
-                        <th style="padding-right:150px">Sản phẩm</th>
-                        <th>Giá</th>
-                        <th style="padding-left:100px;">Số lượng</th>
-                        <th style="padding-left:100px;">Tổng cộng</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.Items)
-                    {
-                        double total = Convert.ToDouble(item._shopping_product.DonGia * item._shopping_quantity);
-                        <tr>
-                            <td style="padding-right:50px">
-                                <img src="@item._shopping_product.Hinh1" style="width:150px;height:150px" />
-                            </td>
-                            <td>
-                                @Html.DisplayFor(Model => item._shopping_product.TenMH)
-                            </td>
-                            <td style="padding-left:15px">
-                                @Html.DisplayFor(Model => item._shopping_product.DonGia)
-                            </td>
-                            <td style="padding-left:120px">
-                                @using (Html.BeginForm("Update_Quantity_Cart", "HoaDon"))
-                                {
-                                    <input type="hidden" value="@item._shopping_product.MaMH" name="Ma_MH" />
-                                    <input type="number" value="@item._shopping_quantity" name="Quantity" style="width:40px; height:40px; text-align:center" />
-                                    <input type="submit" value="Cập nhật" style="width:80px; height:40px"/>
-                                }
-                            </td>
-                            <td style="padding-left:115px">
-                                @total
-                            </td>
-                            <td>
-                                <a href="/HoaDon/RemoveCart/@item._shopping_product.MaMH" style="font-size:20px; padding-left:60px; color:blue; padding-top:5px;">Xóa</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="5" style="padding-top:20px;">Tổng cộng: @Model.Total_Money()</td>
-                    </tr>
-                </tfoot>
-            </table>
-            <a href="@Url.Action("Index","Home")" style="margin-left:600px;;">Quay về trang chủ</a>
-        }
     </div>
+    <div class="newstuffs-container" style="height: 450px;">
+        <div class="newstuffs">
+            <div class="banner">
+                <img src="~/Content/Images/Banner/ASUS Banner.jpg" data-aos="fade-up" data-aos-delay="0" data-aos-easing="linear" data-aos-duration="500" style="padding-top: 1%">
+                <img src="~/Content/Images/Banner/Acer Banner.jpg" data-aos="fade-up" data-aos-delay="100" data-aos-easing="linear" data-aos-duration="500">
+                <img src="~/Content/Images/Banner/MSI Banner.jpg" data-aos="fade-up" data-aos-delay="200" data-aos-easing="linear" data-aos-duration="500">
+            </div>
+        </div>
+    </div>
+    <div class="layout" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="500">
+
+        @foreach (var item in Model)
+        {
+            <div style="margin-left: 1%" id="products" class="Search">
+                <a href="@Url.Action("Details", new { id = @item.MaMH })">
+                    <img style="max-width: 270px; max-height: 230px" id="products-preview" src="@item.HinhChinh">
+                    <p>@item.TenMH</p>
+                    <h2>@item.DonGia VNĐ</h2>
+                </a>
+            </div>
+        }
+
+        <div class="center1" style="width: 100%; height: auto; float: left;">
+            <div class="pagination1">
+                @*@Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)*@
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+    <script type="text/javascript">
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function () {
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + '%';
+        }
+    </script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000
+        });
+    </script>
+    <script>
+        hljs.initHighlightingOnLoad();
+
+        $('.hero__scroll').on('click', function (e) {
+            $('html, body').animate({
+                scrollTop: $(window).height()
+            }, 1200);
+        });
+    </script>
+    <script src="~Content/JAVA/java.js"></script>
 </body>
 </html>
+

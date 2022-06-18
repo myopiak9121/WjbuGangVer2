@@ -177,6 +177,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CSBHController.cs" />
     <Compile Include="Controllers\HangController.cs" />
+    <Compile Include="Controllers\HoaDonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LienHeController.cs" />
     <Compile Include="Controllers\LoaiMHController.cs" />
@@ -6371,10 +6372,12 @@
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Hang\Index.cshtml" />
     <Content Include="Views\Product\IndexNSX.cshtml" />
+    <Content Include="Views\HoaDon\BagCart.cshtml" />
+    <Content Include="Views\HoaDon\ShowToCart.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
