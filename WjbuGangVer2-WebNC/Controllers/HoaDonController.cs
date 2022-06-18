@@ -77,19 +77,22 @@ namespace WjbuGangVer2_WebNC.Controllers
             return View(Session["HoaDon"]);
         }
 
-        //phương thức thanh toán
         //public ActionResult CheckOut(FormCollection form)
         //{
-            //try
-            //{
-                //HoaDon hoadon = Session["HoaDon"] as HoaDon;
-                //HoaDonDetail _other =new HoaDon();
-                //_other.Ngay = DateTime.Now;
-                //foreach(var item in hoadon.Items)
-                //{
-                   //HoaDon 
-                //}    
-            //}
+        //    try
+        //    {
+        //        HoaDon hoadon = Session["HoaDon"] as HoaDon;
+        //        HoaDon _other = new HoaDon();
+        //        _other.Ngay = DateTime.Now;
+        //        foreach (var item in hoadon.Items)
+        //        {
+                    
+        //        }
+        //    }
+        //    catch
+        //    {
+        //    }
+        //    return 
         //}
     }
 }

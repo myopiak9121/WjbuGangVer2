@@ -379,7 +379,6 @@ D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Web.WebPages.Depl
 D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Web.WebPages.Razor.xml
 D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\bin\Antlr3.Runtime.pdb
 D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.csproj.AssemblyReference.cache
 D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.csproj.CoreCompileInputs.cache
 D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.csproj.CopyComplete
 D:\WjbuGangVer2-Git\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.dll

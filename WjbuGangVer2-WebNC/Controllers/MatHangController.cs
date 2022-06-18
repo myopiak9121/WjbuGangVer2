@@ -122,6 +122,16 @@ namespace WjbuGangVer2_WebNC.Controllers
         // GET: MatHang/Edit/5
         public ActionResult Edit(int? id)
         {
+            var listHang = new List<string>() { "Asus", "Acer", "Dell", "Macbook", "Msi" };
+            var listRam = new List<string>() { "8gb", "16gb", "32gb", "64gb" };
+            var listHdd = new List<string>() { "128gb", "256gb", "512gb", "1tb" };
+            var listHdh = new List<string>() { "Mac", "Linus", "Window 10 64 bit" };
+
+            ViewBag.listHang = listHang;
+            ViewBag.listRam = listRam;
+            ViewBag.listHdd = listHdd;
+            ViewBag.listHdh = listHdh;
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -142,6 +152,15 @@ namespace WjbuGangVer2_WebNC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MaMH,MaLoai,TenMH,DonGia,MoTa,Hang,HinhChinh,Hinh1,Hinh2,Hinh3,Hinh4")] MatHang matHang)
         {
+            var listHang = new List<string>() { "Asus", "Acer", "Dell", "Macbook", "Msi" };
+            var listRam = new List<string>() { "8gb", "16gb", "32gb", "64gb" };
+            var listHdd = new List<string>() { "128gb", "256gb", "512gb", "1tb" };
+            var listHdh = new List<string>() { "Mac", "Linus", "Window 10 64 bit" };
+
+            ViewBag.listHang = listHang;
+            ViewBag.listRam = listRam;
+            ViewBag.listHdd = listHdd;
+            ViewBag.listHdh = listHdh;
             if (ModelState.IsValid)
             {
                 db.Entry(matHang).State = EntityState.Modified;

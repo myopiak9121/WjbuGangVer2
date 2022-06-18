@@ -28,17 +28,28 @@
             </div>
 
             <div>
+
                 @if (Session["User_Name"] != null)
                 {
-                    <div style="margin-left:200px"><p style="color:black;font-size:medium">Xin chào @Session["User_Name"]</p></div>
-                    <div id="login"><a href="~/Account/Userlogout"><p>Đăng xuất</p></a></div>
+                    <div id="login">
+                        <i class="fa fa-user fa-2x" style="padding:7.5px"></i>
+                        <a href="~/Account/Userlogout"><p> Xin chào @Session["User_Name"]  | Đăng xuất</p></a>
+                    </div>
                 }
                 else
                 {
-                    <div id="login"><a href="~/Account/AccountLogic"><p>Đăng Nhập</p></a></div>
-                }
-                <a href="./HTML/Gio Hang.html"><div id="cart"><i class="fa fa-shopping-cart fa-2x"></i></div></a>
-        </div>
+                <div id="login">
+                    <i class="fa fa-user fa-2x" style="padding:7.5px"></i>
+                    <a href="~/Account/AccountLogic"><p>Đăng Nhập</p></a>
+                </div>
+                    }
+                    <a href="@Url.Action("ShowToCart","HoaDon")">
+                        <div id="cart">
+                            <i class="fa fa-shopping-cart fa-2x"></i>
+                            @Html.Action("BagCart", "HoaDon")
+                        </div>
+                    </a>
+                </div>
     </div>
 </div>
         @RenderBody()

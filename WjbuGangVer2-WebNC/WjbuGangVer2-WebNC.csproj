@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -46,10 +45,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Annotations, Version=4242.42.42.42, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\packages\JetBrains.Annotations.2022.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
@@ -170,6 +169,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CSBHController.cs" />
     <Compile Include="Controllers\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Controllers\HoaDonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LienHeController.cs" />
     <Compile Include="Controllers\LoaiMHController.cs" />
@@ -185,6 +185,7 @@
       <DependentUpon>QLBMT.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BUS\ShopWibuBUS.cs" />
+    <Compile Include="Models\Giohang.cs" />
     <Compile Include="Models\HoaDon.cs">
       <DependentUpon>QLBMT.tt</DependentUpon>
     </Compile>
@@ -5262,7 +5263,7 @@
     <Content Include="Content\CSS\Gio Hang.css" />
     <Content Include="Content\CSS\index.css" />
     <Content Include="Content\CSS\lightbox.min.css" />
-    <Content Include="Content\CSS\login.css" />
+    <Content Include="Content\CSS\register.css" />
     <Content Include="Content\CSS\login2.css" />
     <Content Include="Content\CSS\Products.css" />
     <Content Include="Content\CSS\Searchbar.css" />
@@ -6273,6 +6274,12 @@
     <Content Include="Views\AccountEntity\Details.cshtml" />
     <Content Include="Views\AccountEntity\Edit.cshtml" />
     <Content Include="Views\AccountEntity\Index.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\HoaDon\BagCart.cshtml" />
+    <Content Include="Views\HoaDon\ShowToCart.cshtml" />
+    <Content Include="Views\HoaDon\ThanhToan.cshtml" />
+    <Content Include="Views\Shared\_Register.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -6341,12 +6348,9 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
     <Error Condition="!Exists('..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets'))" />
   </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
   <Import Project="..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

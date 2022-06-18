@@ -4,82 +4,85 @@
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<h3>Bạn có muốn xóa không?</h3>
-<div>
-    <h4>Account</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
+    <h3 style="margin-left:250px">Bạn có muốn xóa không?</h3>
+    <div>
+        <hr />
+        <div style="margin-left:300px; margin-top:50px">
 
-        <dd>
-            @Html.DisplayFor(model => model.Username)
-        </dd>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Username)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Username)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Password)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HoTen)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Password)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.HoTen)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.HoTen)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DiaChi)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.HoTen)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DiaChi)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DiaChi)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DiaChi)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SDT)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.SDT)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SDT)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NgaySinh)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.SDT)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.NgaySinh)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.NgaySinh)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Role)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.NgaySinh)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Role)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Role)
+                </dt>
 
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.Role)
+                </dd>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+            </dl>
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> 
+                </div>
+            }
         </div>
-    }
-</div>
+    </div>
