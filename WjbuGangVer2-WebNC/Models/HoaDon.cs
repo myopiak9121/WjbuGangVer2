@@ -87,6 +87,10 @@ namespace WjbuGangVer2_WebNC.Models
         {
             return items.Sum(s => s._shopping_quantity);
         }
+        public void Clear_Cart()
+        {
+            items.Clear();
+        }
     }
     public class HoaDonItem
     {

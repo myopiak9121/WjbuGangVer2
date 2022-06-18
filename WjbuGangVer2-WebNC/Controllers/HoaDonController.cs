@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using WjbuGangVer2_WebNC.Models;
 
@@ -27,10 +28,18 @@ namespace WjbuGangVer2_WebNC.Controllers
             {
                 GetHoaDon().Add(pro);
             }
+            return RedirectToAction("Details","Product", new { id = id});
+        }
+        public ActionResult CreateOrder(int id)
+        {
+            var pro = _db.MatHangs.SingleOrDefault(s => s.MaMH == id);
+            if (pro != null)
+            {
+                GetHoaDon().Add(pro);
+            }
             //return RedirectToAction("Details", "Product", new { id = id});
             return RedirectToAction("ShowToCart");
         }
-
         //Trang giỏ hàng
         public ActionResult ShowToCart()
         {
@@ -63,5 +72,24 @@ namespace WjbuGangVer2_WebNC.Controllers
             ViewBag.infoCart = _t_item;
             return PartialView("BagCart");
         }
+        public ActionResult ThanhToan()
+        {
+            return View(Session["HoaDon"]);
+        }
+
+        //phương thức thanh toán
+        //public ActionResult CheckOut(FormCollection form)
+        //{
+            //try
+            //{
+                //HoaDon hoadon = Session["HoaDon"] as HoaDon;
+                //HoaDonDetail _other =new HoaDon();
+                //_other.Ngay = DateTime.Now;
+                //foreach(var item in hoadon.Items)
+                //{
+                   //HoaDon 
+                //}    
+            //}
+        //}
     }
 }

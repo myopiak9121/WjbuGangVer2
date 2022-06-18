@@ -172,15 +172,16 @@
                 </div>
                 <div id="product-info">
                     <h1>@Model.TenMH</h1>
-                     <p>
+                    <p>
                         <br><b>Nhà sản xuất</b> : ASUS
                         <br><br><b>Xuất xứ</b> : Chính hãng
                         <br><br><b>Bảo hành</b> : 24 Tháng
                         <br><br><b>Tình trạng</b> : Mới 100%
                         <br><br>Giá:<span style="color: red; margin-left: 50px;">@Model.DonGia</span>
                         <br><br><br>
-                        <a href="@Url.Action("AddToCart","HoaDon", new { id = @Model.MaMH })"><button style="background-color: red; color: white">Đặt Hàng</button></a>
-                        <button style="background-color: orangered; color: white">Thêm vào giỏ</button>
+                        <a href="@Url.Action("CreateOrder","HoaDon", new { id = @Model.MaMH })"><button style="background-color: red; color: white">Đặt Hàng</button></a>
+                        <a href ="@Url.Action("AddToCart","HoaDon", new { id = @Model.MaMH })" onclick="addToCartSuccess()"><button style="background-color: orange; color: white">Thêm vào giỏ</button></a>
+
 
                     </p>
                 </div>
@@ -314,5 +315,12 @@
         });
     </script>
     <script src="~/Conten/JAVA/java.js"></script>
+    <script>
+        function addToCartSuccess()
+        {
+            alert("Successfully add to cart!");
+        }
+
+    </script>
 </body>
 </html>
