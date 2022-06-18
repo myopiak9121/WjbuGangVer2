@@ -11,7 +11,7 @@
         @using (Html.BeginForm("AccountLogic", "Account", FormMethod.Post, new { @class = "box" }))
         {
             <form name="form1" class="box" action="">
-                <h4>FileFate<span>Đăng nhập</span></h4>
+                <h4>WibuGang<span>Đăng nhập</span></h4>
                 <h5>Điền tài khoản & mật khẩu</h5>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
@@ -35,7 +35,7 @@
                 <input style="margin-top:20px" type="submit" value="Sign in" class="btn1">
             </form>
         }
-        <a href="/User/RegisterUser/" class="dnthave">Don’t have an account? Sign up</a>
+        <a href="/User/RegisterUser/" class="dnthave" ; style="m">Don’t have an account? Sign up</a>
     </div>
     @RenderBody();
 </div>

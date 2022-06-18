@@ -61,6 +61,8 @@ namespace WjbuGangVer2_WebNC.Controllers
         // GET: AccountEntity/Edit/5
         public ActionResult Edit(int? id)
         {
+            var listRole = new List<string>() { "User", "Admin" };
+            ViewBag.listRole = listRole;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -80,6 +82,8 @@ namespace WjbuGangVer2_WebNC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "AccountID,Username,Password,HoTen,DiaChi,Email,SDT,NgaySinh,Role")] Account account)
         {
+            var listRole = new List<string>() { "User", "Admin" };
+            ViewBag.listRole = listRole;
             if (ModelState.IsValid)
             {
                 db.Entry(account).State = EntityState.Modified;
