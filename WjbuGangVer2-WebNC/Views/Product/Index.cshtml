@@ -175,7 +175,7 @@
         {
             <div style="margin-left: 1%" id="products">
                 <a href="@Url.Action("Details", new { id = @item.MaMH })">
-                    <img style="max-width: 270px; max-height: 230px" id="products-preview" src="~/Content/Images/@item.HinhChinh">
+                    <img style="max-width: 270px; max-height: 230px" id="products-preview" src="@item.HinhChinh">
                     <p>@item.TenMH</p>
                     <h2>@item.DonGia VNĐ</h2>
                 </a>

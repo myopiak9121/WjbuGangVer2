@@ -20,7 +20,7 @@ namespace WjbuGangVer2_WebNC.Models
         {
             this.MatHangs = new HashSet<MatHang>();
         }
-    
+
         public int MaHD { get; set; }
         public Nullable<System.DateTime> Ngay { get; set; }
 
@@ -33,7 +33,7 @@ namespace WjbuGangVer2_WebNC.Models
         public Nullable<int> TongTien { get; set; }
         public int MaPT { get; set; }
         public int AccountID { get; set; }
-    
+
         public virtual Account Account { get; set; }
         public virtual PhuongThucThanhToan PhuongThucThanhToan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -66,10 +66,10 @@ namespace WjbuGangVer2_WebNC.Models
                 item._shopping_quantity += _quantity;
             }
         }
-        public void Update_Quantity_Shopping(int id,int _quatity)
+        public void Update_Quantity_Shopping(int id, int _quatity)
         {
             var item = items.Where(s => s._shopping_product.MaMH == id).FirstOrDefault();
-            if(item != null)
+            if (item != null)
             {
                 item._shopping_quantity = _quatity;
             }
@@ -81,7 +81,7 @@ namespace WjbuGangVer2_WebNC.Models
         }
         public void Remove_CartItem(int id)
         {
-            items.RemoveAll(s => s._shopping_product.MaMH==id);
+            items.RemoveAll(s => s._shopping_product.MaMH == id);
         }
         public int Total_Quantity()
         {

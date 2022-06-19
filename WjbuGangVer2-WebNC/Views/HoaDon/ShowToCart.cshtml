@@ -175,10 +175,10 @@
                 <tbody>
                     @foreach (var item in Model.Items)
                     {
-                        double total = Convert.ToDouble(item._shopping_product.DonGia.Value * item._shopping_quantity);
+                        double total = Convert.ToDouble(item._shopping_product.DonGia * item._shopping_quantity);
                         <tr>
                             <td style="padding-right:50px">
-                                <img src="~/Content/Images/@item._shopping_product.HinhChinh" style="width:150px;height:150px" />
+                                <img src="@item._shopping_product.HinhChinh" style="width:150px;height:150px" />
                             </td>
                             <td>
                                 @Html.DisplayFor(Model => item._shopping_product.TenMH)

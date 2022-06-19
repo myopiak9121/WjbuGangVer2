@@ -183,7 +183,7 @@ span.price {
 
                     @foreach (var item in Model.Items)
                     {
-                        double total = Convert.ToDouble(item._shopping_product.DonGia.Value * item._shopping_quantity);
+                        double total = Convert.ToDouble(item._shopping_product.DonGia * item._shopping_quantity);
                         <h4>Giỏ hàng <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
                         <p>@item._shopping_product.TenMH <span class="price"> @total VNĐ</span></p>
                         <hr>

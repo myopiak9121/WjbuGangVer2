@@ -10,29 +10,58 @@
 namespace WjbuGangVer2_WebNC.Models
 {
     using System;
+    using System.Web;
     using System.Collections.Generic;
-    
+
     public partial class MatHang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MatHang()
         {
+
+            HinhChinh = "~/Content/Images/add.png";
+            Hinh1 = "~/Content/Images/add.png";
+            Hinh2 = "~/Content/Images/add.png";
+            Hinh3 = "~/Content/Images/add.png";
+            Hinh4 = "~/Content/Images/add.png";
             this.HoaDons = new HashSet<HoaDon>();
         }
-    
+
         public int MaMH { get; set; }
         public int MaLoai { get; set; }
+        public int DonGia { get; set; }
         public string TenMH { get; set; }
-        public Nullable<int> DonGia { get; set; }
         public string MoTa { get; set; }
+        public string Hang { get; set; }
         public string HinhChinh { get; set; }
         public string Hinh1 { get; set; }
         public string Hinh2 { get; set; }
         public string Hinh3 { get; set; }
         public string Hinh4 { get; set; }
-    
+        public string BaoHanh { get; set; }
+        public string CPU { get; set; }
+        public string RAM { get; set; }
+        public string HDD { get; set; }
+        public string VGA { get; set; }
+        public string Monitor { get; set; }
+        public string Port { get; set; }
+        public string Audio { get; set; }
+        public string NumberPad { get; set; }
+        public string HDH { get; set; }
+        public string Pin { get; set; }
+        public string Weight { get; set; }
+        public string Color { get; set; }
+        public string Size { get; set; }
+        public string NSX { get; set; }
+
         public virtual LoaiMH LoaiMH { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }
+
+        public HttpPostedFileBase ImageFile { get; set; }
+        public HttpPostedFileBase ImageFile1 { get; set; }
+        public HttpPostedFileBase ImageFile2 { get; set; }
+        public HttpPostedFileBase ImageFile3 { get; set; }
+        public HttpPostedFileBase ImageFile4 { get; set; }
     }
 }
