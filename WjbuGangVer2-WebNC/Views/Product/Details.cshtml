@@ -178,8 +178,8 @@
                         <br><br><b>Tình trạng</b> : Mới 100%
                         <br><br>Giá:<span style="color: red; margin-left: 50px;">@Model.DonGia</span>
                         <br><br><br>
-                        <button style="background-color: red; color: white">Đặt Hàng</button>
-                        <a href="@Url.Action("AddToCart", "HoaDon", new { id = Model.MaMH})"><button style="background-color: orangered; color: white">Thêm vào giỏ</button></a>
+                        <a href="@Url.Action("CreateOrder","HoaDon", new { id = @Model.MaMH })"><button style="background-color: red; color: white">Đặt Hàng</button></a>
+                        <a href="@Url.Action("AddToCart","HoaDon", new { id = @Model.MaMH })" onclick="addToCartSuccess()"><button style="background-color: orange; color: white">Thêm vào giỏ</button></a>
                     </p>
                 </div>
                 <div id="thongso">

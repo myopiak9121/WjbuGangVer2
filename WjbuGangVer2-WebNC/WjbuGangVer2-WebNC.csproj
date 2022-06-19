@@ -6375,6 +6375,7 @@
     <Content Include="Views\HoaDon\BagCart.cshtml" />
     <Content Include="Views\HoaDon\ShowToCart.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\HoaDon\ThanhToan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
