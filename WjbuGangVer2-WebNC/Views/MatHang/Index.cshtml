@@ -1,9 +1,7 @@
 ﻿@model IEnumerable<WjbuGangVer2_WebNC.Models.MatHang>
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
 <style>
     .shortDisplay:hover {
         overflow: visible;
@@ -23,7 +21,7 @@
 
 
 <div style="margin-left:50px; margin-top:50px">
-    <h2>Thêm sản phẩm</h2>
+    <h2>Danh Sách sản phẩm</h2>
     <div style="margin-left:100px">
         <p>
             @Html.ActionLink("Thêm sản phẩm mới", "Create")
@@ -46,18 +44,6 @@
                     @Html.DisplayNameFor(model => model.HinhChinh)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Hinh1)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Hinh2)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Hinh3)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Hinh4)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => model.LoaiMH.TenLoai)
                 </th>
                 <th></th>
@@ -65,45 +51,31 @@
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TenMH)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DonGia)
-                    </td>
-                    <td>
-                        <span class="shortDisplay"> @Html.DisplayFor(modelItem => item.MoTa)</span>
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Hang)
-                    </td>
-                    <td>
-                        <img src="@Url.Content(item.HinhChinh ?? "~/Content/Images/add.png")"  width="100" height="100" />
-                    </td>
-                    <td>
-
-                        <img src="@Url.Content(item.Hinh1 ?? "~/Content/Images/add.png")" width="100" height="100" />
-                    </td>
-                    <td>
-                        <img src="@Url.Content(item.Hinh2 ?? "~/Content/Images/add.png")" width="100" height="100" />
-                    </td>
-                    <td>
-                        <img src="@Url.Content(item.Hinh3 ?? "~/Content/Images/add.png")" width="100" height="100" />
-                    </td>
-                    <td>
-                        <img src="@Url.Content(item.Hinh4 ?? "~/Content/Images/add.png")" width="100" height="100" />
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.LoaiMH.TenLoai)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.MaMH }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.MaMH }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.MaMH })
-                    </td>
-                </tr>
-            }
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenMH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DonGia)
+    </td>
+    <td>
+        <span class="shortDisplay"> @Html.DisplayFor(modelItem => item.MoTa)</span>
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Hang)
+    </td>
+    <td>
+        <img src="@Url.Content(item.HinhChinh ?? "~/Content/Images/add.png")" width="100" height="100" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LoaiMH.TenLoai)
+    </td>
+    <td>
+        @Html.ActionLink("Chỉnh sửa ", "Edit", new { id = item.MaMH }) |
+        @Html.ActionLink("Chi Tiết", "Details", new { id = item.MaMH }) |
+        @Html.ActionLink("Xóa", "Delete", new { id = item.MaMH })
+    </td>
+</tr>            }
         </table>
     </div>
 </div>

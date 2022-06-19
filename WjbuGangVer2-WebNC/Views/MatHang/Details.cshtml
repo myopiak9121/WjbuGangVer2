@@ -1,14 +1,11 @@
 ﻿@model WjbuGangVer2_WebNC.Models.MatHang
 
-@{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+@{ ViewBag.Title = "Details";
+                Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
 
-<h2>Details</h2>
+<h2>Chi tiết</h2>
 
 <div>
-    <h4>MatHang</h4>
     <hr />
     <dl class="dl-horizontal" style=" margin-left: 400px;">
         <dt>
@@ -53,7 +50,7 @@
 
         <dt>
         </dt>
-            @Html.DisplayNameFor(model => model.Hinh1)
+        @Html.DisplayNameFor(model => model.Hinh1)
         <dd>
             <img src="@Url.Content(Model.Hinh1)" width="250" height="250" />
         </dd>
@@ -93,6 +90,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaMH }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Chỉnh sửa ", "Edit", new { id = Model.MaMH }) |
+    @Html.ActionLink("Quay lại", "Index")
 </p>

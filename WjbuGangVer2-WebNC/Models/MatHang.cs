@@ -10,15 +10,14 @@
 namespace WjbuGangVer2_WebNC.Models
 {
     using System;
-    using System.Web;
     using System.Collections.Generic;
-    
+    using System.Web;
+
     public partial class MatHang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MatHang()
         {
-
             HinhChinh = "~/Content/Images/add.png";
             Hinh1 = "~/Content/Images/add.png";
             Hinh2 = "~/Content/Images/add.png";
@@ -57,7 +56,6 @@ namespace WjbuGangVer2_WebNC.Models
         public virtual LoaiMH LoaiMH { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }
-
         public HttpPostedFileBase ImageFile { get; set; }
         public HttpPostedFileBase ImageFile1 { get; set; }
         public HttpPostedFileBase ImageFile2 { get; set; }

@@ -18,7 +18,7 @@ namespace WjbuGangVer2_WebNC.Controllers
         // GET: MatHang
         public ActionResult Index()
         {
-           
+
             var matHangs = db.MatHangs.Include(m => m.LoaiMH);
             return View(matHangs.ToList());
         }
@@ -42,15 +42,23 @@ namespace WjbuGangVer2_WebNC.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var list = new List<string>() { "Asus", "Acer", "Dell", "Macbook", "Msi", "CPU" };
-            ViewBag.list = list;
+            var listHang = new List<string>() { "Asus", "Acer", "Dell", "Macbook", "Msi" };
+            var listRam = new List<string>() { "8gb", "16gb", "32gb", "64gb" };
+            var listHdd = new List<string>() { "128gb", "256gb", "512gb", "1tb" };
+            var listHdh = new List<string>() { "Mac", "Linus", "Window 10 64 bit" };
+
+            ViewBag.listHang = listHang;
+            ViewBag.listRam = listRam;
+            ViewBag.listHdd = listHdd;
+            ViewBag.listHdh = listHdh;
             ViewBag.MaLoai = new SelectList(db.LoaiMHs, "MaLoai", "TenLoai");
+
             MatHang matHang = new MatHang();
             return View(matHang);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( MatHang matHang)
+        public ActionResult Create(MatHang matHang)
         {
 
             string fileName = Path.GetFileNameWithoutExtension(matHang.ImageFile.FileName);
@@ -82,7 +90,7 @@ namespace WjbuGangVer2_WebNC.Controllers
             matHang.Hinh3 = "~/Content/Images/" + matHang.Hang + "/" + fileName3;
             matHang.Hinh4 = "~/Content/Images/" + matHang.Hang + "/" + fileName4;
 
-            fileName = Path.Combine(Server.MapPath("~/Content/Images/"),matHang.Hang, fileName);
+            fileName = Path.Combine(Server.MapPath("~/Content/Images/"), matHang.Hang, fileName);
             fileName1 = Path.Combine(Server.MapPath("~/Content/Images/"), matHang.Hang, fileName1);
             fileName2 = Path.Combine(Server.MapPath("~/Content/Images/"), matHang.Hang, fileName2);
             fileName3 = Path.Combine(Server.MapPath("~/Content/Images/"), matHang.Hang, fileName3);
@@ -114,6 +122,16 @@ namespace WjbuGangVer2_WebNC.Controllers
         // GET: MatHang/Edit/5
         public ActionResult Edit(int? id)
         {
+            var listHang = new List<string>() { "Asus", "Acer", "Dell", "Macbook", "Msi" };
+            var listRam = new List<string>() { "8gb", "16gb", "32gb", "64gb" };
+            var listHdd = new List<string>() { "128gb", "256gb", "512gb", "1tb" };
+            var listHdh = new List<string>() { "Mac", "Linus", "Window 10 64 bit" };
+
+            ViewBag.listHang = listHang;
+            ViewBag.listRam = listRam;
+            ViewBag.listHdd = listHdd;
+            ViewBag.listHdh = listHdh;
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -134,6 +152,16 @@ namespace WjbuGangVer2_WebNC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MaMH,MaLoai,TenMH,DonGia,MoTa,Hang,HinhChinh,Hinh1,Hinh2,Hinh3,Hinh4")] MatHang matHang)
         {
+            var listHang = new List<string>() { "Asus", "Acer", "Dell", "Macbook", "Msi" };
+            var listRam = new List<string>() { "8gb", "16gb", "32gb", "64gb" };
+            var listHdd = new List<string>() { "128gb", "256gb", "512gb", "1tb" };
+            var listHdh = new List<string>() { "Mac", "Linus", "Window 10 64 bit" };
+
+            ViewBag.listHang = listHang;
+            ViewBag.listRam = listRam;
+            ViewBag.listHdd = listHdd;
+            ViewBag.listHdh = listHdh;
+
             if (ModelState.IsValid)
             {
                 db.Entry(matHang).State = EntityState.Modified;
