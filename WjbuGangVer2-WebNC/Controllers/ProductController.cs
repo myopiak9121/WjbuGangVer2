@@ -11,7 +11,7 @@ namespace WjbuGangVer2_WebNC.Controllers
     {
         QLBMTEntities db = new QLBMTEntities();
         // GET: Product
-        public ActionResult Index(int page = 1, int pagesize = 4)
+        public ActionResult Index(int page = 1, int pagesize = 16)
         {
             var list = db.MatHangs.ToList().ToPagedList(page, pagesize);
             return View(list);
@@ -21,6 +21,11 @@ namespace WjbuGangVer2_WebNC.Controllers
         public ActionResult IndexNSX(string name)
         {
             var list = db.MatHangs.Where(x => x.Hang == name).ToList();
+            Session["nsxbanner"] = "/Content/Images/Banner/" + name + "banner.jpg";
+            Session["nsxbannerleft"] = "/Content/Images/Banner/" + name + "left.jpg";
+            Session["nsxbannerright"] = "/Content/Images/Banner/" + name + "right.jpg";
+            Session["nsxbannerright1"] = "/Content/Images/Banner/" + name + "right1.jpg";
+            Session["nsxbannerright2"] = "/Content/Images/Banner/" + name + "right2.jpg";
             return View(list);
         }
 

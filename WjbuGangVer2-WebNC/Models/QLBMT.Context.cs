@@ -31,5 +31,6 @@ namespace WjbuGangVer2_WebNC.Models
         public virtual DbSet<LoaiMH> LoaiMHs { get; set; }
         public virtual DbSet<MatHang> MatHangs { get; set; }
         public virtual DbSet<PhuongThucThanhToan> PhuongThucThanhToans { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

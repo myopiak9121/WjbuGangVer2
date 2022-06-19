@@ -86,6 +86,16 @@
     <Property Name="TenPT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__MaPT__44FF419A" FromRole="PhuongThucThanhToan" ToRole="HoaDon" />
   </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <Association Name="FK__HoaDon__AccountI__45F365D3">
     <End Role="Account" Type="Self.Account" Multiplicity="1" />
     <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
@@ -133,6 +143,7 @@
     <EntitySet Name="LoaiMHs" EntityType="Self.LoaiMH" />
     <EntitySet Name="MatHangs" EntityType="Self.MatHang" />
     <EntitySet Name="PhuongThucThanhToans" EntityType="Self.PhuongThucThanhToan" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <AssociationSet Name="FK__HoaDon__AccountI__45F365D3" Association="Self.FK__HoaDon__AccountI__45F365D3">
       <End Role="Account" EntitySet="Accounts" />
       <End Role="HoaDon" EntitySet="HoaDons" />

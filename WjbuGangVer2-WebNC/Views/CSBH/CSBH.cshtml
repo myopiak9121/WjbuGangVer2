@@ -25,11 +25,16 @@
                         <ul class="dropdown-menu">
                             <li style="width: 250px"><a href="./HTML/All Products page 1.html">Laptop<i style="float: right;" class="fa fa-angle-right"></i></a>
                                 <ul class="dropdown-laptop">
-                                    <a href="./HTML/Asus/Asus Products.html"><li style="width: 250px; margin-top: -1px;">Asus</li></a>
-                                    <a href="./HTML/Acer/Acer Products.html"><li style="width: 250px">Acer</li></a>
-                                    <a href="./HTML/MSI/MSI Products.html"><li style="width: 250px">MSI</li></a>
-                                    <a href="./HTML/Dell/Dell Products.html"><li style="width: 250px">Dell</li></a>
-                                    <a href="./HTML/Macbook/Mac Products.html"><li style="width: 250px">Macbook</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Asus"})">
+                                    <li style="width: 250px; margin-top: -1px;">Asus</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Acer"})">
+                                    <li style="width: 250px; margin-top: -1px;">Acer</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Dell"})">
+                                    <li style="width: 250px; margin-top: -1px;">Dell</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Macbook"})">
+                                    <li style="width: 250px; margin-top: -1px;">Macbook</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Msi"})">
+                                    <li style="width: 250px; margin-top: -1px;">MSI</li></a>
                                 </ul>
                             </li>
                             <li style="width: 250px"><a href="#">Linh Kiện PC<i style="float: right;" class="fa fa-angle-right"></i></a>
@@ -74,18 +79,18 @@
                     </li>
                     <div class="center">
                         <div class="pagination">
-                            <a href="./index.html"><i class="fa fa-home"></i>Trang Chủ</a>
-                            <a href="./HTML/All Products page 1.html"><i class="fa fa-tags"></i>Sản Phẩm</a>
-                            <a href="./csbh.html" class="active"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
+                            <a href="@Url.Action("Index","Home")" ><i class="fa fa-home"></i>Trang Chủ</a>
+                            <a href="@Url.Action("Index","Product","Index")"><i class="fa fa-tags"></i>Sản Phẩm</a>
+                            <a href="@Url.Action("CSBH","CSBH","CSBH")" class="active"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
                             <a data-modal-target="#modal"><i class="fa fa-phone"></i>Liên Hệ</a>
                             <div class="modal" id="modal">
                                 <div class="modal-header">
-                                  <div class="title">Liên Hệ</div>
-                                  <button data-close-button class="close-button">&times;</button>
+                                    <div class="title">Liên Hệ</div>
+                                    <button data-close-button class="close-button">&times;</button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="testclmm">
-                                        <img height="300" style="margin-left: -40px;" src="./Images/Sang.jpg">
+                                        <img height="300" style="margin-left: -40px;" src="~/Content/Images/sang1.jpg">
                                     </div>
                                     <p>
                                         SĐT: 0582754857
@@ -96,17 +101,27 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="testclmm">
-                                        <img height="500" style="margin: -150px 0px 0px -300px" src="./Images/Me.png">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="~/Content/Images/Tien1.jpg">
                                     </div>
                                     <p>
                                         SĐT: 0931151121
                                         <br>
-                                        <a style="margin-left:80px;" href="https://www.facebook.com/satie0201/"> Quốc Tiến</a>
+                                        <a style="margin-left:80px;" href="https://www.facebook.com/satie0201"> Quốc Tiến</a>
                                     </p>
                                 </div>
-                              </div>
-                              <div id="overlay"></div>
-                              <script src="./JAVA/java.js"></script>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="~/Content/Images/tung1.png">
+                                    </div>
+                                    <p>
+                                        SĐT: 0396054204
+                                        <br>
+                                        <a style="margin-left:80px;" href="https://www.facebook.com/opapapaamammadad"> Mạnh Tùng</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="overlay"></div>
+                            <script src="./JAVA/java.js"></script>
                         </div>
                     </div>
                 </ul>

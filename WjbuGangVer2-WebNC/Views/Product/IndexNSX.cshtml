@@ -158,16 +158,22 @@
             </div>
         </div>
     </div>
-    <div class="newstuffs-container" style="height: 450px;">
+    <div class="newstuffs-container">
         <div class="newstuffs">
-            <div class="banner">
-                <img src="~/Content/Images/Banner/ASUS Banner.jpg" data-aos="fade-up" data-aos-delay="0" data-aos-easing="linear" data-aos-duration="500" style="padding-top: 1%">
-                <img src="~/Content/Images/Banner/Acer Banner.jpg" data-aos="fade-up" data-aos-delay="100" data-aos-easing="linear" data-aos-duration="500">
-                <img src="~/Content/Images/Banner/MSI Banner.jpg" data-aos="fade-up" data-aos-delay="200" data-aos-easing="linear" data-aos-duration="500">
+            <div class="banner-top">
+                <img height="200px" src=@Session["nsxbanner"]>
+            </div>
+            <div class="ns-left">
+                <img style="height:644px" src=@Session["nsxbannerleft"]>
+            </div>
+            <div class="ns-right">
+                <img style="height:330px" src=@Session["nsxbannerright"]>
+                <img style="height:307.5px; width: 307.5px; margin-top: 5px" src=@Session["nsxbannerright1"]>
+                <img style="height:307.5px; width: 307.5px; margin-top: 5px; margin-left: 5px" src=@Session["nsxbannerright2"]>
             </div>
         </div>
-    </div>
-    <div class="layout" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="500">
+    </div>=
+    <div class="layout" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="500" style="margin-top: 40px">
 
         @foreach (var item in Model)
         {
@@ -175,7 +181,7 @@
                 <a href="@Url.Action("Details", new { id = @item.MaMH })">
                     <img style="max-width: 270px; max-height: 230px" id="products-preview" src="@item.HinhChinh">
                     <p>@item.TenMH</p>
-                    <h2>@item.DonGia VNĐ</h2>
+                    <h2>@item.DonGia.ToString("#,##0") VNĐ</h2>
                 </a>
             </div>
         }

@@ -36,20 +36,20 @@
                 {
                     <div id="login">
                         <i class="fa fa-user fa-2x" style="padding:7.5px"></i>
-                        <a href="~/Account/Userlogout"><p> Xin chào @Session["User_Name"] | Đăng xuất</p></a>
+                        <a href="~/Account/Userlogout"><p style="margin-top: 20px"> Xin chào @Session["User_Name"] | Đăng xuất</p></a>
                     </div>
                 }
                 else
                 {
                     <div id="login">
                         <i class="fa fa-user fa-2x" style="padding:7.5px"></i>
-                        <a href="~/Account/AccountLogic"><p>Đăng Nhập</p></a>
+                        <a href="~/Account/AccountLogic"><p style="margin-top: 20px">Đăng Nhập</p></a>
 
                     </div>
                 }
                 <a href="@Url.Action("ShowToCart","HoaDon")">
                     <div id="cart">
-                        <i class="fa fa-shopping-cart fa-2x"></i>
+                        <i class="fa fa-shopping-cart fa-2x" style="padding: 5px"></i>
                         @Html.Action("BagCart", "HoaDon")
                     </div>
                 </a>

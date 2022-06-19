@@ -121,10 +121,10 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="testclmm">
-                                        <img height="300" style="margin-left: -40px;" src="../../Images/Sang.jpg">
+                                        <img height="300" style="margin-left: -40px;" src="~/Content/Images/sang1.jpg">
                                     </div>
                                     <p>
-                                        SĐT:0582754857
+                                        SĐT: 0582754857
 
                                         <br>
                                         <a style="margin-left:70px" href="https://www.facebook.com/profile.php?id=100038650591808">Sang Phạm</a>
@@ -132,12 +132,22 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="testclmm">
-                                        <img height="500" style="margin: -150px 0px 0px -300px" src="../../Images/Me.png">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="~/Content/Images/Tien1.jpg">
                                     </div>
                                     <p>
-                                        SĐT:0931151121
+                                        SĐT: 0931151121
                                         <br>
-                                        <a style="margin-left:70px" href="https://www.facebook.com/satie0201/">Quốc Tiến</a>
+                                        <a style="margin-left:80px;" href="https://www.facebook.com/satie0201"> Quốc Tiến</a>
+                                    </p>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="~/Content/Images/tung1.png">
+                                    </div>
+                                    <p>
+                                        SĐT: 0396054204
+                                        <br>
+                                        <a style="margin-left:80px;" href="https://www.facebook.com/opapapaamammadad"> Mạnh Tùng</a>
                                     </p>
                                 </div>
                             </div>
@@ -173,11 +183,16 @@
 
         @foreach (var item in Model)
         {
+            @*<script>
+                var number = @item.DonGia;
+                var commas = number.toLocaleString("en-US");
+                document.getElementById('price').innerHTML = commas;
+            </script>*@
             <div style="margin-left: 1%" id="products" class="Search">
                 <a href="@Url.Action("Details", new { id = @item.MaMH })">
                     <img style="max-width: 270px; max-height: 230px" id="products-preview" src="@item.HinhChinh">
                     <p>@item.TenMH</p>
-                    <h2>@item.DonGia VNĐ</h2>
+                    <h2 id="price">@item.DonGia.ToString("#,##0") VNĐ</h2>
                 </a>
             </div>
         }
@@ -221,6 +236,7 @@
         });
     </script>
     <script src="~Content/JAVA/java.js"></script>
+
 </body>
 </html>
 

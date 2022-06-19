@@ -222,6 +222,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBMT.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>QLBMT.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -5977,28 +5980,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\QLBMT.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLBMT.edmx</DependentUpon>
-      <LastGenOutput>QLBMT.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\QLBMT.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLBMT.edmx</DependentUpon>
-      <LastGenOutput>QLBMT.cs</LastGenOutput>
-    </Content>
     <Content Include="Content\Images\Asus\vaz044t_0c63158635aa4ab59152643e593a3994.webp" />
     <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-info3.webp" />
     <Content Include="Content\Images\Dell\Dell Inspiron G7 7590-info4.webp" />
     <Content Include="Content\Images\MSI\MSI icon.zip" />
     <Content Include="Content\Images\vecteezy_creative-and-modern-computer-pixels-logo-template-suitable-for-many-themes_203469.zip" />
-    <EntityDeploy Include="Models\QLBMT.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLBMT.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QLBMT.edmx.diagram">
-      <DependentUpon>QLBMT.edmx</DependentUpon>
-    </Content>
     <Content Include="AdminPages\assets\icon\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="AdminPages\assets\icon\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="AdminPages\assets\icon\font-awesome\fonts\fontawesome-webfont.woff" />
@@ -6315,12 +6301,29 @@
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="bin\WjbuGangVer2-WebNC.dll.config" />
+    <Content Include="Models\QLBMT.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLBMT.edmx</DependentUpon>
+      <LastGenOutput>QLBMT.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QLBMT.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLBMT.edmx</DependentUpon>
+      <LastGenOutput>QLBMT.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\QLBMT.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLBMT.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QLBMT.edmx.diagram">
+      <DependentUpon>QLBMT.edmx</DependentUpon>
+    </Content>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>

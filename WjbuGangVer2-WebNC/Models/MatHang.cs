@@ -25,7 +25,7 @@ namespace WjbuGangVer2_WebNC.Models
             Hinh4 = "~/Content/Images/add.png";
             this.HoaDons = new HashSet<HoaDon>();
         }
-    
+
         public int MaMH { get; set; }
         public int MaLoai { get; set; }
         public int DonGia { get; set; }
@@ -52,7 +52,7 @@ namespace WjbuGangVer2_WebNC.Models
         public string Color { get; set; }
         public string Size { get; set; }
         public string NSX { get; set; }
-    
+
         public virtual LoaiMH LoaiMH { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }

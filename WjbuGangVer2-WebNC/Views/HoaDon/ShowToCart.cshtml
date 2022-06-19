@@ -184,7 +184,8 @@
                                 @Html.DisplayFor(Model => item._shopping_product.TenMH)
                             </td>
                             <td style="padding-left:15px">
-                                @Html.DisplayFor(Model => item._shopping_product.DonGia)
+                                @*@Html.DisplayFor(Model => item._shopping_product.DonGia)*@
+                                @Convert.ToString(string.Format("{0:#,##0}", item._shopping_product.DonGia)) VNĐ
                             </td>
                             <td style="padding-left:120px">
                                 @using (Html.BeginForm("Update_Quantity_Cart", "HoaDon"))
@@ -195,7 +196,7 @@
                                 }
                             </td>
                             <td style="padding-left:115px">
-                                @total VNĐ
+                                @total.ToString("#,##0") VNĐ
                             </td>
                             <td>
                                 <a href="/HoaDon/RemoveCart/@item._shopping_product.MaMH" style="font-size:20px; padding-left:60px; color:blue; padding-top:5px;">Xóa</a>
@@ -212,14 +213,14 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="5" style="padding-top:30px;padding-left:900px">Tổng cộng: <h style="color: #5ac5f1;font-size:22px" >@Model.Total_Money()</h> VNĐ</td>
+                        <td colspan="5" style="padding-top:30px;padding-left:900px">Tổng cộng: <h style="color: #5ac5f1;font-size:22px" >@Model.Total_Money().ToString("#,##0")</h> VNĐ</td>
                         <td>
                             <a href="@Url.Action("ThanhToan","HoaDon")"><input type="submit" value="Thanh toán" class="btn btn-success" style="width: 100px; height: 50px; margin-left:20px;margin-top:20px;font-size: 15px; background-color: #5ac5f1; color: white; border: none; border-radius: 20%" /></a>
                         </td>
                     </tr>
                 </tfoot>
             </table>
-            <a href="@Url.Action("Index","Home")" style="margin-left:600px;">Quay về trang chủ</a>
+            <a href="@Url.Action("Index","Home")" style="margin-left:600px;">Tiếp tục mua hàng</a>
         }
     </div>
 </body>

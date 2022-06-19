@@ -176,10 +176,10 @@
                         <br><br><b>Xuất xứ</b> : Chính hãng
                         <br><br><b>Bảo hành</b> : @Model.BaoHanh
                         <br><br><b>Tình trạng</b> : Mới 100%
-                        <br><br>Giá:<span style="color: red; margin-left: 50px;">@Model.DonGia</span>
+                        <br><br>Giá:<span id="price" style="color: red; margin-left: 50px;">@Model.DonGia.ToString("#,##0") VNĐ</span>
                         <br><br><br>
                         <a href="@Url.Action("CreateOrder","HoaDon", new { id = @Model.MaMH })"><button style="background-color: red; color: white">Đặt Hàng</button></a>
-                        <a href="@Url.Action("AddToCart","HoaDon", new { id = @Model.MaMH })" onclick="addToCartSuccess()"><button style="background-color: orange; color: white">Thêm vào giỏ</button></a>
+                        <a href="@Url.Action("AddToCart","HoaDon", new { id = @Model.MaMH })" onclick="addToCartSuccess()"><button style="background-color: tomato; color: white">Thêm vào giỏ</button></a>
                     </p>
                 </div>
                 <div id="thongso">
@@ -293,5 +293,10 @@
         });
     </script>
     <script src="~/Conten/JAVA/java.js"></script>
+    @*<script>
+        var number = @Model.DonGia;
+        var commas = number.toLocaleString("en-US");
+        document.getElementById('price').innerHTML = commas;
+    </script>*@
 </body>
 </html>

@@ -28,7 +28,7 @@ namespace WjbuGangVer2_WebNC.Controllers
             {
                 GetHoaDon().Add(pro);
             }
-            return RedirectToAction("Details","Product", new { id = id});
+            return RedirectToAction("Details", "Product", new { id = id });
         }
         public ActionResult CreateOrder(int id)
         {
@@ -72,24 +72,48 @@ namespace WjbuGangVer2_WebNC.Controllers
             ViewBag.infoCart = _t_item;
             return PartialView("BagCart");
         }
+
         public ActionResult ThanhToan()
         {
             return View(Session["HoaDon"]);
         }
 
+        [HttpPost]
+        public ActionResult ThanhToan(FormCollection frc)
+        {
+            QLBMTEntities db = new QLBMTEntities();
+            HoaDon _hoadon = new HoaDon();
+
+            var _total = frc["totalprice"];
+            var _quantity = frc["quantity"];
+
+            _hoadon.Ngay = DateTime.Now;
+            _hoadon.SoLuong = Convert.ToInt32(_quantity);
+            _hoadon.TongTien = Convert.ToInt32(_total);
+            _hoadon.MaPT = 1;
+            _hoadon.AccountID = 1;
+
+            db.HoaDons.Add(_hoadon);
+            db.SaveChanges();
+
+            Session["HoaDon"] = null;
+
+            return RedirectToAction("Index", "Product");
+        }
+
         //phương thức thanh toán
         //public ActionResult CheckOut(FormCollection form)
         //{
-            //try
-            //{
-                //HoaDon hoadon = Session["HoaDon"] as HoaDon;
-                //HoaDonDetail _other =new HoaDon();
-                //_other.Ngay = DateTime.Now;
-                //foreach(var item in hoadon.Items)
-                //{
-                   //HoaDon 
-                //}    
-            //}
+        //try
+        //{
+        //HoaDon hoadon = Session["HoaDon"] as HoaDon;
+        //HoaDonDetail _other =new HoaDon();
+        //_other.Ngay = DateTime.Now;
+        //foreach(var item in hoadon.Items)
+        //{
+        //HoaDon 
+        //}    
+        //}
         //}
     }
 }

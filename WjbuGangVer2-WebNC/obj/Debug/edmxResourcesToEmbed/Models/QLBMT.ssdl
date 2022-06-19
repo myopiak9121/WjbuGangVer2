@@ -86,6 +86,16 @@
     <Property Name="MaPT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenPT" Type="nvarchar" MaxLength="255" Nullable="false" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <Association Name="FK__HoaDon__AccountI__45F365D3">
     <End Role="Account" Type="Self.Account" Multiplicity="1" />
     <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
@@ -154,6 +164,7 @@
     <EntitySet Name="LoaiMH" EntityType="Self.LoaiMH" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MatHang" EntityType="Self.MatHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhuongThucThanhToan" EntityType="Self.PhuongThucThanhToan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__HoaDon__AccountI__45F365D3" Association="Self.FK__HoaDon__AccountI__45F365D3">
       <End Role="Account" EntitySet="Account" />
       <End Role="HoaDon" EntitySet="HoaDon" />
