@@ -132,7 +132,7 @@
                                 <div class="main-search morphsearch-search">
                                     <div class="input-group">
                                         <span class="input-group-addon search-close"><i class="ti-close"></i></span>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="Search">
                                         <span class="input-group-addon search-btn"><i class="ti-search"></i></span>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius" src="~/Content/Images/user.jpg" alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center img-radius" src="~/Content/Images/user.png" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">@Session["Admin_Name"]</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -188,7 +188,7 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="~/Content/Images/user.jpg" class="img-radius" alt="User-Profile-Image">
+                                    <img src="~/Content/Images/user.png" class="img-radius" alt="User-Profile-Image">
                                     <span>@Session["Admin_Name"]</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
@@ -222,7 +222,7 @@
                 <div class="pcoded-inner-navbar main-menu">
                     <div class="">
                         <div class="main-menu-header">
-                            <img class="img-80 img-radius" src="~/Content/Images/user.jpg" alt="User-Profile-Image">
+                            <img class="img-80 img-radius" src="~/Content/Images/user.png" alt="User-Profile-Image">
                             <div class="user-details">
                                 <span id="more-details">@Session["Admin_Name"]<i class="fa fa-caret-down"></i></span>
                             </div>
@@ -306,6 +306,25 @@
                                 </li>
                             </ul>
                         </li>
+
+
+                        <!--menu-->
+                        <li class="pcoded-hasmenu">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Quản lý đơn hàng</span>
+                                <span class="pcoded-mcaret"></span>
+                            </a>
+                            <!--components-->
+                            <ul class="pcoded-submenu">
+                                <li class=" ">
+                                    <a href="breadcrumb.html" class="waves-effect waves-dark">
+                                        @Html.ActionLink("Danh sách đơn hàng", "Index", "QuanlyHoaDon")
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                     </ul>
             </nav>
             <div class="pcoded-content">
@@ -333,7 +352,7 @@
                     </div>
                 </div>
 
-                <div class="main-body">
+                <div class="main-body" style="margin: 50px 0px 0px 50px">
                     @RenderBody()
                     <div class="page-body">
                     </div>
@@ -378,6 +397,30 @@
             Session["Admin_username"] = null;
             Session["Admin_Name"] = null;
         }
+    </script>
+    <script>
+        $(document).ready(function () {
+            function Contains(text_one, text_two) {
+                if (text_one.indexOf(text_two) != -1)
+                    return true;
+            }
+            $("#Search").keyup(function () {
+                var searchText = $("#Search").val().toLowerCase();
+                $(".Search").each(function () {
+                    if (!Contains($(this).text().toLowerCase(), searchText)) {
+                        $(this).hide();
+                    }
+                    else {
+                        $(this).show();
+                    }
+                });
+            });
+            $('table tbody tr').click(function () {
+                var text = $(this).find('td:first-child')[0].innerText;
+                console.log(text);
+                document.getElementById("test").innerText = $(this).text();
+            });
+        });
     </script>
 </body>
 

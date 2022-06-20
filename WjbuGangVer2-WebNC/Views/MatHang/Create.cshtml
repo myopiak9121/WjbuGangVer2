@@ -5,14 +5,14 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<div style="margin-left:150px; margin-top:50px">
+<div >
     <h2>Thêm Mặt Hàng</h2>
-    <div style="margin-left:100px">
+    <div>
         @using (Html.BeginForm("Create", "MatHang", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-horizontal" style=" margin-left: 200px;">
+            <div class="form-horizontal">
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
@@ -60,7 +60,7 @@
                     @Html.LabelFor(model => model.HinhChinh, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         <img src="@Url.Content(Model.HinhChinh)" style="height: 200px; width: 200px; margin: 10px" id="previewImage" />
-                        <input type="file" name="ImageFile" onchange="ShowImagePreview(this, document.getElementById('previewImage'))" />
+                        <input type="file"accept=".jpg, .jpeg, .png"  name="ImageFile" onchange="ShowImagePreview(this, document.getElementById('previewImage'))" />
                         @Html.ValidationMessageFor(model => model.HinhChinh, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                     @Html.LabelFor(model => model.Hinh1, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         <img src="@Url.Content(Model.Hinh1)" style="height: 200px; width: 200px; margin: 10px" id="previewImage1" />
-                        <input type="file" name="ImageFile1" onchange="ShowImagePreview1(this, document.getElementById('previewImage1'))" />
+                        <input type="file"accept=".jpg, .jpeg, .png"  name="ImageFile1" onchange="ShowImagePreview1(this, document.getElementById('previewImage1'))" />
                         @Html.ValidationMessageFor(model => model.Hinh1, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                     @Html.LabelFor(model => model.Hinh2, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         <img src="@Url.Content(Model.Hinh2)" style="height: 200px; width: 200px; margin: 10px" id="previewImage2" />
-                        <input type="file" name="ImageFile2" onchange="ShowImagePreview2(this, document.getElementById('previewImage2'))" />
+                        <input type="file"accept=".jpg, .jpeg, .png"  name="ImageFile2" onchange="ShowImagePreview2(this, document.getElementById('previewImage2'))" />
                         @Html.ValidationMessageFor(model => model.Hinh2, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                     @Html.LabelFor(model => model.Hinh3, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         <img src="@Url.Content(Model.Hinh3)" style="height: 200px; width: 200px; margin: 10px" id="previewImage3" />
-                        <input type="file" name="ImageFile3" onchange="ShowImagePreview3(this, document.getElementById('previewImage3'))" />
+                        <input type="file"accept=".jpg, .jpeg, .png"  name="ImageFile3" onchange="ShowImagePreview3(this, document.getElementById('previewImage3'))" />
                         @Html.ValidationMessageFor(model => model.Hinh3, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                     @Html.LabelFor(model => model.Hinh4, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         <img src="@Url.Content(Model.Hinh4)" style="height: 200px; width: 200px; margin: 10px" id="previewImage4" />
-                        <input type="file" name="ImageFile4" onchange="ShowImagePreview4(this, document.getElementById('previewImage4'))" />
+                        <input type="file"accept=".jpg, .jpeg, .png"  name="ImageFile4" onchange="ShowImagePreview4(this, document.getElementById('previewImage4'))" />
                         @Html.ValidationMessageFor(model => model.Hinh4, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -206,12 +206,6 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.NSX, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        <input type="date" name="arrival_time" class="form-control" value="" required />
-                    </div>
-                </div>
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">

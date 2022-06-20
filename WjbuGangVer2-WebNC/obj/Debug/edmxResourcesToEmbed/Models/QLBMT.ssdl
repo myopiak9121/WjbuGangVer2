@@ -32,6 +32,7 @@
     <Property Name="TongTien" Type="int" Nullable="false" />
     <Property Name="MaPT" Type="int" Nullable="false" />
     <Property Name="AccountID" Type="int" Nullable="false" />
+    <Property Name="ChiTiet" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="HoaDonChiTiet">
     <Key>
@@ -77,7 +78,7 @@
     <Property Name="Weight" Type="nvarchar(max)" />
     <Property Name="Color" Type="nvarchar(max)" />
     <Property Name="Size" Type="nvarchar(max)" />
-    <Property Name="NSX" Type="nvarchar(max)" />
+    <Property Name="SoLuong" Type="int" />
   </EntityType>
   <EntityType Name="PhuongThucThanhToan">
     <Key>

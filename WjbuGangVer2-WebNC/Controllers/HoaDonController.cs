@@ -84,15 +84,41 @@ namespace WjbuGangVer2_WebNC.Controllers
             QLBMTEntities db = new QLBMTEntities();
             HoaDon _hoadon = new HoaDon();
 
-            var _total = frc["totalprice"];
-            var _quantity = frc["quantity"];
-
             _hoadon.Ngay = DateTime.Now;
-            _hoadon.SoLuong = Convert.ToInt32(_quantity);
-            _hoadon.TongTien = Convert.ToInt32(_total);
-            _hoadon.MaPT = 1;
-            _hoadon.AccountID = 1;
+            _hoadon.SoLuong = 0;
+            _hoadon.TongTien = 0;
+            foreach (HoaDonItem item in GetHoaDon().items)
+            {
+                _hoadon.TongTien += item._shopping_product.DonGia * item._shopping_quantity;
+                _hoadon.SoLuong += item._shopping_quantity;
+            }
+            int maPT = 0;
+            bool parse = Int32.TryParse(frc["pttt"], out maPT);
+            if(parse)
+            {
+                _hoadon.MaPT = maPT;
+            }
+            else
+            {
+                return View(Session["HoaDon"]);
+            }
+            _hoadon.AccountID = (int)Session["User_ID"];
 
+            string chiTiet = "";
+            int i = 0;
+            foreach (HoaDonItem item in GetHoaDon().items)
+            {
+                var slr = item._shopping_quantity;
+
+                chiTiet += item._shopping_product.MaMH + ":" + item._shopping_quantity;
+                if (i < GetHoaDon().items.Count - 1)
+                {
+                    chiTiet += "-";
+                }
+                i++;
+                db.MatHangs.Where(a => a.MaMH == item._shopping_product.MaMH).FirstOrDefault().SoLuong -= slr;
+            }
+            _hoadon.ChiTiet = chiTiet;
             db.HoaDons.Add(_hoadon);
             db.SaveChanges();
 

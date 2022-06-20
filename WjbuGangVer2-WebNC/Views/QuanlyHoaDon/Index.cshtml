@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WjbuGangVer2_WebNC.Models.HoaDon>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Danh sách đơn đặt hàng</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Ngay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhuongThucThanhToan.TenPT)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="Search">
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.TongTien)*@
+                @Convert.ToString(string.Format("{0:#,##0}", item.TongTien))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Account.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhuongThucThanhToan.TenPT)
+            </td>
+            <td>
+                @Html.ActionLink("Chi tiết đơn hàng", "Details", new { id = item.MaHD }) |
+                @Html.ActionLink("Xóa đơn hàng", "Delete", new { id = item.MaHD })
+            </td>
+        </tr>
+    }
+
+</table>

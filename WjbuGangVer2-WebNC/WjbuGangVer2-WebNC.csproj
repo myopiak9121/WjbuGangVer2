@@ -184,6 +184,7 @@
     <Compile Include="Controllers\LoaiMHController.cs" />
     <Compile Include="Controllers\MatHangController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\QuanlyHoaDonController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -194,7 +195,6 @@
     <Compile Include="Models\Admin.cs">
       <DependentUpon>QLBMT.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BUS\ShopWibuBUS.cs" />
     <Compile Include="Models\HoaDon.cs">
       <DependentUpon>QLBMT.tt</DependentUpon>
     </Compile>
@@ -6383,11 +6383,15 @@
     <Content Include="Views\Account\AccountLogic.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Dashboard.cshtml" />
+    <Content Include="Views\QuanlyHoaDon\Create.cshtml" />
+    <Content Include="Views\QuanlyHoaDon\Delete.cshtml" />
+    <Content Include="Views\QuanlyHoaDon\Details.cshtml" />
+    <Content Include="Views\QuanlyHoaDon\Edit.cshtml" />
+    <Content Include="Views\QuanlyHoaDon\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Testt\" />
-    <Folder Include="Views\Test\" />
+    <Folder Include="Models\BUS\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

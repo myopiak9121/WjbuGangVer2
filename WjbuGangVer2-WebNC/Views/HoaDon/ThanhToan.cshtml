@@ -110,10 +110,13 @@
     }
     else
     {
-        <a href="./index.html">
-            <img height="150" src="/Content/Images/index/new logo.png">
+        <a href="@Url.Action("Index", "Home")">
+            <img height="100" style="margin-left:60px" src="/Content/Images/index/new logo.png">
         </a>
-        <h2>Thanh Toán</h2>
+        <div style=" display:inline-block;">
+            <h2 style="color: #5ac5f1"> | Thanh Toán</h2>
+            <h4 style=" margin-left:1410px">Thông tin đơn hàng</h4>
+        </div>
         using (Html.BeginForm("ThanhToan", "HoaDon", FormMethod.Post, new { @class = "box" }))
         {
             <form name="form1" class="box" action="">
@@ -122,16 +125,30 @@
                         <div class="container">
                             <form action="/action_page.php">
                                 <div class="row">
-                                    <div class="col-50">
+                                    <div class="col-50" id="info">
                                         <h3>Thông tin khách hàng</h3>
-                                        <label for="fname"><i class="fa fa-user"></i> Họ và tên</label>
-                                        <input type="text" id="fname" name="firstname" placeholder="">
-                                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                                        <input type="text" id="email" name="email" placeholder="">
-                                        <label for="adr"><i class="fa fa-address-card-o"></i> Địa chỉ</label>
-                                        <input type="text" id="adr" name="address" placeholder="">
-                                        <label for="city"><i class="fa fa-institution"></i> Thành phố</label>
-                                        <input type="text" id="city" name="city" placeholder="">
+                                        @if (Session["User_username"] != null)
+                                        {
+                                            <label for="fname"><i class="fa fa-user"></i> Họ và tên</label>
+                                            <input type="text" id="fname" name="firstname" value="@Session["User_Name"]" , new { disabled="disabled" }>
+                                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                            <input type="text" id="email" name="email" value="@Session["User_Email"]" , new { disabled="disabled" }>
+                                            <label for="adr"><i class="fa fa-address-card-o"></i> Địa chỉ</label>
+                                            <input type="text" id="adr" name="address" value="@Session["User_Diachi"]" , new { disabled="disabled" }>
+                                            <label for="city"><i class="fa fa-institution"></i> Thành phố</label>
+                                            <input type="text" id="city" name="city" placeholder="Hồ Chí Minh">
+                                        }
+                                        else
+                                        {
+                                            <label for="fname"><i class="fa fa-user"></i> Họ và tên</label>
+                                            <input type="text" id="fname" name="firstname">
+                                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                            <input type="text" id="email" name="email" placeholder="sang@example.com">
+                                            <label for="adr"><i class="fa fa-address-card-o"></i> Địa chỉ</label>
+                                            <input type="text" id="adr" name="address">
+                                            <label for="city"><i class="fa fa-institution"></i> Thành phố</label>
+                                            <input type="text" id="city" name="city">
+                                        }
 
                                         <div class="row">
                                             <div class="col-50">
@@ -140,18 +157,26 @@
                                             </div>
                                             <div class="col-50">
                                                 <label for="zip">Số điện thoại</label>
-                                                <input type="text" id="zip" name="zip" placeholder="">
+                                                <input type="text" id="sdt" name="zip" placeholder="" value="@Session["User_SDT"]">
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-50">
                                         <h3>Phương thức thanh toán</h3>
-                                        <select name="delivery-collection" class="summary-delivery-selection" style="height:30px">
-                                            <option value="0" selected="selected">Chọn Phương Thức Giao Hàng</option>
-                                            <option value="collection">Thanh toán qua thẻ VISA</option>
-                                            <option value="first-class">Thanh toán trực tiếp tại cửa hàng</option>
+                                        @*<select id="myAns" onchange="verifyAnswer()" name="delivery-collection" class="summary-delivery-selection" style="height:30px">
+                                                <option selected="selected" value="0">Chọn Phương Thức Giao Hàng</option>
+                                                <option id="visa" value="1">Thanh toán qua thẻ VISA</option>
+                                                <option id="tructiep" value="2">Thanh toán trực tiếp tại cửa hàng</option>
+                                            </select>*@
+
+                                        <select id="myAns" name="pttt" onchange="verify()" style="height:30px">
+                                            <option value="choose"> Chọn Phương Thức Giao Hàng </option>
+                                            <option value="1"> Thanh toán qua thẻ VISA </option>
+                                            <option value="2"> Thanh toán trực tiếp tại cửa hàng </option>
                                         </select>
+
+
                                         <label for="cname" style="margin-top:10px">Tên thẻ</label>
                                         <input type="text" id="cname" name="cardname" placeholder="">
                                         <label for="ccnum">Số thẻ</label>
@@ -174,28 +199,63 @@
                                 <label>
                                     <input type="checkbox" checked="checked" name="sameadr"> Địa chỉ giao hàng giống thanh toán
                                 </label>
-                                <input type="submit" value="Thanh toán" class="btn">
+                                <input type="submit" value="Thanh toán" class="btn" onclick="ThanhToanSucess()">
                             </form>
                         </div>
                     </div>
                     <div class="col-25">
                         <div class="container">
-
                             @foreach (var item in Model.Items)
                             {
-                                <h4>Thông tin đơn hàng <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i>   @item._shopping_quantity</span></h4>
                                 double total = Convert.ToDouble(item._shopping_product.DonGia * item._shopping_quantity);
-                                <input name="totalprice" value="@total" style="visibility: hidden"/>
-                                <input name="quantity" value="@item._shopping_quantity" style="visibility: hidden" />
-                                <p>@item._shopping_product.TenMH <c style="padding-left:70px">@item._shopping_quantity</c> <r style="padding-left:70px">@total.ToString("#,##0") VNĐ</r></p>
+
+                                <p>@item._shopping_product.TenMH <i class="fa fa-shopping-cart"></i> <input style="width: 20px; background-color: #f2f2f2; border:none" name="quantity" value="@item._shopping_quantity.ToString("#,##0")" readonly> <input style="border: none; background-color: #f2f2f2; width:auto" class="price" name="totalprice" value="@total.ToString("#,##0")" readonly> VNĐ</p>
                                 <hr>
-                                <p>Tổng cộng <span class="price" style="color:black"><b>@Model.Total_Money().ToString("#,##0") VNĐ</b></span></p>
                             }
+                            <p>Tổng cộng <span class="price" style="color:black"><b>@Model.Total_Money().ToString("#,##0") VNĐ</b></span></p>
                         </div>
                     </div>
                 </div>
             </form>
+
         }
+
     }
 </body>
 </html>
+<script>
+    function verify() {
+        //get the selected value from the dropdown list
+        var mylist = document.getElementById("myAns");
+        var result = mylist.options[mylist.selectedIndex].text;
+        if (result == 'Thanh toán trực tiếp tại cửa hàng') {
+            //disable all the radio button
+            document.getElementById("cname").disabled = true;
+            document.getElementById("ccnum").disabled = true;
+            document.getElementById("expmonth").disabled = true;
+            document.getElementById("expyear").disabled = true;
+            document.getElementById("cvv").disabled = true;
+        } else {
+            //enable all the radio button
+            document.getElementById("cname").disabled = false;
+            document.getElementById("ccnum").disabled = false;
+            document.getElementById("expmonth").disabled = false;
+            document.getElementById("expyear").disabled = false;
+            document.getElementById("cvv").disabled = false;
+        }
+    }
+</script>
+<script>
+    function ThanhToanSucess() {
+        var mylist = document.getElementById("myAns");
+        var result = mylist.options[mylist.selectedIndex].text;
+        if (result == 'Chọn Phương Thức Giao Hàng') {
+            alert("Vui lòng chọn phương thức thanh toán!");
+
+        }
+        else {
+            alert("Thanh toán thành công! Đơn hàng của bạn sẽ được xử lý nhanh nhất có thể");
+
+        }
+    }
+</script>

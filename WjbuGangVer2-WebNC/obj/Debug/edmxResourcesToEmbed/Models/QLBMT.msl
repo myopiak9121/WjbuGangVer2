@@ -34,6 +34,7 @@
           <ScalarProperty Name="TongTien" ColumnName="TongTien" />
           <ScalarProperty Name="MaPT" ColumnName="MaPT" />
           <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="ChiTiet" ColumnName="ChiTiet" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -73,7 +74,7 @@
           <ScalarProperty Name="Weight" ColumnName="Weight" />
           <ScalarProperty Name="Color" ColumnName="Color" />
           <ScalarProperty Name="Size" ColumnName="Size" />
-          <ScalarProperty Name="NSX" ColumnName="NSX" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

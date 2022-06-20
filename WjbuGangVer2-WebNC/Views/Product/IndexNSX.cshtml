@@ -108,7 +108,7 @@
                     </li>
                     <div class="center">
                         <div class="pagination" style="margin: 0px 0px">
-                            <a href="@Url.Action("Index","Home")" ><i class="fa fa-home"></i>Trang Chủ</a>
+                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Trang Chủ</a>
                             <a href="@Url.Action("Index","Product","Index")" class="active"><i class="fa fa-tags"></i>Sản Phẩm</a>
                             <a href="@Url.Action("CSBH","CSBH","CSBH")"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
                             <a data-modal-target="#modal"><i class="fa fa-phone"></i>Liên Hệ</a>
@@ -172,8 +172,16 @@
                 <img style="height:307.5px; width: 307.5px; margin-top: 5px; margin-left: 5px" src=@Session["nsxbannerright2"]>
             </div>
         </div>
-    </div>=
-    <div class="layout" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="500" style="margin-top: 40px">
+    </div>
+    <div style="margin-top: 50px">
+        <div class="introduce-title">
+            SẢN PHẨM
+            <div class="colorbar">
+                <img src="~/Content/Images/index/colorbar.gif">
+            </div>
+        </div>
+    </div>
+    <div class="layout" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="500" style="margin-top: 50px">
 
         @foreach (var item in Model)
         {

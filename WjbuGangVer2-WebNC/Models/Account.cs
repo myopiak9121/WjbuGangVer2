@@ -11,8 +11,7 @@ namespace WjbuGangVer2_WebNC.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Account
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,7 +19,7 @@ namespace WjbuGangVer2_WebNC.Models
         {
             this.HoaDons = new HashSet<HoaDon>();
         }
-
+    
         public int AccountID { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
@@ -28,10 +27,9 @@ namespace WjbuGangVer2_WebNC.Models
         public string DiaChi { get; set; }
         public string Email { get; set; }
         public Nullable<int> SDT { get; set; }
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> NgaySinh { get; set; }
         public string Role { get; set; }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }
     }

@@ -5,14 +5,13 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Chỉnh sửa</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Account</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.AccountID)
@@ -68,15 +67,14 @@
         <div class="form-group">
             @Html.LabelFor(model => model.NgaySinh, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NgaySinh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
+                <input class="mb-0 form-control" type="date" value="2000-01-01" name="birth" placeholder="Ngày sinh" required">
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Role, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.Role, new SelectList(ViewBag.listRole), htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -88,7 +86,3 @@
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

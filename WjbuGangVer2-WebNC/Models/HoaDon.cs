@@ -29,6 +29,7 @@ namespace WjbuGangVer2_WebNC.Models
         //    throw new NotImplementedException();
         //}
 
+        public string ChiTiet { get; set; }
         public Nullable<int> SoLuong { get; set; }
         public Nullable<int> TongTien { get; set; }
         public int MaPT { get; set; }
@@ -41,7 +42,7 @@ namespace WjbuGangVer2_WebNC.Models
 
         //Gio hàng
 
-        List<HoaDonItem> items = new List<HoaDonItem>();
+        public List<HoaDonItem> items = new List<HoaDonItem>();
         public IEnumerable<HoaDonItem> Items
         {
             get { return items; }
@@ -96,5 +97,11 @@ namespace WjbuGangVer2_WebNC.Models
     {
         public MatHang _shopping_product { get; set; }
         public int _shopping_quantity { get; set; }
+    }
+
+    public class HoaDonAdmin
+    {
+        public HoaDon hoaDon { get; set; }
+        public List<HoaDonItem> items { get; set; }
     }
 }

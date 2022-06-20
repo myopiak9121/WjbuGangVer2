@@ -84,17 +84,17 @@ namespace WjbuGangVer2_WebNC.Controllers
             fileName3 = fileName3 + DateTime.Now.ToString("yymmssfff") + extension3;
             fileName4 = fileName4 + DateTime.Now.ToString("yymmssfff") + extension4;
 
-            matHang.HinhChinh = "~/Content/Images/" + matHang.Hang + "/" + fileName;
-            matHang.Hinh1 = "~/Content/Images/" + matHang.Hang + "/" + fileName1;
-            matHang.Hinh2 = "~/Content/Images/" + matHang.Hang + "/" + fileName2;
-            matHang.Hinh3 = "~/Content/Images/" + matHang.Hang + "/" + fileName3;
-            matHang.Hinh4 = "~/Content/Images/" + matHang.Hang + "/" + fileName4;
+            matHang.HinhChinh = "/Content/Images/" + matHang.Hang + "/" + fileName;
+            matHang.Hinh1 = "/Content/Images/" + matHang.Hang + "/" + fileName1;
+            matHang.Hinh2 = "/Content/Images/" + matHang.Hang + "/" + fileName2;
+            matHang.Hinh3 = "/Content/Images/" + matHang.Hang + "/" + fileName3;
+            matHang.Hinh4 = "/Content/Images/" + matHang.Hang + "/" + fileName4;
 
-            fileName = Path.Combine(Server.MapPath("~/Content/Images/"), matHang.Hang, fileName);
-            fileName1 = Path.Combine(Server.MapPath("~/Content/Images/"), matHang.Hang, fileName1);
-            fileName2 = Path.Combine(Server.MapPath("~/Content/Images/"), matHang.Hang, fileName2);
-            fileName3 = Path.Combine(Server.MapPath("~/Content/Images/"), matHang.Hang, fileName3);
-            fileName4 = Path.Combine(Server.MapPath("~/Content/Images/"), matHang.Hang, fileName4);
+            fileName = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName);
+            fileName1 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName1);
+            fileName2 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName2);
+            fileName3 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName3);
+            fileName4 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName4);
 
             matHang.ImageFile.SaveAs(fileName);
             matHang.ImageFile1.SaveAs(fileName1);
@@ -150,7 +150,8 @@ namespace WjbuGangVer2_WebNC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaMH,MaLoai,TenMH,DonGia,MoTa,Hang,HinhChinh,Hinh1,Hinh2,Hinh3,Hinh4")] MatHang matHang)
+        public ActionResult Edit(MatHang matHang)
+
         {
             var listHang = new List<string>() { "Asus", "Acer", "Dell", "Macbook", "Msi" };
             var listRam = new List<string>() { "8gb", "16gb", "32gb", "64gb" };
@@ -161,10 +162,75 @@ namespace WjbuGangVer2_WebNC.Controllers
             ViewBag.listRam = listRam;
             ViewBag.listHdd = listHdd;
             ViewBag.listHdh = listHdh;
+            System.Diagnostics.Debug.WriteLine("Hinh chinh: " + matHang.HinhChinh);
+            System.Diagnostics.Debug.WriteLine("MaMH: " + matHang.MaMH);
+
+            if (matHang.ImageFile != null)
+            {
+                string fileName = matHang.ImageFile.FileName;
+                matHang.HinhChinh = "/Content/Images/" + matHang.Hang + "/" + fileName;
+                fileName = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName);
+                matHang.ImageFile.SaveAs(fileName);
+            }
+            else
+            {
+                string fileName = db.MatHangs.Find(matHang.MaMH).HinhChinh;
+                matHang.HinhChinh = fileName;
+            }
+            if (matHang.ImageFile1 != null)
+            {
+                string fileName1 = matHang.ImageFile1.FileName;
+                matHang.Hinh1 = "/Content/Images/" + matHang.Hang + "/" + fileName1;
+                fileName1 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName1);
+                matHang.ImageFile1.SaveAs(fileName1);
+            }
+            else
+            {
+                string fileName1 = db.MatHangs.Find(matHang.MaMH).Hinh1;
+                matHang.Hinh1 = fileName1;
+            }
+            if (matHang.ImageFile2 != null)
+            {
+                string fileName2 = matHang.ImageFile2.FileName;
+                matHang.Hinh2 = "/Content/Images/" + matHang.Hang + "/" + fileName2;
+                fileName2 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName2);
+                matHang.ImageFile2.SaveAs(fileName2);
+            }
+            else
+            {
+                string fileName2 = db.MatHangs.Find(matHang.MaMH).Hinh2;
+                matHang.Hinh2 = fileName2;
+            }
+            if (matHang.ImageFile3 != null)
+            {
+                string fileName3 = matHang.ImageFile3.FileName;
+                matHang.Hinh3 = "/Content/Images/" + matHang.Hang + "/" + fileName3;
+                fileName3 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName3);
+                matHang.ImageFile3.SaveAs(fileName3);
+            }
+            else
+            {
+                string fileName3 = db.MatHangs.Find(matHang.MaMH).Hinh3;
+                matHang.Hinh3 = fileName3;
+            }
+            if (matHang.ImageFile4 != null)
+            {
+                string fileName4 = matHang.ImageFile4.FileName;
+                matHang.Hinh4 = "/Content/Images/" + matHang.Hang + "/" + fileName4;
+                fileName4 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName4);
+                matHang.ImageFile4.SaveAs(fileName4);
+            }
+            else
+            {
+                string fileName4 = db.MatHangs.Find(matHang.MaMH).Hinh4;
+                matHang.Hinh4 = fileName4;
+            }
+
+          
 
             if (ModelState.IsValid)
-            {
-                db.Entry(matHang).State = EntityState.Modified;
+            {            
+                db.Entry(db.MatHangs.Find(matHang.MaMH)).CurrentValues.SetValues(matHang);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

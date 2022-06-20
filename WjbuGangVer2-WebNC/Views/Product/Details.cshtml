@@ -176,7 +176,8 @@
                         <br><br><b>Xuất xứ</b> : Chính hãng
                         <br><br><b>Bảo hành</b> : @Model.BaoHanh
                         <br><br><b>Tình trạng</b> : Mới 100%
-                        <br><br>Giá:<span id="price" style="color: red; margin-left: 50px;">@Model.DonGia.ToString("#,##0") VNĐ</span>
+                        <br><br><b>Số lượng</b> : <span id="price">@Model.SoLuong</span>
+                        <br><br><b>Giá</b> : <span id="price" style="color: red; margin-left: 50px;">@Model.DonGia.ToString("#,##0") VNĐ</span>
                         <br><br><br>
                         <a href="@Url.Action("CreateOrder","HoaDon", new { id = @Model.MaMH })"><button style="background-color: red; color: white">Đặt Hàng</button></a>
                         <a href="@Url.Action("AddToCart","HoaDon", new { id = @Model.MaMH })" onclick="addToCartSuccess()"><button style="background-color: tomato; color: white">Thêm vào giỏ</button></a>

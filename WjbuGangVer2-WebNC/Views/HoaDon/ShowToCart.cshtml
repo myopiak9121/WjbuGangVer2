@@ -208,20 +208,32 @@
                     <tr>
                         <td colspan="5">
                             <table style="border-collapse:separate; border-spacing:5px">
-                                
+
                             </table>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="5" style="padding-top:30px;padding-left:900px">Tổng cộng: <h style="color: #5ac5f1;font-size:22px" >@Model.Total_Money().ToString("#,##0")</h> VNĐ</td>
                         <td>
-                            <a href="@Url.Action("ThanhToan","HoaDon")"><input type="submit" value="Thanh toán" class="btn btn-success" style="width: 100px; height: 50px; margin-left:20px;margin-top:20px;font-size: 15px; background-color: #5ac5f1; color: white; border: none; border-radius: 20%" /></a>
+                            @if (Session["User_ID"] == null)
+                            {
+                                <a href="@Url.Action("AccountLogic", "Account")"><input type="submit" value="Thanh toán" class="btn btn-success" style="width: 100px; height: 50px; margin-left:20px;margin-top:20px;font-size: 15px; background-color: #5ac5f1; color: white; border: none; border-radius: 5px" onclick="ThanhToanfeo()"/></a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("ThanhToan","HoaDon")"><input type="submit" value="Thanh toán" class="btn btn-success" style="width: 100px; height: 50px; margin-left:20px;margin-top:20px;font-size: 15px; background-color: #5ac5f1; color: white; border: none; border-radius: 5px" /></a>
+                            }
                         </td>
                     </tr>
                 </tfoot>
             </table>
-            <a href="@Url.Action("Index","Home")" style="margin-left:600px;">Tiếp tục mua hàng</a>
+            <a href="@Url.Action("Index","Home")" style="margin-left:600px;"><input type="submit" value="Tiếp tục mua hàng" class="btn btn-success" style="padding: 0px 20px 0px 20px; float: right; width: auto; height: 50px; margin: 20px 290px 20px 20px; font-size: 15px; background-color: #5ac5f1; color: white; border: none; border-radius: 5px" /></a>
         }
     </div>
 </body>
 </html>
+<script>
+    function ThanhToanfeo() {
+        alert("Vui lòng đăng nhập trước khi thanh toán!");
+    }
+</script>

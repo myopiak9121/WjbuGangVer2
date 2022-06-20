@@ -7,7 +7,7 @@
 
 <div>
     <hr />
-    <dl class="dl-horizontal" style=" margin-left: 400px;">
+    <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.TenMH)
         </dt>
@@ -21,7 +21,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DonGia)
+            @*@Html.DisplayFor(model => model.DonGia)*@
+            @Convert.ToString(string.Format("{0:#,##0}", Model.DonGia))
         </dd>
 
         <dt>

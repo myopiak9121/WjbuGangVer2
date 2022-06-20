@@ -64,7 +64,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NgaySinh)
+            @*@Html.DisplayFor(model => model.NgaySinh)*@
+            @Convert.ToString(string.Format("{0:dd/MM/yyyy}", Model.NgaySinh))
         </dd>
 
         <dt>

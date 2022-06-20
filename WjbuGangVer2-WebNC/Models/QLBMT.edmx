@@ -37,6 +37,7 @@
           <Property Name="TongTien" Type="int" Nullable="false" />
           <Property Name="MaPT" Type="int" Nullable="false" />
           <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="ChiTiet" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="HoaDonChiTiet">
           <Key>
@@ -82,7 +83,7 @@
           <Property Name="Weight" Type="nvarchar(max)" />
           <Property Name="Color" Type="nvarchar(max)" />
           <Property Name="Size" Type="nvarchar(max)" />
-          <Property Name="NSX" Type="nvarchar(max)" />
+          <Property Name="SoLuong" Type="int" />
         </EntityType>
         <EntityType Name="PhuongThucThanhToan">
           <Key>
@@ -229,6 +230,7 @@
           <Property Name="TongTien" Type="Int32" Nullable="false" />
           <Property Name="MaPT" Type="Int32" Nullable="false" />
           <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <Property Name="ChiTiet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Account" Relationship="Self.FK__HoaDon__AccountI__45F365D3" FromRole="HoaDon" ToRole="Account" />
           <NavigationProperty Name="PhuongThucThanhToan" Relationship="Self.FK__HoaDon__MaPT__44FF419A" FromRole="HoaDon" ToRole="PhuongThucThanhToan" />
           <NavigationProperty Name="MatHangs" Relationship="Self.HoaDonChiTiet" FromRole="HoaDon" ToRole="MatHang" />
@@ -270,7 +272,7 @@
           <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NSX" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SoLuong" Type="Int32" />
           <NavigationProperty Name="LoaiMH" Relationship="Self.FK__MatHang__MaLoai__4316F928" FromRole="MatHang" ToRole="LoaiMH" />
           <NavigationProperty Name="HoaDons" Relationship="Self.HoaDonChiTiet" FromRole="MatHang" ToRole="HoaDon" />
         </EntityType>
@@ -396,6 +398,7 @@
                 <ScalarProperty Name="TongTien" ColumnName="TongTien" />
                 <ScalarProperty Name="MaPT" ColumnName="MaPT" />
                 <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="ChiTiet" ColumnName="ChiTiet" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -435,7 +438,7 @@
                 <ScalarProperty Name="Weight" ColumnName="Weight" />
                 <ScalarProperty Name="Color" ColumnName="Color" />
                 <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="NSX" ColumnName="NSX" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

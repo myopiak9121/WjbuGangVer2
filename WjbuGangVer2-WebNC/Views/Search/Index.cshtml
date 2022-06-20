@@ -158,27 +158,34 @@
             </div>
         </div>
     </div>
-    <div class="newstuffs-container" style="height: 450px;">
-        <div class="newstuffs">
-            <div class="banner">
-                <img src="~/Content/Images/Banner/ASUS Banner.jpg" data-aos="fade-up" data-aos-delay="0" data-aos-easing="linear" data-aos-duration="500" style="padding-top: 1%">
-                <img src="~/Content/Images/Banner/Acer Banner.jpg" data-aos="fade-up" data-aos-delay="100" data-aos-easing="linear" data-aos-duration="500">
-                <img src="~/Content/Images/Banner/MSI Banner.jpg" data-aos="fade-up" data-aos-delay="200" data-aos-easing="linear" data-aos-duration="500">
-            </div>
+    <div class="introduce-title" data-aos="fade-up" data-aos-delay="0" data-aos-easing="linear" data-aos-duration="500">
+        SẢN PHẨM
+        <div class="colorbar">
+            <img src="~/Content/Images/index/colorbar.gif">
         </div>
     </div>
     <div class="layout" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="500">
 
-        @foreach (var item in Model)
+        @if (Model.Count() == 0)
         {
-            <div style="margin-left: 1%" id="products" class="Search">
-                <a href="@Url.Action("Details", new { id = @item.MaMH })">
-                    <img style="max-width: 270px; max-height: 230px" id="products-preview" src="@item.HinhChinh">
-                    <p>@item.TenMH</p>
-                    <h2>@item.DonGia VNĐ</h2>
-                </a>
+            <div style="width: 100%; text-align: center" class="introduce-title" data-aos="fade-up" data-aos-delay="0" data-aos-easing="linear" data-aos-duration="500">
+                Không tìm thấy sản phẩm
             </div>
         }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <div style="margin-left: 1%" id="products" class="Search">
+                    <a href="@Url.Action("Details", "Product", new { id = @item.MaMH })">
+                        <img style="max-width: 270px; max-height: 230px" id="products-preview" src="@item.HinhChinh">
+                        <p>@item.TenMH</p>
+                        <h2>@item.DonGia.ToString("#,##0") VNĐ</h2>
+                    </a>
+                </div>
+            }
+        }
+
 
         <div class="center1" style="width: 100%; height: auto; float: left;">
             <div class="pagination1">
