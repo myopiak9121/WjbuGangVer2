@@ -36,7 +36,7 @@ namespace WjbuGangVer2_WebNC.Controllers
                 Session["User_ID"] = y.AccountID;
                 Session["User_username"] = y.Username;
 
-                Session["User_Name"] = y.HoTen;
+                Session["User_Name"] = y.HoTen.Substring(0,4);
                 Session["User_Email"] = y.Email;
                 Session["User_Diachi"] = y.DiaChi;
                 Session["User_SDT"] = y.SDT;
