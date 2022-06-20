@@ -25,11 +25,16 @@
                         <ul class="dropdown-menu">
                             <li style="width: 250px"><a href="./HTML/All Products page 1.html">Laptop<i style="float: right;" class="fa fa-angle-right"></i></a>
                                 <ul class="dropdown-laptop">
-                                    <a href="./HTML/Asus/Asus Products.html"><li style="width: 250px; margin-top: -1px;">Asus</li></a>
-                                    <a href="./HTML/Acer/Acer Products.html"><li style="width: 250px">Acer</li></a>
-                                    <a href="./HTML/MSI/MSI Products.html"><li style="width: 250px">MSI</li></a>
-                                    <a href="./HTML/Dell/Dell Products.html"><li style="width: 250px">Dell</li></a>
-                                    <a href="./HTML/Macbook/Mac Products.html"><li style="width: 250px">Macbook</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Asus"})">
+                                    <li style="width: 250px; margin-top: -1px;">Asus</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Acer"})">
+                                    <li style="width: 250px; margin-top: -1px;">Acer</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Dell"})">
+                                    <li style="width: 250px; margin-top: -1px;">Dell</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Macbook"})">
+                                    <li style="width: 250px; margin-top: -1px;">Macbook</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Msi"})">
+                                    <li style="width: 250px; margin-top: -1px;">MSI</li></a>
                                 </ul>
                             </li>
                             <li style="width: 250px"><a href="#">Linh Kiện PC<i style="float: right;" class="fa fa-angle-right"></i></a>
@@ -74,18 +79,18 @@
                     </li>
                     <div class="center">
                         <div class="pagination">
-                            <a href="./index.html"><i class="fa fa-home"></i>Trang Chủ</a>
-                            <a href="./HTML/All Products page 1.html"><i class="fa fa-tags"></i>Sản Phẩm</a>
-                            <a href="./csbh.html" class="active"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
+                            <a href="@Url.Action("Index","Home")" ><i class="fa fa-home"></i>Trang Chủ</a>
+                            <a href="@Url.Action("Index","Product","Index")"><i class="fa fa-tags"></i>Sản Phẩm</a>
+                            <a href="@Url.Action("CSBH","CSBH","CSBH")" class="active"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
                             <a data-modal-target="#modal"><i class="fa fa-phone"></i>Liên Hệ</a>
                             <div class="modal" id="modal">
                                 <div class="modal-header">
-                                  <div class="title">Liên Hệ</div>
-                                  <button data-close-button class="close-button">&times;</button>
+                                    <div class="title">Liên Hệ</div>
+                                    <button data-close-button class="close-button">&times;</button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="testclmm">
-                                        <img height="300" style="margin-left: -40px;" src="./Images/Sang.jpg">
+                                        <img height="300" style="margin-left: -40px;" src="~/Content/Images/sang1.jpg">
                                     </div>
                                     <p>
                                         SĐT: 0582754857
@@ -96,17 +101,27 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="testclmm">
-                                        <img height="500" style="margin: -150px 0px 0px -300px" src="./Images/Me.png">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="~/Content/Images/Tien1.jpg">
                                     </div>
                                     <p>
                                         SĐT: 0931151121
                                         <br>
-                                        <a style="margin-left:80px;" href="https://www.facebook.com/satie0201/"> Quốc Tiến</a>
+                                        <a style="margin-left:80px;" href="https://www.facebook.com/satie0201"> Quốc Tiến</a>
                                     </p>
                                 </div>
-                              </div>
-                              <div id="overlay"></div>
-                              <script src="./JAVA/java.js"></script>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="~/Content/Images/tung1.png">
+                                    </div>
+                                    <p>
+                                        SĐT: 0396054204
+                                        <br>
+                                        <a style="margin-left:80px;" href="https://www.facebook.com/opapapaamammadad"> Mạnh Tùng</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="overlay"></div>
+                            <script src="./JAVA/java.js"></script>
                         </div>
                     </div>
                 </ul>
@@ -148,7 +163,7 @@
     <br>
 
     <font color="blue"> <h2>II/ Chính sách đổi mới sản phẩm bị lỗi:</h2></font>
-    <h3> – Khách hàng vui lòng kiểm tra kĩ hàng hóa trước khi thanh toán hoặc ngay khi nhận hàng, XGEAR sẽ không chịu trách nhiệm đối với hàng hóa bị lỗi không phải do nhà sản xuất gây ra sau khi khách Hàng đã nhận hàng. Trong trường hợp sản phẩm của khách hàng bị hư hại trong quá trình vận chuyển, quý khách vui lòng từ chối nhận và báo ngay cho XGEAR để được đổi sản phẩm mới.</h3><br>
+    <h3> – Khách hàng vui lòng kiểm tra kĩ hàng hóa trước khi thanh toán hoặc ngay khi nhận hàng, WibuGang sẽ không chịu trách nhiệm đối với hàng hóa bị lỗi không phải do nhà sản xuất gây ra sau khi khách Hàng đã nhận hàng. Trong trường hợp sản phẩm của khách hàng bị hư hại trong quá trình vận chuyển, quý khách vui lòng từ chối nhận và báo ngay cho WibuGang để được đổi sản phẩm mới.</h3><br>
     <h3> – Đổi mới hàng hóa trong vòng 7 ngày ( đối với linh kiện, gaming gear, một số mã laptop MSI và laptop Acer) – 14 ngày (đối với một số mã Laptop Asus, MSI) kể từ ngày giao hàng . Hàng hóa bị lỗi phải được xác định là lỗi kỹ thuật do nhà sản xuất (cần có xác nhận của Hãng đối với một số trường hợp phức tạp); sản phẩm yêu cầu không bị trầy xước, nứt mẻ (còn nguyên mới giống như lúc Khách hàng nhận hàng); phụ kiện kèm theo phải còn mới, hộp/thùng còn nguyên vẹn, đầy đủ chứng từ như khi WibuGang  giao hàng, riêng lỗi màn hình điểm chết phải từ 5 điểm chết trở lên mới được đổi mới. </h3>
     <br>
     <font color="blue"> <h2>III/ Trường hợp từ chối đổi trả sản phẩm:</h2></font>
@@ -170,7 +185,7 @@
         </div>
     </div>
     <font color="blue"> <h2>I/ Điều kiện nhận bảo hành.</h2></font>
-    <h3> – Áp dụng chính sách đổi mới nếu sản phẩm của quý khách mua tại Xgear trong vòng 7 ngày kể từ lúc giao hàng .( Quý khách tham khảo quy định chính sách đổi mới ) nếu sau 7 ngày sẽ áp dụng chính sách bảo hành theo tiêu chuẩn của nhà sản xuất tại các trung tâm bảo hành chính hãng tại Việt Nam .</h3>
+    <h3> – Áp dụng chính sách đổi mới nếu sản phẩm của quý khách mua tại WibuGang trong vòng 7 ngày kể từ lúc giao hàng .( Quý khách tham khảo quy định chính sách đổi mới ) nếu sau 7 ngày sẽ áp dụng chính sách bảo hành theo tiêu chuẩn của nhà sản xuất tại các trung tâm bảo hành chính hãng tại Việt Nam .</h3>
     <font color="blue"> <h2>Đối với Laptop MSI:</h2></font>
     <h3>HCMC: Digiworld Corporation</h3>
     <h3> – Address: 512A Huynh Tan Phat, BinhThuan ward, Dist. 07, HCMC, Vietnam</h3><br>
@@ -185,8 +200,8 @@
     <font color="blue"> <h2>Đối với Laptop ASUS:</h2></font>
     <h3> – Quý khách vui long tham khảo theo đường dẫn sau :</h3>
     <a href="https://www.asus.com/vn/About_ASUS/Facilities-Branches/"></a><br>
-    <h3> Các sản phẩm, thiết bị do Xgear cung cấp ( dựa trên hóa đơn bán hàng, tem hoặc phiếu bảo hành, serial number v.v…. )</h3>
-    <h3> Đối với các sản phẩm, thiết bị được cấp hiếu bảo hành (PBH), khách hàng phải xuất trình PBH và có đầy đủ tem bảo hành của XGEAR(nếu thiết bị không cấp PBH thì phải còn nguyên tem của XGEAR) và phải còn trong thời hạn bảo hành.</h3>
+    <h3> Các sản phẩm, thiết bị do WibuGang cung cấp ( dựa trên hóa đơn bán hàng, tem hoặc phiếu bảo hành, serial number v.v…. )</h3>
+    <h3> Đối với các sản phẩm, thiết bị được cấp hiếu bảo hành (PBH), khách hàng phải xuất trình PBH và có đầy đủ tem bảo hành của WibuGang(nếu thiết bị không cấp PBH thì phải còn nguyên tem của WibuGang) và phải còn trong thời hạn bảo hành.</h3>
     <h3>Tem bảo hành, mã vạch số serial,… của sản phẩm phải còn nguyên vẹn, không có dấu hiệu cạo sửa, tẩy xóa, bị rách, mờ.</h3>
     <h3>Đối với laptop, màn hình LCD có số điểm chấm từ 5 điểm lỗi trở lên.</h3>
     <h3>Những hư hỏng của thiết bị được xác định do lỗi kỹ thuật hoặc lỗi của nhà sản xuất .</h3>
@@ -200,11 +215,11 @@
     <font color="green"> <h3>Đặc biệt: không nhận BH về dữ liệu trong các thiết bị lưu trữ, bản quyền phần mềm.</h3></font>
 
     <font color="blue"> <h2>III/ Đối với trường hợp hết thời hạn bảo hành.</h2></font>
-    <h3> – Đối với các sản phẩm, thiết bị hết thời hạn bảo hành thì Xgear vẫn nhận máy và chuyển sang trường hợp SỬA CHỮA DỊCH VỤ. </h3><br>
-    <h3>  – Khách hàng sẽ hoàn toàn chịu tất cả các chi phí thay thế linh kiện, sửa chữa do trung tâm bảo hành đưa ra. Xgear sẽ hỗ trợ Khách hàng gởi bảo hành đến trung tâm bảo hành.</h3><br>
+    <h3> – Đối với các sản phẩm, thiết bị hết thời hạn bảo hành thì WibuGang vẫn nhận máy và chuyển sang trường hợp SỬA CHỮA DỊCH VỤ. </h3><br>
+                                                                                                                                        <h3>  – Khách hàng sẽ hoàn toàn chịu tất cả các chi phí thay thế linh kiện, sửa chữa do trung tâm bảo hành đưa ra. WibuGang sẽ hỗ trợ Khách hàng gởi bảo hành đến trung tâm bảo hành.</h3><br>
 
     <font color="blue"> <h2>IV/ Thời gian trả bảo hành:</h2></font>
-    <h3>–  Dự kiến từ 7 – 10 ngày tính từ ngày tiếp nhận bảo hành tại cửa hàng (không tính thứ 7 và chủ nhật, ngày lễ). Đối với những lỗi phức tạp hơn thì thời gian bảo hành có thể kéo dài, Xgear sẽ thông báo cho bạn nếu có thông tin bảo hành từ hãng.</h3>
+    <h3>–  Dự kiến từ 7 – 10 ngày tính từ ngày tiếp nhận bảo hành tại cửa hàng (không tính thứ 7 và chủ nhật, ngày lễ). Đối với những lỗi phức tạp hơn thì thời gian bảo hành có thể kéo dài, WibuGang sẽ thông báo cho bạn nếu có thông tin bảo hành từ hãng.</h3>
     </div>
     </div>
 

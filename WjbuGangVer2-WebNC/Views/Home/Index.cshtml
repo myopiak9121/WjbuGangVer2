@@ -26,16 +26,16 @@
                             <li style="width: 250px">
                                 <a href="./HTML/All Products page 1.html">Laptop<i style="float: right;" class="fa fa-angle-right"></i></a>
                                 <ul class="dropdown-laptop">
-                                    <a href="./HTML/Asus/Asus Products.html">
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Asus"})">
                                     <li style="width: 250px; margin-top: -1px;">Asus</li></a>
-                                    <a href="./HTML/Acer/Acer Products.html">
-                                    <li style="width: 250px">Acer</li></a>
-                                    <a href="./HTML/MSI/MSI Products.html">
-                                    <li style="width: 250px">MSI</li></a>
-                                    <a href="./HTML/Dell/Dell Products.html">
-                                    <li style="width: 250px">Dell</li></a>
-                                    <a href="./HTML/Macbook/Mac Products.html">
-                                    <li style="width: 250px">Macbook</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Acer"})">
+                                    <li style="width: 250px; margin-top: -1px;">Acer</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Dell"})">
+                                    <li style="width: 250px; margin-top: -1px;">Dell</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Macbook"})">
+                                    <li style="width: 250px; margin-top: -1px;">Macbook</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Msi"})">
+                                    <li style="width: 250px; margin-top: -1px;">MSI</li></a>
                                 </ul>
                             </li>
                             <li style="width: 250px">
@@ -106,11 +106,9 @@
                     </li>
                     <div class="center">
                         <div class="pagination">
-                            <a href="./index.html" class="active"><i class="fa fa-home"></i>Trang Chủ</a>
+                            <a href="@Url.Action("Index","Home")" class="active"><i class="fa fa-home"></i>Trang Chủ</a>
                             <a href="@Url.Action("Index","Product","Index")"><i class="fa fa-tags"></i>Sản Phẩm</a>
-                            <a href="@Url.Action("CSBH","CSBH","CSBH")">
-                                <i class="fa fa-book"></i>Chính Sách Bán Hàng
-                            </a>
+                            <a href="@Url.Action("CSBH","CSBH","CSBH")"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
                             <a data-modal-target="#modal"><i class="fa fa-phone"></i>Liên Hệ</a>
                             <div class="modal" id="modal">
                                 <div class="modal-header">
@@ -119,7 +117,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="testclmm">
-                                        <img height="300" style="margin-left: -40px;" src="./Images/Sang.jpg">
+                                        <img height="300" style="margin-left: -40px;" src="~/Content/Images/sang1.jpg">
                                     </div>
                                     <p>
                                         SĐT: 0582754857
@@ -130,12 +128,22 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="testclmm">
-                                        <img height="500" style="margin: -150px 0px 0px -300px" src="./Images/Me.png">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="~/Content/Images/Tien1.jpg">
                                     </div>
                                     <p>
                                         SĐT: 0931151121
                                         <br>
-                                        <a style="margin-left:80px;" href="https://www.facebook.com/satie0201/"> Quốc Tiến</a>
+                                        <a style="margin-left:80px;" href="https://www.facebook.com/satie0201"> Quốc Tiến</a>
+                                    </p>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="~/Content/Images/tung1.png">
+                                    </div>
+                                    <p>
+                                        SĐT: 0396054204
+                                        <br>
+                                        <a style="margin-left:80px;" href="https://www.facebook.com/opapapaamammadad"> Mạnh Tùng</a>
                                     </p>
                                 </div>
                             </div>
@@ -210,33 +218,33 @@
         </div>
         <div>
             <div id="product-container">
-                <a href="./HTML/Asus/Asus Products.html">
+                <a href="@Url.Action("IndexNSX", "Product", new { name = "Asus"})">
                     <div data-tooltip="Laptop Asus" style="margin-right: 2%;" id="product" data-aos="fade-up" data-aos-delay="0" data-aos-easing="linear" data-aos-duration="500">
                         <img style="width: 35%; margin-left: 32.5%; margin-top: 6%;" src="~/Content/Images/Asus/Asus icon.png">
                     </div>
                 </a>
-                <a href="./HTML/Acer/Acer Products.html">
+                <a href="@Url.Action("IndexNSX", "Product", new { name = "Acer"})">
                     <div data-tooltip="Laptop Acer" style="margin-right: 2%;" id="product" data-aos="fade-up" data-aos-delay="250" data-aos-easing="linear" data-aos-duration="500">
                         <img style="margin-top: 15%; margin-left: 27%" src="~/Content/Images/Acer/Acer icon.png">
                     </div>
                 </a>
-                <a href="./HTML/MSI/MSI Products.html">
+                <a href="@Url.Action("IndexNSX", "Product", new { name = "Msi"})">
                     <div data-tooltip="Laptop MSI" id="product" data-aos="fade-up" data-aos-delay="500" data-aos-easing="linear" data-aos-duration="500">
                         <img style="margin-top: 17%; margin-left: 27%" src="~/Content/Images/MSI/MSI-logo-png.png">
                     </div>
                 </a>
-                <a href="./HTML/Dell/Dell Products.html">
+                <a href="@Url.Action("IndexNSX", "Product", new { name = "Dell"})">
                     <div data-tooltip="Laptop Dell" style="margin-right: 2%;" id="product" data-aos="fade-up" data-aos-delay="0" data-aos-easing="linear" data-aos-duration="500">
                         <img style="margin-top: 15%; margin-left: 25%" src="~/Content/Images/Dell/Dell Icon.png">
                     </div>
                 </a>
-                <a href="./HTML/Macbook/Mac Products.html">
+                <a href="@Url.Action("IndexNSX", "Product", new { name = "Macbook"})">
                     <div data-tooltip="Macbook" style="margin-right: 2%;" id="product" data-aos="fade-up" data-aos-delay="250" data-aos-easing="linear" data-aos-duration="500">
                         <img style="margin-top: 17%; width: 50%" src="~/Content/Images/Macbook/Mac Icon.png">
                     </div>
                 </a>
                 <div id="MoreProducts" style="cursor: pointer; text-align: center;" data-aos="fade-up" data-aos-delay="500" data-aos-easing="linear" data-aos-duration="500">
-                    <p><a style="color: rgb(48,48,48);" href="./HTML/All Products page 1.html">Xem Thêm</a></p>
+                    <p><a style="color: rgb(48,48,48);" href="@Url.Action("Index", "Product", "Index")">Xem Thêm</a></p>
                     <p style="font-family: 'Times New Roman', Times, serif; font-size: 60px; margin-top: -10%;">...</p>
                 </div>
             </div>

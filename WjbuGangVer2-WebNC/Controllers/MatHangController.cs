@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -17,6 +18,7 @@ namespace WjbuGangVer2_WebNC.Controllers
         // GET: MatHang
         public ActionResult Index()
         {
+
             var matHangs = db.MatHangs.Include(m => m.LoaiMH);
             return View(matHangs.ToList());
         }
@@ -37,19 +39,75 @@ namespace WjbuGangVer2_WebNC.Controllers
         }
 
         // GET: MatHang/Create
+        [HttpGet]
         public ActionResult Create()
         {
-            ViewBag.MaLoai = new SelectList(db.LoaiMHs, "MaLoai", "TenLoai");
-            return View();
-        }
+            var listHang = new List<string>() { "Asus", "Acer", "Dell", "Macbook", "Msi" };
+            var listRam = new List<string>() { "8gb", "16gb", "32gb", "64gb" };
+            var listHdd = new List<string>() { "128gb", "256gb", "512gb", "1tb" };
+            var listHdh = new List<string>() { "Mac", "Linus", "Window 10 64 bit" };
 
-        // POST: MatHang/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+            ViewBag.listHang = listHang;
+            ViewBag.listRam = listRam;
+            ViewBag.listHdd = listHdd;
+            ViewBag.listHdh = listHdh;
+            ViewBag.MaLoai = new SelectList(db.LoaiMHs, "MaLoai", "TenLoai");
+
+            MatHang matHang = new MatHang();
+            return View(matHang);
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaMH,MaLoai,TenMH,DonGia,MoTa,HinhChinh,Hinh1,Hinh2,Hinh3,Hinh4")] MatHang matHang)
+        public ActionResult Create(MatHang matHang)
         {
+
+            string fileName = Path.GetFileNameWithoutExtension(matHang.ImageFile.FileName);
+            string fileName1 = Path.GetFileNameWithoutExtension(matHang.ImageFile1.FileName);
+            string fileName2 = Path.GetFileNameWithoutExtension(matHang.ImageFile2.FileName);
+            string fileName3 = Path.GetFileNameWithoutExtension(matHang.ImageFile3.FileName);
+            string fileName4 = Path.GetFileNameWithoutExtension(matHang.ImageFile4.FileName);
+
+
+
+            string extension = Path.GetExtension(matHang.ImageFile.FileName);
+            string extension1 = Path.GetExtension(matHang.ImageFile1.FileName);
+            string extension2 = Path.GetExtension(matHang.ImageFile2.FileName);
+            string extension3 = Path.GetExtension(matHang.ImageFile3.FileName);
+            string extension4 = Path.GetExtension(matHang.ImageFile4.FileName);
+
+
+
+
+            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+            fileName1 = fileName1 + DateTime.Now.ToString("yymmssfff") + extension1;
+            fileName2 = fileName2 + DateTime.Now.ToString("yymmssfff") + extension2;
+            fileName3 = fileName3 + DateTime.Now.ToString("yymmssfff") + extension3;
+            fileName4 = fileName4 + DateTime.Now.ToString("yymmssfff") + extension4;
+
+            matHang.HinhChinh = "/Content/Images/" + matHang.Hang + "/" + fileName;
+            matHang.Hinh1 = "/Content/Images/" + matHang.Hang + "/" + fileName1;
+            matHang.Hinh2 = "/Content/Images/" + matHang.Hang + "/" + fileName2;
+            matHang.Hinh3 = "/Content/Images/" + matHang.Hang + "/" + fileName3;
+            matHang.Hinh4 = "/Content/Images/" + matHang.Hang + "/" + fileName4;
+
+            fileName = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName);
+            fileName1 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName1);
+            fileName2 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName2);
+            fileName3 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName3);
+            fileName4 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName4);
+
+            matHang.ImageFile.SaveAs(fileName);
+            matHang.ImageFile1.SaveAs(fileName1);
+            matHang.ImageFile2.SaveAs(fileName2);
+            matHang.ImageFile3.SaveAs(fileName3);
+            matHang.ImageFile4.SaveAs(fileName4);
+
+
+            //fileName = Path.GetFullPath(fileName);
+
+
+            ViewBag.MaLoai = new SelectList(db.LoaiMHs, "MaLoai", "TenLoai", matHang.MaLoai);
+
             if (ModelState.IsValid)
             {
                 db.MatHangs.Add(matHang);
@@ -57,13 +115,23 @@ namespace WjbuGangVer2_WebNC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MaLoai = new SelectList(db.LoaiMHs, "MaLoai", "TenLoai", matHang.MaLoai);
+            ModelState.Clear();
             return View(matHang);
         }
 
         // GET: MatHang/Edit/5
         public ActionResult Edit(int? id)
         {
+            var listHang = new List<string>() { "Asus", "Acer", "Dell", "Macbook", "Msi" };
+            var listRam = new List<string>() { "8gb", "16gb", "32gb", "64gb" };
+            var listHdd = new List<string>() { "128gb", "256gb", "512gb", "1tb" };
+            var listHdh = new List<string>() { "Mac", "Linus", "Window 10 64 bit" };
+
+            ViewBag.listHang = listHang;
+            ViewBag.listRam = listRam;
+            ViewBag.listHdd = listHdd;
+            ViewBag.listHdh = listHdh;
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -82,11 +150,87 @@ namespace WjbuGangVer2_WebNC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaMH,MaLoai,TenMH,DonGia,MoTa,HinhChinh,Hinh1,Hinh2,Hinh3,Hinh4")] MatHang matHang)
+        public ActionResult Edit(MatHang matHang)
+
         {
-            if (ModelState.IsValid)
+            var listHang = new List<string>() { "Asus", "Acer", "Dell", "Macbook", "Msi" };
+            var listRam = new List<string>() { "8gb", "16gb", "32gb", "64gb" };
+            var listHdd = new List<string>() { "128gb", "256gb", "512gb", "1tb" };
+            var listHdh = new List<string>() { "Mac", "Linus", "Window 10 64 bit" };
+
+            ViewBag.listHang = listHang;
+            ViewBag.listRam = listRam;
+            ViewBag.listHdd = listHdd;
+            ViewBag.listHdh = listHdh;
+            System.Diagnostics.Debug.WriteLine("Hinh chinh: " + matHang.HinhChinh);
+            System.Diagnostics.Debug.WriteLine("MaMH: " + matHang.MaMH);
+
+            if (matHang.ImageFile != null)
             {
-                db.Entry(matHang).State = EntityState.Modified;
+                string fileName = matHang.ImageFile.FileName;
+                matHang.HinhChinh = "/Content/Images/" + matHang.Hang + "/" + fileName;
+                fileName = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName);
+                matHang.ImageFile.SaveAs(fileName);
+            }
+            else
+            {
+                string fileName = db.MatHangs.Find(matHang.MaMH).HinhChinh;
+                matHang.HinhChinh = fileName;
+            }
+            if (matHang.ImageFile1 != null)
+            {
+                string fileName1 = matHang.ImageFile1.FileName;
+                matHang.Hinh1 = "/Content/Images/" + matHang.Hang + "/" + fileName1;
+                fileName1 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName1);
+                matHang.ImageFile1.SaveAs(fileName1);
+            }
+            else
+            {
+                string fileName1 = db.MatHangs.Find(matHang.MaMH).Hinh1;
+                matHang.Hinh1 = fileName1;
+            }
+            if (matHang.ImageFile2 != null)
+            {
+                string fileName2 = matHang.ImageFile2.FileName;
+                matHang.Hinh2 = "/Content/Images/" + matHang.Hang + "/" + fileName2;
+                fileName2 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName2);
+                matHang.ImageFile2.SaveAs(fileName2);
+            }
+            else
+            {
+                string fileName2 = db.MatHangs.Find(matHang.MaMH).Hinh2;
+                matHang.Hinh2 = fileName2;
+            }
+            if (matHang.ImageFile3 != null)
+            {
+                string fileName3 = matHang.ImageFile3.FileName;
+                matHang.Hinh3 = "/Content/Images/" + matHang.Hang + "/" + fileName3;
+                fileName3 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName3);
+                matHang.ImageFile3.SaveAs(fileName3);
+            }
+            else
+            {
+                string fileName3 = db.MatHangs.Find(matHang.MaMH).Hinh3;
+                matHang.Hinh3 = fileName3;
+            }
+            if (matHang.ImageFile4 != null)
+            {
+                string fileName4 = matHang.ImageFile4.FileName;
+                matHang.Hinh4 = "/Content/Images/" + matHang.Hang + "/" + fileName4;
+                fileName4 = Path.Combine(Server.MapPath("/Content/Images/"), matHang.Hang, fileName4);
+                matHang.ImageFile4.SaveAs(fileName4);
+            }
+            else
+            {
+                string fileName4 = db.MatHangs.Find(matHang.MaMH).Hinh4;
+                matHang.Hinh4 = fileName4;
+            }
+
+          
+
+            if (ModelState.IsValid)
+            {            
+                db.Entry(db.MatHangs.Find(matHang.MaMH)).CurrentValues.SetValues(matHang);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

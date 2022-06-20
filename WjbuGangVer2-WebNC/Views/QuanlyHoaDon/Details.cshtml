@@ -1,0 +1,78 @@
+﻿@model WjbuGangVer2_WebNC.Models.HoaDonAdmin
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Chi Tiết đơn hàng</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.hoaDon.Ngay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hoaDon.Ngay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hoaDon.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hoaDon.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hoaDon.TongTien)
+        </dt>
+
+        <dd>
+            @Convert.ToString(string.Format("{0:#,##0}", Model.hoaDon.TongTien))
+            @*@Html.DisplayFor(model => model.hoaDon.TongTien)*@
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hoaDon.Account.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hoaDon.Account.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hoaDon.PhuongThucThanhToan.TenPT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hoaDon.PhuongThucThanhToan.TenPT)
+        </dd>
+
+    </dl>
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <th>Tên Mặt Hàng</th>
+                <th>Số Lượng</th>
+                <th>Giá</th>
+                <th>Tổng Giá</th>
+            </tr>
+            @foreach (var item in Model.items)
+            {
+                double total = Convert.ToDouble(item._shopping_product.DonGia * item._shopping_quantity);
+                <tr>
+                    <td>@item._shopping_product.TenMH</td>
+                    <td>@item._shopping_quantity</td>
+                    <td>@item._shopping_product.DonGia.ToString("#,##0")</td>
+                    <td>@total.ToString("#,##0")</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

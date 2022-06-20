@@ -1,0 +1,94 @@
+﻿@model WjbuGangVer2_WebNC.Models.Account
+
+@{
+    ViewBag.Title = "Login";
+}
+<link href="~/Content/CSS/register.css" rel="stylesheet" />
+
+<div class="animated bounceInDown">
+    <div class="container">
+        <span class="error animated tada" id="msg"></span>
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "box" }))
+        {
+            <form name="form1" class="box" action="">
+                <h4>WibuGang<span>Đăng ký</span></h4>
+                <h5>Điền tài khoản & mật khẩu</h5>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.HoTen, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="text" class="mb-0 form-control" placeholder="Tên" name="fname" required>
+                        @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DiaChi, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input class="mb-0 form-control" type="text" name="Địa Chỉ" placeholder="Địa Chỉ" required>
+                        @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input class="mb-0 form-control" type="email" id="email" name="email" placeholder="Email" required>
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SDT, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input class="mb-0 form-control" type="tel" name="phone" placeholder="SĐT" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
+                        @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.NgaySinh, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input class="mb-0 form-control" type="date" value="2000-01-01" name="birth" placeholder="Ngày sinh" required">
+                        @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input class="mb-0 form-control" type="text" placeholder="Tên Tài Khoản" name="uname" required>
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <i class="typcn typcn-eye" id="eye"></i>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input class="mb-0 form-control" type="password" name="psw" id="password" placeholder="Password" required>
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <i class="typcn typcn-eye" id="eye"></i>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input class="mb-0 form-control" type="password" id="repeat-password" name="repsw" placeholder="Xác Nhận Password" required>
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <p style="color:red">@ViewBag.error</p>
+                <input style="margin-top:20px" type="submit" value="Đăng ký" class="btn1">
+            </form>
+        }
+        <a href="/Account/AccountLogic" class="dnthave">Đã có tài khoản? Đăng nhập ngay</a>
+    </div>
+    @RenderBody();
+</div>
+
+

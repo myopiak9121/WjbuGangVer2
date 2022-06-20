@@ -33,7 +33,7 @@ body, html {
     border-top: 10px solid #79a6fe;
     border-bottom: 10px solid #8BD17C;
     width: 400px;
-    height: 500px;
+    height: 650px;
     box-shadow: 1px 1px 108.8px 19.2px rgb(25,31,53);
 }
 
@@ -42,7 +42,6 @@ body, html {
     color: #5c6bc0;
     font-size: 18px;
     margin-top: 94px;
-    ;
 }
 
     .box h4 span {
@@ -202,5 +201,4 @@ label span {
 
     .footer .fa {
         color: #7f5feb;
-        ;
     }

@@ -3,31 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/Content/CSS/aos.css" type="text/css">
-    <link rel="stylesheet" href="~/Content/CSS/csbh.css" type="text/css">
     <link rel="stylesheet" href="~/Content/CSS/index.css" type="text/css">
-    <link rel="stylesheet" href="~/CSS/contact.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/CSS/contact.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>WibuGang</title>
+    <style>
+        /*.fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 70px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+
+            .fa:hover {
+                opacity: 0.7;
+            }*/
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-youtube {
+            background: #bb0000;
+            color: white;
+        }
+
+        .fa-instagram {
+            background: #125688;
+            color: white;
+        }
+
+
+        .fa-rss {
+            background: #ff6600;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
     <div class="header">
         <div class="header-container">
             <div id="logo" data-aos="zoom-out">
-                <a href="./index.html">
+                <a href="@Url.Action("Index","Home")">
                     <img height="150" src="~/Content/Images/index/new logo.png">
                 </a>
             </div>
-            <div class="searchBox">
-                <div class="search">
-                    <div>
-                        <input type="text" placeholder="Search . . ." required>
+            @using (Html.BeginForm("Index", "Search", FormMethod.Post, new { @class = "box" }))
+            {
+                <form id="search-form">
+                    <div class="searchBox">
+                        <div class="search">
+                            <div>
+                                <input type="text" name="searchstring" placeholder="Search . . ." required>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </form>
+            }
+
+            <div>
+                @if (Session["User_Name"] != null)
+                {
+                    <a href="~/Account/Userlogout">
+                    <div id="login">
+                        <i class="fa fa-user fa-2x" style="padding:7.5px"></i>
+                        <p style="margin-top: 20px"> Xin chào @Session["User_Name"] | Đăng xuất</p>
+                    </div>
+                    </a>
+                }
+                else
+                {
+                    <a href="~/Account/AccountLogic">
+                        <div id="login">
+                            <i class="fa fa-user fa-2x" style="padding:7.5px"></i>
+                            <p style="margin-top: 20px">Đăng Nhập</p>
+                        </div>
+                    </a>
+                }
+                <a href="@Url.Action("ShowToCart","HoaDon")">
+                    <div id="cart">
+                        <i class="fa fa-shopping-cart fa-2x" style="padding: 5px"></i>
+                        @Html.Action("BagCart", "HoaDon")
+                    </div>
+                </a>
             </div>
-            <div id="login"><i class="fa fa-user fa-2x"></i><p>Đăng Nhập</p></div>
-            <a href="./HTML/Gio Hang.html"><div id="cart"><i class="fa fa-shopping-cart fa-2x"></i></div></a>
         </div>
     </div>
     @RenderBody()
@@ -48,20 +120,16 @@
                 <p style="font-size:15px">Quy chế hoạt động sàn GDTMĐT</p>
                 <p style="font-size:15px">Bán hàng cùng HGShop</p><br>
                 <p><b>PHƯƠNG THỨC THANH TOÁN</b></p>
-                <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/visa.svg" style="margin-left: 10px; float: left;">
-                <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/mastercard.svg" style="margin-left: 10px; float: left">
-                <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/jcb.svg" style="margin-left: 10px; margin-right:10px; float: left">
-                <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/cash.svg" style="margin-left: 10px; margin-top: 10px;">
-                <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/internet-banking.svg" style="margin-left: 5px;">
-                <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/installment.svg" style="margin-left: 5px;">
+                <p style="font-size:15px">Thanh toán qua VISA</p>
+                <p style="font-size:15px">Thanh toán trực tiếp</p><br>
             </div>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2530546194694!2d106.655663793639!3d10.791920472338704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752934d78720e1%3A0xd51e0fa8457cb04b!2sXgear!5e0!3m2!1svi!2s!4v1607832319981!5m2!1svi!2s" width="500" height="300" frameborder="0" style="border:0; float:left;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
             <div class="thongtin" style="float:left; margin-left: 20px;">
                 <p><b>KẾT NỐI VỚI CHÚNG TÔI</b></p>
-                <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/fb.svg" style="margin-left: 10px; float: left;">
-                <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/youtube.svg" style="margin-left: 10px; float: left;">
-                <img src="https://cdn.chanhtuoi.com/uploads/2020/10/logo-zalo.jpg" style="margin-left: 15px; float: left; height: 25px; background-color: white; border-radius: 50%; margin-top: 4px;">
+                <a href="#" class="fa fa-facebook fa-2x" style=" padding: 20px; font-size: 30px; width: 70px; text-align: center; text-decoration: none; margin: 5px 2px; border-radius: 50%;"></a>
+                <a href="#" class="fa fa-twitter fa-2x"style=" padding: 20px; font-size: 30px; width: 70px; text-align: center; text-decoration: none; margin: 5px 2px; border-radius: 50%;"></a>
+                <a href="#" class="fa fa-youtube fa-2x"style=" padding: 20px; font-size: 30px; width: 70px; text-align: center; text-decoration: none; margin: 5px 2px; border-radius: 50%;"></a>
                 <img>
                 <p style="margin-top: 50px;"><b>TẢI ỨNG DỤNG TRÊN DI ĐỘNG</b></p>
                 <img height="50" src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/appstore.png" style="margin-left: 10px;">
@@ -73,12 +141,7 @@
     <div class="endless-footer"></div>
     <div class="banner2ben">
         <div id="hot-product-container">
-            <a href="./link/dienthoai.html" class="hinhbanner">
-                <img src="https://xgear.vn/wp-content/uploads/2020/12/Xmas-right-website.png">
-            </a>
-            <a href="./link/dogiadung.html" class="hinhbanner">
-                <img src="https://xgear.vn/wp-content/uploads/2020/12/Xmas-right-website.png">
-            </a>
+            
         </div>
     </div>
     <div id="progressbar"></div>

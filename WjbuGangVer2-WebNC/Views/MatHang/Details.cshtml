@@ -1,14 +1,11 @@
 ﻿@model WjbuGangVer2_WebNC.Models.MatHang
 
-@{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+@{ ViewBag.Title = "Details";
+                Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
 
-<h2>Details</h2>
+<h2>Chi tiết</h2>
 
 <div>
-    <h4>MatHang</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -24,7 +21,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DonGia)
+            @*@Html.DisplayFor(model => model.DonGia)*@
+            @Convert.ToString(string.Format("{0:#,##0}", Model.DonGia))
         </dd>
 
         <dt>
@@ -36,19 +34,26 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Hang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hang)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.HinhChinh)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.HinhChinh)
+            <img src="@Url.Content(Model.HinhChinh)" width="250" height="250" />
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Hinh1)
         </dt>
-
+        @Html.DisplayNameFor(model => model.Hinh1)
         <dd>
-            @Html.DisplayFor(model => model.Hinh1)
+            <img src="@Url.Content(Model.Hinh1)" width="250" height="250" />
         </dd>
 
         <dt>
@@ -56,7 +61,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Hinh2)
+            <img src="@Url.Content(Model.Hinh2)" width="250" height="250" />
         </dd>
 
         <dt>
@@ -64,7 +69,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Hinh3)
+            <img src="@Url.Content(Model.Hinh3)" width="250" height="250" />
         </dd>
 
         <dt>
@@ -72,7 +77,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Hinh4)
+            <img src="@Url.Content(Model.Hinh4)" width="250" height="250" />
         </dd>
 
         <dt>
@@ -86,6 +91,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaMH }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Chỉnh sửa ", "Edit", new { id = Model.MaMH }) |
+    @Html.ActionLink("Quay lại", "Index")
 </p>

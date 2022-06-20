@@ -1,4 +1,6 @@
-﻿@model IEnumerable<WjbuGangVer2_WebNC.Models.MatHang>
+﻿@model IPagedList<WjbuGangVer2_WebNC.Models.MatHang>
+@using PagedList.Mvc;
+@using PagedList;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,6 +14,7 @@
     <link rel="stylesheet" href="~/Content/CSS/index.css" type="text/css">
     <link rel="stylesheet" href="~/Content/CSS/All Products.css" type="text/css">
     <link rel="stylesheet" href="~/Content/CSS/aos.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/PagedList.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>HyperGear Sản Phẩm Trang 1</title>
@@ -27,16 +30,16 @@
                             <li style="width: 250px">
                                 <a href="./HTML/All Products page 1.html">Laptop<i style="float: right;" class="fa fa-angle-right"></i></a>
                                 <ul class="dropdown-laptop">
-                                    <a href="../HTML/Asus/Asus Products.html">
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Asus"})">
                                     <li style="width: 250px; margin-top: -1px;">Asus</li></a>
-                                    <a href="../HTML/Acer/Acer Products.html">
-                                    <li style="width: 250px">Acer</li></a>
-                                    <a href="../HTML/MSI/MSI Products.html">
-                                    <li style="width: 250px">MSI</li></a>
-                                    <a href="../HTML/Dell/Dell Products.html">
-                                    <li style="width: 250px">Dell</li></a>
-                                    <a href="../HTML/Macbook/Mac Products.html">
-                                    <li style="width: 250px">Macbook</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Acer"})">
+                                    <li style="width: 250px; margin-top: -1px;">Acer</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Dell"})">
+                                    <li style="width: 250px; margin-top: -1px;">Dell</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Macbook"})">
+                                    <li style="width: 250px; margin-top: -1px;">Macbook</li></a>
+                                    <a href="@Url.Action("IndexNSX", "Product", new { name = "Msi"})">
+                                    <li style="width: 250px; margin-top: -1px;">MSI</li></a>
                                 </ul>
                             </li>
                             <li style="width: 250px">
@@ -106,10 +109,10 @@
                         </ul>
                     </li>
                     <div class="center">
-                        <div class="pagination">
-                            <a href="../index.html"><i class="fa fa-home"></i>Trang Chủ</a>
-                            <a href="../HTML/All Products page 1.html" class="active"><i class="fa fa-tags"></i>Sản Phẩm</a>
-                            <a href="../csbh.html"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
+                        <div class="pagination" style="margin: 0px 0px">
+                            <a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i>Trang Chủ</a>
+                            <a href="@Url.Action("Index","Product","Index")" class="active"><i class="fa fa-tags"></i>Sản Phẩm</a>
+                            <a href="@Url.Action("CSBH","CSBH","CSBH")"><i class="fa fa-book"></i>Chính Sách Bán Hàng</a>
                             <a data-modal-target="#modal"><i class="fa fa-phone"></i>Liên Hệ</a>
                             <div class="modal" id="modal">
                                 <div class="modal-header">
@@ -118,10 +121,10 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="testclmm">
-                                        <img height="300" style="margin-left: -40px;" src="../../Images/Sang.jpg">
+                                        <img height="300" style="margin-left: -40px;" src="~/Content/Images/sang1.jpg">
                                     </div>
                                     <p>
-                                        SĐT:0582754857
+                                        SĐT: 0582754857
 
                                         <br>
                                         <a style="margin-left:70px" href="https://www.facebook.com/profile.php?id=100038650591808">Sang Phạm</a>
@@ -129,17 +132,27 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="testclmm">
-                                        <img height="500" style="margin: -150px 0px 0px -300px" src="../../Images/Me.png">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="~/Content/Images/Tien1.jpg">
                                     </div>
                                     <p>
-                                        SĐT:0931151121
+                                        SĐT: 0931151121
                                         <br>
-                                        <a style="margin-left:70px" href="https://www.facebook.com/satie0201/">Quốc Tiến</a>
+                                        <a style="margin-left:80px;" href="https://www.facebook.com/satie0201"> Quốc Tiến</a>
+                                    </p>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="testclmm">
+                                        <img height="500" style="margin: -150px 0px 0px -300px" src="~/Content/Images/tung1.png">
+                                    </div>
+                                    <p>
+                                        SĐT: 0396054204
+                                        <br>
+                                        <a style="margin-left:80px;" href="https://www.facebook.com/opapapaamammadad"> Mạnh Tùng</a>
                                     </p>
                                 </div>
                             </div>
                             <div id="overlay"></div>
-                            <script src="../JAVA/java.js"></script>
+                            <script src="~Content/JAVA/java.js"></script>
                         </div>
                     </div>
                 </ul>
@@ -156,68 +169,80 @@
                 </div>
             </div>
         </div>
-
-        <div class="newstuffs-container" style="height: 450px;">
-            <div class="newstuffs">
-                <div class="banner">
-                    <img src="~/Content/Images/Banner/ASUS Banner.jpg" data-aos="fade-up" data-aos-delay="0" data-aos-easing="linear" data-aos-duration="500" style="padding-top: 1%">
-                    <img src="~/Content/Images/Banner/Acer Banner.jpg" data-aos="fade-up" data-aos-delay="100" data-aos-easing="linear" data-aos-duration="500">
-                    <img src="~/Content/Images/Banner/MSI Banner.jpg" data-aos="fade-up" data-aos-delay="200" data-aos-easing="linear" data-aos-duration="500">
-                </div>
+    </div>
+    <div class="newstuffs-container" style="height: 450px;">
+        <div class="newstuffs">
+            <div class="banner">
+                <img src="~/Content/Images/Banner/ASUSbanner.jpg" data-aos="fade-up" data-aos-delay="0" data-aos-easing="linear" data-aos-duration="500" style="padding-top: 1%">
+                <img src="~/Content/Images/Banner/Acerbanner.jpg" data-aos="fade-up" data-aos-delay="100" data-aos-easing="linear" data-aos-duration="500">
+                <img src="~/Content/Images/Banner/MSIbanner.jpg" data-aos="fade-up" data-aos-delay="200" data-aos-easing="linear" data-aos-duration="500">
             </div>
         </div>
-        <div class="layout" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="500">
+    </div>
+    <div class="introduce-title" data-aos="fade-up" data-aos-delay="0" data-aos-easing="linear" data-aos-duration="500">
+        SẢN PHẨM
+        <div class="colorbar">
+            <img src="~/Content/Images/index/colorbar.gif">
+        </div>
+    </div>
+    <div class="layout" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="500">
 
-            @foreach (var item in Model)
-            {
-                <div style="margin-left: 1%" id="products">
-                    <a href="~/Content/HTML/Asus/Asus ROG Zephyrus Duo 15.html">
-                        <img height="230" id="products-preview" src="~/Content/Images/@item.HinhChinh">
-                        <p>@item.TenMH</p>
-                        <h2>@item.DonGia</h2>   
-                    </a>
-                </div>
-            }
+        @foreach (var item in Model)
+        {
+            @*<script>
+                    var number = @item.DonGia;
+                    var commas = number.toLocaleString("en-US");
+                    document.getElementById('price').innerHTML = commas;
+                </script>*@
+            <div style="margin-left: 1%" id="products" class="Search">
+                <a href="@Url.Action("Details", new { id = @item.MaMH })">
+                    <img style="max-width: 270px; max-height: 230px" id="products-preview" src="@item.HinhChinh">
+                    <p>@item.TenMH</p>
+                    <h2 id="price">@item.DonGia.ToString("#,##0") VNĐ</h2>
+                </a>
+            </div>
+        }
 
-
-            <div class="center1">
-                <div class="pagination1">
-                    <a href="#">&laquo;</a>
+        <div class="center1" style="width: 100%; height: auto; float: left;">
+            <div class="pagination1">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+                @*<a href="#">&laquo;</a>
                     <a href="#" class="active">1</a>
                     <a href="../HTML/All Products page 2.html">2</a>
                     <a href="../HTML/All Products page 3.html">3</a>
                     <a href="../HTML/All Products page 4.html">4</a>
-                    <a href="../HTML/All Products page 2.html">&raquo;</a>
-                </div>
+                    <a href="../HTML/All Products page 2.html">&raquo;</a>*@
             </div>
         </div>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <div id="progressbar"></div>
-        <div id="scrollPath"></div>
-        <script type="text/javascript">
-            let progress = document.getElementById('progressbar');
-            let totalHeight = document.body.scrollHeight - window.innerHeight;
-            window.onscroll = function () {
-                let progressHeight = (window.pageYOffset / totalHeight) * 100;
-                progress.style.height = progressHeight + '%';
-            }
-        </script>
-        <script>
-            AOS.init({
-                easing: 'ease-out-back',
-                duration: 1000
-            });
-        </script>
-        <script>
-            hljs.initHighlightingOnLoad();
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+    <script type="text/javascript">
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function () {
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + '%';
+        }
+    </script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000
+        });
+    </script>
+    <script>
+        hljs.initHighlightingOnLoad();
 
-            $('.hero__scroll').on('click', function (e) {
-                $('html, body').animate({
-                    scrollTop: $(window).height()
-                }, 1200);
-            });
-        </script>
-        <script src="../JAVA/java.js"></script>
+        $('.hero__scroll').on('click', function (e) {
+            $('html, body').animate({
+                scrollTop: $(window).height()
+            }, 1200);
+        });
+    </script>
+    <script src="~Content/JAVA/java.js"></script>
+
 </body>
 </html>
 
