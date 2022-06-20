@@ -91,7 +91,13 @@ namespace WjbuGangVer2_WebNC.Controllers
             _hoadon.TongTien = Convert.ToInt32(_total);
             _hoadon.MaPT = 1;
             _hoadon.AccountID = 1;
-
+            string chiTiet = "";
+            foreach(HoaDonItem item in GetHoaDon().items)
+            {
+                chiTiet += item._shopping_product.MaMH + ":" + item._shopping_quantity + "-";
+            }
+            chiTiet.Remove(chiTiet.Length - 1);
+            _hoadon.ChiTiet = chiTiet;
             db.HoaDons.Add(_hoadon);
             db.SaveChanges();
 
