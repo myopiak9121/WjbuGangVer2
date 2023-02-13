@@ -88,7 +88,7 @@ namespace WjbuGangVer2_WebNC.Controllers
             {
                 db.Entry(account).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
             }
             return View(account);
         }

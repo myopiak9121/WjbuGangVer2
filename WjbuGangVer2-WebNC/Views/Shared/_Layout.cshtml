@@ -74,32 +74,37 @@
                 </form>
             }
 
-            <div>
-                @if (Session["User_Name"] != null)
-                {
-                    <a href="~/Account/Userlogout">
+        <div>
+            @if (Session["User_Name"] != null)
+            {
+                <a href="~/Account/Userlogout">
                     <div id="login">
                         <i class="fa fa-user fa-2x" style="padding:7.5px"></i>
                         <p style="margin-top: 20px"> Xin chào @Session["User_Name"] | Đăng xuất</p>
+
                     </div>
-                    </a>
-                }
-                else
-                {
-                    <a href="~/Account/AccountLogic">
-                        <div id="login">
-                            <i class="fa fa-user fa-2x" style="padding:7.5px"></i>
-                            <p style="margin-top: 20px">Đăng Nhập</p>
-                        </div>
-                    </a>
-                }
-                <a href="@Url.Action("ShowToCart","HoaDon")">
-                    <div id="cart">
-                        <i class="fa fa-shopping-cart fa-2x" style="padding: 5px"></i>
-                        @Html.Action("BagCart", "HoaDon")
+                    <div style="margin: 125px 0px 0px 1175px; position: fixed">
+                        <a href="@Url.Action("Edit", "AccountEntity", new { id = Session["User_ID"] })">[Chỉnh sửa thông tin cá nhân]</a>
                     </div>
                 </a>
-            </div>
+
+            }
+            else
+            {
+                <a href="~/Account/AccountLogic">
+                    <div id="login">
+                        <i class="fa fa-user fa-2x" style="padding:7.5px"></i>
+                        <p style="margin-top: 20px">Đăng Nhập</p>
+                    </div>
+                </a>
+            }
+            <a href="@Url.Action("ShowToCart","HoaDon")">
+                <div id="cart">
+                    <i class="fa fa-shopping-cart fa-2x" style="padding: 5px"></i>
+                    @Html.Action("BagCart", "HoaDon")
+                </div>
+            </a>
+        </div>
         </div>
     </div>
     @RenderBody()

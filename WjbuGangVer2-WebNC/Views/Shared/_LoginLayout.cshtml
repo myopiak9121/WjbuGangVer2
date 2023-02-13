@@ -14,7 +14,7 @@
                 <h4>WibuGang<span>Đăng nhập</span></h4>
                 <h5>Điền tài khoản & mật khẩu</h5>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
+                <div class="form-group" style="color:white">
                     @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <i class="typcn typcn-eye" id="eye"></i>
-                <div class="form-group">
+                <div class="form-group" style="color:white">
                     @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })

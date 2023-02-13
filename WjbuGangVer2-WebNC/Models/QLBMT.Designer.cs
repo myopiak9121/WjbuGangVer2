@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\Models\QLBMT.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\Models\QLBMT.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

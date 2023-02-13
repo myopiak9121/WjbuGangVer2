@@ -427,7 +427,6 @@ D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.IO.
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.IO.Compression.ZipFile.dll
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.IO.FileSystem.dll
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Net.Http.dll
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Net.Sockets.dll
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Reflection.Metadata.dll
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -436,7 +435,6 @@ D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Sec
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Security.Cryptography.Primitives.dll
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Threading.Tasks.Extensions.dll
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.ValueTuple.dll
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Xml.ReaderWriter.dll
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Xml.XmlDocument.dll
@@ -447,26 +445,6 @@ D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\vbc.exe.co
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\vbc.rsp
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\VBCSCompiler.exe
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\VBCSCompiler.exe.config
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\Antlr3.Runtime.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\EntityFramework.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\EntityFramework.SqlServer.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\JetBrains.Annotations.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\Microsoft.Web.Infrastructure.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\Newtonsoft.Json.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\Oracle.ManagedDataAccess.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\PagedList.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\PagedList.Mvc.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\Slapper.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Web.Helpers.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Web.Mvc.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Web.Optimization.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Web.Razor.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Web.WebPages.Deployment.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Web.WebPages.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Web.WebPages.Razor.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\WebGrease.dll
-D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\X.PagedList.dll
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\EntityFramework.xml
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\EntityFramework.SqlServer.xml
 D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\JetBrains.Annotations.xml
@@ -510,3 +488,29 @@ D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\System.
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\System.Text.Encodings.Web.xml
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\System.Text.Json.xml
 D:\Docx\Nam 3 HK 2\LT WEB NC Doan\WjbuGang-Backup\WjbuGangVer2-WebNC\bin\System.ValueTuple.xml
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Buffers.dll
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Memory.dll
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Numerics.Vectors.dll
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Buffers.dll
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Memory.dll
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Numerics.Vectors.dll
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Text.Encodings.Web.dll
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Text.Json.dll
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Threading.Tasks.Extensions.dll
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.ValueTuple.dll
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Buffers.xml
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Memory.xml
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Numerics.Vectors.xml
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Text.Encodings.Web.xml
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.Text.Json.xml
+D:\Docx\Nam3HK2\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\bin\System.ValueTuple.xml
+D:\Baitap\KĐPM\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.csproj.AssemblyReference.cache
+D:\Baitap\KĐPM\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.csproj.CoreCompileInputs.cache
+D:\Baitap\KĐPM\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.dll
+D:\Baitap\KĐPM\LTWEB DoAn\WjbuGangVer2\WjbuGangVer2-WebNC\obj\Debug\WjbuGangVer2-WebNC.pdb
