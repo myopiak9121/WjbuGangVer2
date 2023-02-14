@@ -1,0 +1,331 @@
+{
+  "id": "9143521f-25a3-4738-9394-3a9568d28c43",
+  "version": "2.0",
+  "name": "TestDemo",
+  "url": "https://localhost:44339",
+  "tests": [{
+    "id": "ee5a1a0e-75ac-4185-b4ca-926f47ed2824",
+    "name": "SanPhamROG",
+    "commands": [{
+      "id": "bd1fb065-573d-4f01-9072-894f6b6784ac",
+      "comment": "",
+      "command": "open",
+      "target": "https://localhost:44339/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "378f1bb1-944f-47f2-acc5-39b7e3b78f1f",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(1) > #product > img",
+      "targets": [
+        ["css=a:nth-child(1) > #product > img", "css:finder"],
+        ["xpath=//div[@id='product']/img", "xpath:idRelative"],
+        ["xpath=//a/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ea70c647-efb5-4c11-886f-5e8f9e002cba",
+    "name": "TimKiem",
+    "commands": [{
+      "id": "045f9fd3-8105-4c27-9999-34e73cb76c21",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d2cb9e4-bfaa-4504-875b-075ab05b7543",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1393x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0a4a4f99-3e75-48e0-b176-70c75eb815ca",
+      "comment": "",
+      "command": "click",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6572e525-3ac9-462f-9e2d-879cb1e20374",
+      "comment": "",
+      "command": "click",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "425341ec-028f-4080-81d2-744e5cdc9aad",
+      "comment": "",
+      "command": "type",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "MH01"
+    }, {
+      "id": "d65b2055-a34c-4bf6-ba4a-2ddd6be0c574",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "dac5cbc0-b97a-4374-b3d0-5294d659fbce",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.introduce-title:nth-child(1)",
+      "targets": [],
+      "value": "Không tìm thấy sản phẩm"
+    }]
+  }, {
+    "id": "ad30b408-911c-45dc-a2bc-205481117fb8",
+    "name": "TimKiem1",
+    "commands": [{
+      "id": "ce53c55a-e639-4500-80c0-6dce7ad8261b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "25449bed-8d3a-4a52-9c2f-2dddf475ef7c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1393x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b7137b58-6129-4f68-a9cd-3ba83fd4b40e",
+      "comment": "",
+      "command": "click",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4e070538-61f5-4702-9558-abbd9997fc79",
+      "comment": "",
+      "command": "click",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "13365942-0047-4499-b3a6-e4abc91b6d18",
+      "comment": "",
+      "command": "type",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "170121"
+    }, {
+      "id": "4e5a59ac-99ef-48f2-bd8e-68a25b0b36c6",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "2346dd2f-af46-4857-8343-bde88c42aa1a",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.introduce-title:nth-child(1)",
+      "targets": [],
+      "value": "Không tìm thấy sản phẩm"
+    }]
+  }, {
+    "id": "d899c1b1-b2c7-4005-8923-ddcde6cb6288",
+    "name": "TimKiemKyTuDB",
+    "commands": [{
+      "id": "7685fd0a-b48a-4f5b-af98-d3c927e8f4c2",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "483cfede-30cc-4925-8966-7ebd0a7d297b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1393x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "60d7248c-3d20-423f-a1ca-b89182c2ecef",
+      "comment": "",
+      "command": "click",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fccdccd6-34e2-4d64-a90d-729c541a4f28",
+      "comment": "",
+      "command": "click",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb43900f-47d3-4df8-a160-9a2052b4335e",
+      "comment": "",
+      "command": "type",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "@!$%"
+    }, {
+      "id": "07c6be57-87dc-4838-b75a-1be85aace07f",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "ac62594b-8259-44b8-aae3-29a317eb5ec6",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.introduce-title:nth-child(1)",
+      "targets": [],
+      "value": "Không tìm thấy sản phẩm"
+    }]
+  }, {
+    "id": "19f58114-3d0c-4a1f-9369-62e480dcb664",
+    "name": "TimKiem0HL",
+    "commands": [{
+      "id": "e432f397-494a-4828-a368-bdbccb0cfa86",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d13c8d1-30bd-4401-9a6f-0cfe6c3a8d09",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1393x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d8a9849e-88fd-45dd-8422-813c2c83f2b2",
+      "comment": "",
+      "command": "click",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3df3e145-963f-4a4e-9a07-c131660fb658",
+      "comment": "",
+      "command": "click",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09511866-c375-4baa-9095-8b81667ad454",
+      "comment": "",
+      "command": "type",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "ửhgxcvszhjww"
+    }, {
+      "id": "ab846aa4-9bc5-45ce-a49d-80c934bb8b83",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=searchstring",
+      "targets": [
+        ["name=searchstring", "name"],
+        ["css=input", "css:finder"],
+        ["xpath=//input[@name='searchstring']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "c2c16cc4-2e7d-4af6-bba2-807d5f5849c5",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.introduce-title:nth-child(1)",
+      "targets": [],
+      "value": "Không tìm thấy sản phẩm"
+    }]
+  }],
+  "suites": [{
+    "id": "683deb24-f079-4e11-a2e1-8399e227a4ae",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://localhost:44339/Account/Register/", "https://localhost:44339/"],
+  "plugins": []
+}
