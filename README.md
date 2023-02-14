@@ -1,2 +1,2 @@
-# WjbuGangVer2-WebNC
+# Webtesting using Selenium and Webdriver
  
